@@ -4,7 +4,9 @@ const { isFunction, isPlainObject, isArrayLike } = checkers
 const { separateValueUnit } = helpers
 
 export default {
-  after: function () {},
+  after: function () {
+    
+  },
   addClass: function () {},
   after: function () {},
   append: function () {},
