@@ -30,6 +30,7 @@ export default {
       return this
     }
   },
+  before: function () {},
   css: function (name, value) {
     if (typeof name === 'string') {
       if (typeof value === 'string') {
@@ -69,12 +70,15 @@ export default {
       return this
     }
   },
-  before: function () {},
   empty: function () {},
   get: function () {},
   has: function () {},
   hasClass: function () {},
   html: function () {},
+  prepend:function(){},
+  remove:function(){},
   removeAttr: function () {},
-  removeClass: function () {}
+  removeClass: function () {},
+  text:function(){},
+  toggle:function(){},
 }

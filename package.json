@@ -1,13 +1,17 @@
 {
   "name": "baby-query",
   "version": "1.0.0",
-  "description": "baby query is the custom implementation of the popular javascriopt library jQuery.",  
+  "description": "baby query is the custom implementation of the popular javascriopt library jQuery.",
   "source": "src/babyQuery.js",
   "main": "dist/babyQuery.js",
   "scripts": {
     "test": "jest --env=jsdom --coverage --watchAll",
     "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "parcel build",
+    "docs:dev": "vitepress dev docs/",
+    "docs:build": "vitepress build docs/",
+    "docs:preview": "vitepress preview docs/",
+    "docs": "concurrently \"vitepress dev docs/\" \"npm run docs:build\" \"npm run docs:preview\""
   },
   "repository": {
     "type": "git",
@@ -29,8 +33,10 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "babel-jest": "^29.5.0",
+    "concurrently": "^7.6.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "vitepress": "^1.0.0-alpha.60"
   }
 }
