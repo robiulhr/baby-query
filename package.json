@@ -8,6 +8,7 @@
     "test": "jest --env=jsdom --coverage --watchAll",
     "watch": "parcel watch",
     "build": "parcel build",
+    "parcel": "concurrently \"parcel watch\" \"parcel build\"",
     "docs:dev": "vitepress dev docs/",
     "docs:build": "vitepress build docs/",
     "docs:preview": "vitepress preview docs/",

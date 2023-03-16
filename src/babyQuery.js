@@ -42,6 +42,7 @@ export default (function (globalThis) {
       // assinging all elements to the object
       for (let i = 0; i < this.nodes?.length; i++) {
         this[i] = this.nodes[i]
+        this.length = (i+1);
       }
     }
   }

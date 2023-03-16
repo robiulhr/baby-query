@@ -1,14 +1,13 @@
 import checkers from './checkers'
 import helpers from './helpers'
-const { isFunction, isPlainObject, isArrayLike } = checkers
-const { separateValueUnit } = helpers
+const { isFunction, isPlainObject, isValidHtmlElement } = checkers
 
 export default {
-  after: function () {
-    
+  after: function (element, elemArr) {
+    if (typeof element === 'string') {
+      console.log('element is string')
+    }
   },
-  addClass: function () {},
-  after: function () {},
   append: function () {},
   attr: function (name, value) {
     if (typeof name === 'string') {
@@ -18,7 +17,7 @@ export default {
         this['0']?.setAttribute(name, value)
         return this
       } else if (isFunction(value)) {
-        for (let i = 0; i < this.nodes.length; i++) {
+        for (let i = 0; i < this.length; i++) {
           const currVal = this[i]?.getAttribute(name)
           const newVal = value(i, currVal)
           newVal && this[i]?.setAttribute(name, newVal)
@@ -33,54 +32,24 @@ export default {
     }
   },
   before: function () {},
-  css: function (name, value) {
-    if (typeof name === 'string') {
-      if (typeof value === 'string') {
-        let toIncrease = false
-        value.slice(0, 2) == '+=' && (toIncrease = true)
-        for (let i = 0; i < this.nodes.length; i++) {
-          if (toIncrease) {
-            const { value: currValue, unit } = separateValueUnit(window.getComputedStyle(this[i])[name])
-            const newValue = currValue + Number(value.slice(2))
-            this[i].style[name] = newValue + unit
-          } else {
-            this[i].style[name] = value
-          }
-        }
-        return this
-      } else if (isFunction(value)) {
-        for (let i = 0; i < this.nodes.length; i++) {
-          const propValue = window.getComputedStyle(this[i])[name]
-          const { unit: currentUnit } = separateValueUnit(propValue)
-          const { value: givenValue, unit: givenUnit } = separateValueUnit(value(i, propValue))
-          this[i].style[name] = givenValue + (givenUnit || currentUnit)
-        }
-        return this
-      } else if (!value) return window.getComputedStyle(this['0'])[name]
-    } else if (isArrayLike(name)) {
-      let attrs = {}
-      for (let i = 0; i < name.length; i++) {
-        attrs[name[i]] = window.getComputedStyle(this['0'])[name[i]]
-      }
-      return attrs
-    } else if (isPlainObject(name)) {
-      for (let i = 0; i < this.nodes.length; i++) {
-        for (let props in name) {
-          this[i].style[props] = name[props]
-        }
-      }
-      return this
-    }
-  },
   empty: function () {},
   get: function () {},
   has: function () {},
-  hasClass: function () {},
-  html: function () {},
-  prepend:function(){},
-  remove:function(){},
+  html: function (input) {
+    if (!input) {
+      return this['0'].innerHTML
+    } else if (typeof input === 'string' && isValidHtmlElement(input)) {
+      this['0'].innerHTML = input
+      return this
+    } else if (isFunction(input)) {
+      console.log(input())
+      this['0'].innerHTML = input();
+      return this
+    }
+  },
+  prepend: function () {},
+  remove: function () {},
   removeAttr: function () {},
-  removeClass: function () {},
-  text:function(){},
-  toggle:function(){},
+  text: function () {},
+  toggle: function () {}
 }

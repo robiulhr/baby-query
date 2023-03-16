@@ -1,5 +1,6 @@
 
 export default {
+  animate:function(){},
   fadeIn:function(){},
   fadeOut:function(){},
   fadeToggle:function(){},
@@ -9,5 +10,4 @@ export default {
   slideDown:function(){},
   slideToggle:function(){},
   stop:function(){},
-  animate:function(){},
 }
