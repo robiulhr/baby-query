@@ -39,10 +39,10 @@ export default (function (globalThis) {
       handleDOMReady(selector)
     }
     if (this.nodes?.length) {
+      this.length = this.nodes.length;
       // assinging all elements to the object
       for (let i = 0; i < this.nodes?.length; i++) {
         this[i] = this.nodes[i]
-        this.length = (i+1);
       }
     }
   }

@@ -38,13 +38,16 @@ export default {
 
     return this
   },
-  separateValueUnit(valueStr){
-    let value = ""
-    let unit = ""
-    if(typeof valueStr !== "string") return {value:valueStr,unit}
-    for(let i = 0;i<valueStr.length;i++){
-      isNaN(+valueStr[i]) ? unit+=valueStr[i] : value+=valueStr[i]
+  separateValueUnit : function (valueStr) {
+    let value = ''
+    let unit = ''
+    if (typeof valueStr !== 'string') return { value: valueStr, unit }
+    for (let i = 0; i < valueStr.length; i++) {
+      isNaN(+valueStr[i]) ? (unit += valueStr[i]) : (value += valueStr[i])
     }
-    return {value:Number(value),unit}
+    return { value: Number(value), unit }
+  },
+  insertAfter: function (newNode, existingNode) {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextElementSibling)
   }
 }

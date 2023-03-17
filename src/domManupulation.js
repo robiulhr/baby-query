@@ -1,11 +1,21 @@
 import checkers from './checkers'
 import helpers from './helpers'
 const { isFunction, isPlainObject, isValidHtmlElement } = checkers
-
+const { insertAfter,createHtmlElementDynamically } = helpers
 export default {
   after: function (element, elemArr) {
     if (typeof element === 'string') {
-      console.log('element is string')
+      for (let ind = 0; ind < this.length; ind++) {
+          insertAfter(createHtmlElementDynamically(element)[0], this[ind])
+      }
+    } else if (typeof element === 'object' && !isPlainObject(element) && element.length) {
+      for (let ind = 0; ind < this.length; ind++) {
+        for (let i = 0; i < element.length; i++) {
+          let cloneNode = element[i]
+          if (ind !== 0) cloneNode = element[i].cloneNode(true)
+          insertAfter(cloneNode, this[ind])
+        }
+      }
     }
   },
   append: function () {},
@@ -42,8 +52,7 @@ export default {
       this['0'].innerHTML = input
       return this
     } else if (isFunction(input)) {
-      console.log(input())
-      this['0'].innerHTML = input();
+      this['0'].innerHTML = input()
       return this
     }
   },
