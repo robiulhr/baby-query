@@ -1,9 +1,9 @@
 import helpers from './helpers.js'
 import checkers from './checkers.js'
-import domManupulation from './domManupulation.js'
+import domManupulation from './domManupulation/domManupulation.js'
+import css from './css/css.js'
 const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction, isWindow, toType, isArrayLike, isEmptyObject } = checkers
 const { createHtmlElementDynamically, handleDOMReady, myExtend } = helpers
-
 export default (function (globalThis) {
   function BabyQuery (selector, context) {
     // if Developer doesn't use the new keyword
@@ -39,7 +39,7 @@ export default (function (globalThis) {
       handleDOMReady(selector)
     }
     if (this.nodes?.length) {
-      this.length = this.nodes.length;
+      this.length = this.nodes.length
       // assinging all elements to the object
       for (let i = 0; i < this.nodes?.length; i++) {
         this[i] = this.nodes[i]
@@ -58,8 +58,8 @@ export default (function (globalThis) {
 
   BabyQuery.extend = BabyQuery.fn.extend = myExtend
 
-  BabyQuery.fn.extend(domManupulation)
-
+  BabyQuery.fn.extend(domManupulation,css)
+  
   globalThis.BabyQuery = globalThis.$ = BabyQuery
 
   return BabyQuery

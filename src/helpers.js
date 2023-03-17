@@ -1,3 +1,6 @@
+import checkers from './checkers'
+const { isArrayLike, isEqualObject } = checkers
+
 export default {
   handleDOMReady: function (callback) {
     var domReadyQueue = []
@@ -15,30 +18,33 @@ export default {
     template.innerHTML = html
     return template.content.childNodes
   },
-  myExtend: function (source) {
-    if (!source || typeof source !== 'object') {
-      return this
-    }
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        var value = source[key]
-
-        if (value !== undefined) {
-          if (typeof value === 'object' && value !== null) {
-            if (!this[key] || typeof this[key] !== 'object') {
-              this[key] = {}
+  myExtend: function () {
+    for(let i = 0;i<arguments.length;i++){
+      if (!arguments[i] || typeof arguments[i] !== 'object') {
+        continue;
+      }
+      for (var key in arguments[i]) {
+        if (Object.prototype.hasOwnProperty.call(arguments[i], key)) {
+          var value = arguments[i][key]
+  
+          if (value !== undefined) {
+            if (typeof value === 'object' && value !== null) {
+              if (!this[key] || typeof this[key] !== 'object') {
+                this[key] = {}
+              }
+              this[key].merge(value)
+            } else {
+              this[key] = value
             }
-            this[key].merge(value)
-          } else {
-            this[key] = value
           }
         }
       }
+  
     }
-
+   
     return this
   },
-  separateValueUnit : function (valueStr) {
+  separateValueUnit: function (valueStr) {
     let value = ''
     let unit = ''
     if (typeof valueStr !== 'string') return { value: valueStr, unit }
@@ -47,7 +53,21 @@ export default {
     }
     return { value: Number(value), unit }
   },
-  insertAfter: function (newNode, existingNode) {
-    existingNode.parentNode.insertBefore(newNode, existingNode.nextElementSibling)
+  fileterDuplicateInaRow: function (array) {
+    if (!isArrayLike(array)) return
+    let filteredArr = []
+    let outerCount = 0
+    while (outerCount < array.length) {
+      let value = array[outerCount]
+      let innerCount = outerCount + 1
+      if (isEqualObject(value, array[innerCount])) {
+        while (isEqualObject(value, array[innerCount])) {
+          innerCount++
+        }
+      }
+      filteredArr.push(value)
+      outerCount = innerCount
+    }
+    return filteredArr
   }
 }

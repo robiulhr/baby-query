@@ -95,6 +95,20 @@ const checkers = {
       return false
     }
     return true
+  },
+  /**
+   * @return {Boolean} true/false  
+   * can be pass as many as object exmple: isEqualObject(obj1,obj2,obj3);
+   */
+  isEqualObject(){
+    let first = JSON.stringify(arguments[0])
+    for(let i = 1;i<arguments.length;i++){
+      if(first !== JSON.stringify(arguments[i]))  return false 
+    }
+    return true
+  },
+  isBabyQueryObject(obj){
+   return typeof obj === 'object' && !checkers.isPlainObject(obj) && obj.length && !checkers.isArrayLike(obj) && obj.nodes 
   }
 }
 

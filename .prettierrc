@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": "./src/*.js",
+      "files": ["./src/*.js","./src/*/*.js"],
       "options": {
         "tabWidth": 2,
         "useTabs": false,
