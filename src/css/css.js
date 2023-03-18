@@ -1,8 +1,9 @@
 import checkers from '../checkers'
 import helpers from '../helpers'
+import localhelpers from './localhelpers'
 const { isFunction, isPlainObject, isArrayLike } = checkers
 const { separateValueUnit } = helpers
-
+const { isCssValueFunction } = localhelpers
 export default {
   css: function (name, value) {
     if (typeof name === 'string') {
@@ -19,12 +20,7 @@ export default {
           }
         }
       } else if (isFunction(value)) {
-        for (let i = 0; i < this.length; i++) {
-          const propValue = window.getComputedStyle(this[i])[name]
-          const { unit: currentUnit } = separateValueUnit(propValue)
-          const { value: givenValue, unit: givenUnit } = separateValueUnit(value(i, propValue))
-          this[i].style[name] = givenValue + (givenUnit || currentUnit)
-        }
+        isCssValueFunction(name, value, this)
       } else if (!value) return window.getComputedStyle(this['0'])[name]
     } else if (isArrayLike(name)) {
       let attrs = {}
@@ -33,9 +29,13 @@ export default {
       }
       return attrs
     } else if (isPlainObject(name)) {
-      for (let i = 0; i < this.length; i++) {
-        for (let props in name) {
-          this[i].style[props] = name[props]
+      for (let props in name) {
+        if (isFunction(name[props])) {
+          isCssValueFunction(props, name[props], this)
+        } else {
+          for (let i = 0; i < this.length; i++) {
+            this[i].style[props] = name[props]
+          }
         }
       }
     }

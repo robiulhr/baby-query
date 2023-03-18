@@ -22,7 +22,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Tutorial', link: '/tutorial/' },
       { text: 'Docs', link: '/docs/introduction', activeMatch: '/docs/' },
-      { text: 'Author', link: '/author/' }
+      { text: 'Author', link: 'https://robiulhr.github.io/' }
     ],
 
     sidebar: {

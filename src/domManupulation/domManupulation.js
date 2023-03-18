@@ -1,8 +1,8 @@
 import checkers from '../checkers'
 import helpers from '../helpers'
 import localhelpers from './localhelpers'
-const { afterandAppendmethodRecursive,insertAfter,appendChild } = localhelpers
-const { isFunction, isPlainObject, isValidHtmlElement } = checkers
+const { afterandAppendmethodRecursive, insertAfter, appendChild } = localhelpers
+const { isFunction, isPlainObject, isValidHtmlElement, isBabyQueryObject } = checkers
 const { createHtmlElementDynamically, fileterDuplicateInaRow } = helpers
 
 export default {
@@ -15,7 +15,7 @@ export default {
       }
     } else {
       const filteredArguments = fileterDuplicateInaRow(arguments)
-      afterandAppendmethodRecursiveBinded(filteredArguments,"after")
+      afterandAppendmethodRecursiveBinded(filteredArguments, 'after')
     }
     return this
   },
@@ -28,7 +28,7 @@ export default {
       }
     } else {
       const filteredArguments = fileterDuplicateInaRow(arguments)
-      afterandAppendmethodRecursiveBinded(filteredArguments,"append")
+      afterandAppendmethodRecursiveBinded(filteredArguments, 'append')
     }
     return this
   },
@@ -41,7 +41,7 @@ export default {
       } else if (isFunction(value)) {
         for (let i = 0; i < this.length; i++) {
           const currVal = this[i]?.getAttribute(name)
-          const newVal = value(i, currVal)
+          const newVal = value.call(this[i],i, currVal)
           newVal && this[i]?.setAttribute(name, newVal)
         }
       }
@@ -59,19 +59,39 @@ export default {
   html: function (input) {
     if (!input) {
       return this['0'].innerHTML
-    } else if (typeof input === 'string' && isValidHtmlElement(input)) {
-      this['0'].innerHTML = input
-      return this
-    } else if (isFunction(input)) {
-      this['0'].innerHTML = input()
-      return this
     }
+    for (let i = 0; i < this.length; i++) {
+      if (typeof input === 'string' && isValidHtmlElement(input)) {
+        this[i].innerHTML = input
+      } else if (isFunction(input)) {
+        this[i].innerHTML = input(i, this[i].innerHTML)
+      } else if (isBabyQueryObject(input)) {
+        let tamplateElement = document.createElement('div')
+        for (let ind = 0; ind < input.length; ind++) {
+          tamplateElement.appendChild(input[ind])
+        }
+        this[i].innerHTML = tamplateElement.innerHTML
+      }
+    }
+
+    return this
   },
   prepend: function () {},
   remove: function () {},
   removeAttr: function () {},
-  text: function () {
-
+  text: function (text) {
+    if (!text) {
+      return this[0].textContent
+    } else if (typeof text === 'string') {
+      for (let i = 0; i < this.length; i++) {
+        this[i].textContent = text
+      }
+    } else if (isFunction(text)) {
+      for (let i = 0; i < this.length; i++) {
+        this[i].textContent = text.call(this[i],i, this[i].textContent)
+      }
+    }
+    return this
   },
   toggle: function () {}
 }

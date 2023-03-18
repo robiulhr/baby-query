@@ -8,16 +8,6 @@ typeof globalThis !== 'undefined'
   : typeof global !== 'undefined'
   ? global
   : {};
-function $parcel$defineInteropFlag(a) {
-  Object.defineProperty(a, '__esModule', {value: true, configurable: true});
-}
-function $parcel$export(e, n, v, s) {
-  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
-}
-
-$parcel$defineInteropFlag(module.exports);
-
-$parcel$export(module.exports, "default", () => $047f9defc20f6cd7$export$2e2bcd8739ae039);
 const $d4df80a29a2554d2$var$checkers = {
     isValidElementSelector: function(input) {
         try {
@@ -94,7 +84,7 @@ const $d4df80a29a2554d2$var$checkers = {
         return true;
     },
     isBabyQueryObject (obj) {
-        return typeof obj === "object" && !$d4df80a29a2554d2$var$checkers.isPlainObject(obj) && obj.length && !$d4df80a29a2554d2$var$checkers.isArrayLike(obj) && obj.nodes;
+        return typeof obj === "object" && !$d4df80a29a2554d2$var$checkers.isPlainObject(obj) && obj.length && obj.nodes;
     }
 };
 var $d4df80a29a2554d2$export$2e2bcd8739ae039 = $d4df80a29a2554d2$var$checkers;
@@ -179,7 +169,6 @@ const $8e7efde313f1b90f$var$localhelpers = {
                     break;
             }
             else if ($8e7efde313f1b90f$var$isBabyQueryObject(elementArray[index])) {
-                console.log("element is babyquery object");
                 for(let ind = 0; ind < this.length; ind++)for(let i = 0; i < elementArray[index].length; i++)switch(methodName){
                     case "after":
                         $8e7efde313f1b90f$var$localhelpers.insertAfter(elementArray[index][i], this[ind]);
@@ -188,7 +177,7 @@ const $8e7efde313f1b90f$var$localhelpers = {
                         $8e7efde313f1b90f$var$localhelpers.appendChild(elementArray[index][i], this[ind]);
                         break;
                 }
-            } else if ($8e7efde313f1b90f$var$isArrayLike(elementArray[index])) // call the afterandAppendmethodRecursive function again (recursively)
+            } else if ($8e7efde313f1b90f$var$isArrayLike(elementArray[index]) && !elementArray[index].nodes) // call the afterandAppendmethodRecursive function again (recursively)
             $8e7efde313f1b90f$var$localhelpers.afterandAppendmethodRecursive.call(this, elementArray[index], methodName);
             else if (elementArray[index] instanceof HTMLElement) for(let ind = 0; ind < this.length; ind++)switch(methodName){
                 case "after":
@@ -209,14 +198,19 @@ const $8e7efde313f1b90f$var$localhelpers = {
         existingNode.parentNode.insertBefore(cloneNode, existingNode.nextElementSibling);
     },
     appendChild (newNode, targetNode) {
-        targetNode.appendChild(newNode);
+        // make a clone of the element
+        let cloneNode = newNode.cloneNode(true);
+        // remove the original element
+        newNode.remove();
+        // append the cloned element
+        targetNode.appendChild(cloneNode);
     }
 };
 var $8e7efde313f1b90f$export$2e2bcd8739ae039 = $8e7efde313f1b90f$var$localhelpers;
 
 
 const { afterandAppendmethodRecursive: $d8203bae9db46050$var$afterandAppendmethodRecursive , insertAfter: $d8203bae9db46050$var$insertAfter , appendChild: $d8203bae9db46050$var$appendChild  } = (0, $8e7efde313f1b90f$export$2e2bcd8739ae039);
-const { isFunction: $d8203bae9db46050$var$isFunction , isPlainObject: $d8203bae9db46050$var$isPlainObject , isValidHtmlElement: $d8203bae9db46050$var$isValidHtmlElement  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
+const { isFunction: $d8203bae9db46050$var$isFunction , isPlainObject: $d8203bae9db46050$var$isPlainObject , isValidHtmlElement: $d8203bae9db46050$var$isValidHtmlElement , isBabyQueryObject: $d8203bae9db46050$var$isBabyQueryObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $d8203bae9db46050$var$createHtmlElementDynamically , fileterDuplicateInaRow: $d8203bae9db46050$var$fileterDuplicateInaRow  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 var $d8203bae9db46050$export$2e2bcd8739ae039 = {
     after: function(element) {
@@ -245,7 +239,7 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
             else if (typeof value === "string") this["0"]?.setAttribute(name, value);
             else if ($d8203bae9db46050$var$isFunction(value)) for(let i = 0; i < this.length; i++){
                 const currVal = this[i]?.getAttribute(name);
-                const newVal = value(i, currVal);
+                const newVal = value.call(this[i], i, currVal);
                 newVal && this[i]?.setAttribute(name, newVal);
             }
         } else if ($d8203bae9db46050$var$isPlainObject(value)) for(let prop in value)this["0"].setAttribute(prop, value[prop]);
@@ -257,26 +251,50 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
     has: function() {},
     html: function(input) {
         if (!input) return this["0"].innerHTML;
-        else if (typeof input === "string" && $d8203bae9db46050$var$isValidHtmlElement(input)) {
-            this["0"].innerHTML = input;
-            return this;
-        } else if ($d8203bae9db46050$var$isFunction(input)) {
-            this["0"].innerHTML = input();
-            return this;
+        for(let i = 0; i < this.length; i++){
+            if (typeof input === "string" && $d8203bae9db46050$var$isValidHtmlElement(input)) this[i].innerHTML = input;
+            else if ($d8203bae9db46050$var$isFunction(input)) this[i].innerHTML = input(i, this[i].innerHTML);
+            else if ($d8203bae9db46050$var$isBabyQueryObject(input)) {
+                let tamplateElement = document.createElement("div");
+                for(let ind = 0; ind < input.length; ind++)tamplateElement.appendChild(input[ind]);
+                this[i].innerHTML = tamplateElement.innerHTML;
+            }
         }
+        return this;
     },
     prepend: function() {},
     remove: function() {},
     removeAttr: function() {},
-    text: function() {},
+    text: function(text) {
+        if (!text) return this[0].textContent;
+        else if (typeof text === "string") for(let i = 0; i < this.length; i++)this[i].textContent = text;
+        else if ($d8203bae9db46050$var$isFunction(text)) for(let i = 0; i < this.length; i++)this[i].textContent = text.call(this[i], i, this[i].textContent);
+        return this;
+    },
     toggle: function() {}
 };
 
 
 
 
+
+const { separateValueUnit: $a21d1168b2ad536e$var$separateValueUnit  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
+const $a21d1168b2ad536e$var$localhelpers = {
+    isCssValueFunction: function(cssProp, callback, elementArr) {
+        for(let i = 0; i < elementArr.length; i++){
+            const propValue = window.getComputedStyle(elementArr[i])[cssProp];
+            const { unit: currentUnit  } = $a21d1168b2ad536e$var$separateValueUnit(propValue);
+            const { value: givenValue , unit: givenUnit  } = $a21d1168b2ad536e$var$separateValueUnit(callback.call(elementArr[i], i, propValue));
+            elementArr[i].style[cssProp] = givenValue + (givenUnit || currentUnit);
+        }
+    }
+};
+var $a21d1168b2ad536e$export$2e2bcd8739ae039 = $a21d1168b2ad536e$var$localhelpers;
+
+
 const { isFunction: $a9a61dad2c314c2e$var$isFunction , isPlainObject: $a9a61dad2c314c2e$var$isPlainObject , isArrayLike: $a9a61dad2c314c2e$var$isArrayLike  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { separateValueUnit: $a9a61dad2c314c2e$var$separateValueUnit  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
+const { isCssValueFunction: $a9a61dad2c314c2e$var$isCssValueFunction  } = (0, $a21d1168b2ad536e$export$2e2bcd8739ae039);
 var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
     css: function(name, value) {
         if (typeof name === "string") {
@@ -288,19 +306,15 @@ var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
                     const newValue = currValue + Number(value.slice(2));
                     this[i].style[name] = newValue + unit;
                 } else this[i].style[name] = value;
-            } else if ($a9a61dad2c314c2e$var$isFunction(value)) for(let i = 0; i < this.length; i++){
-                const propValue = window.getComputedStyle(this[i])[name];
-                const { unit: currentUnit  } = $a9a61dad2c314c2e$var$separateValueUnit(propValue);
-                const { value: givenValue , unit: givenUnit  } = $a9a61dad2c314c2e$var$separateValueUnit(value(i, propValue));
-                this[i].style[name] = givenValue + (givenUnit || currentUnit);
-            }
+            } else if ($a9a61dad2c314c2e$var$isFunction(value)) $a9a61dad2c314c2e$var$isCssValueFunction(name, value, this);
             else if (!value) return window.getComputedStyle(this["0"])[name];
         } else if ($a9a61dad2c314c2e$var$isArrayLike(name)) {
             let attrs = {};
             for(let i = 0; i < name.length; i++)attrs[name[i]] = window.getComputedStyle(this["0"])[name[i]];
             return attrs;
-        } else if ($a9a61dad2c314c2e$var$isPlainObject(name)) {
-            for(let i = 0; i < this.length; i++)for(let props in name)this[i].style[props] = name[props];
+        } else if ($a9a61dad2c314c2e$var$isPlainObject(name)) for(let props in name){
+            if ($a9a61dad2c314c2e$var$isFunction(name[props])) $a9a61dad2c314c2e$var$isCssValueFunction(props, name[props], this);
+            else for(let i = 0; i < this.length; i++)this[i].style[props] = name[props];
         }
         return this;
     },

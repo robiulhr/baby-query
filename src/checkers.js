@@ -108,7 +108,7 @@ const checkers = {
     return true
   },
   isBabyQueryObject(obj){
-   return typeof obj === 'object' && !checkers.isPlainObject(obj) && obj.length && !checkers.isArrayLike(obj) && obj.nodes 
+   return typeof obj === 'object' && !checkers.isPlainObject(obj) && obj.length && obj.nodes 
   }
 }
 

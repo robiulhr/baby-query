@@ -17,7 +17,6 @@ const localhelpers = {
           }
         }
       } else if (isBabyQueryObject(elementArray[index])) {
-        console.log("element is babyquery object")
         for (let ind = 0; ind < this.length; ind++) {
           for (let i = 0; i < elementArray[index].length; i++) {
             switch (methodName) {
@@ -30,7 +29,7 @@ const localhelpers = {
             }
           }
         }
-      } else if (isArrayLike(elementArray[index])) {
+      } else if (isArrayLike(elementArray[index]) && !elementArray[index].nodes) {
         // call the afterandAppendmethodRecursive function again (recursively)
         localhelpers.afterandAppendmethodRecursive.call(this, elementArray[index], methodName)
       } else if (elementArray[index] instanceof HTMLElement) {
@@ -56,7 +55,12 @@ const localhelpers = {
     existingNode.parentNode.insertBefore(cloneNode, existingNode.nextElementSibling)
   },
   appendChild (newNode, targetNode) {
-    targetNode.appendChild(newNode)
+    // make a clone of the element
+    let cloneNode = newNode.cloneNode(true)
+    // remove the original element
+    newNode.remove()
+    // append the cloned element
+    targetNode.appendChild(cloneNode)
   }
 }
 
