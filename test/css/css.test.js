@@ -104,7 +104,6 @@ describe('.css() method', () => {
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('180px')
     expect(window.getComputedStyle($('div')[3])['height']).toEqual('180px')
   })
-
   test("$('div').css({width: function (index, value) { const width = parseFloat(value) * index this.textContent = `width is ${width}` return width },height: function (index, value) {const height = parseFloat(value) * index this.textContent = `width is ${height}` return height}})", () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
