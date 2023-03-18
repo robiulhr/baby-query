@@ -1,1 +1,0 @@
-import{_ as t,o as e,c as a}from"./chunks/framework.a6ff1387.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/css/attr.md"}'),s={name:"docs/css/attr.md"};function r(c,o,n,d,p,_){return e(),a("div")}const f=t(s,[["render",r]]);export{m as __pageData,f as default};

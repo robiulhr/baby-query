@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as n,N as r}from"./chunks/framework.a6ff1387.js";const u=JSON.parse('{"title":".after()","description":"","frontmatter":{},"headers":[],"relativePath":"docs/manupulation/after.md"}'),a={name:"docs/manupulation/after.md"},o=r("",5),s=[o];function i(h,d,l,c,m,f){return t(),n("div",null,s)}const p=e(a,[["render",i]]);export{u as __pageData,p as default};

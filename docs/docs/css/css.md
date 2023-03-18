@@ -2,7 +2,7 @@
 
 Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
 
-## Method Details
+## Method Details 
 
 | Method Call                                                    | Description                                                                                                                                                                                                                                                                                                         |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
