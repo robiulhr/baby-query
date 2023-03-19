@@ -50,7 +50,7 @@ const localhelpers = {
     // make a clone of the element
     let cloneNode = newNode.cloneNode(true)
     // remove the original element
-    newNode.remove()
+    // newNode.remove()
     // insert the cloned element
     existingNode.parentNode.insertBefore(cloneNode, existingNode.nextElementSibling)
   },
@@ -58,7 +58,7 @@ const localhelpers = {
     // make a clone of the element
     let cloneNode = newNode.cloneNode(true)
     // remove the original element
-    newNode.remove()
+    // newNode.remove()
     // append the cloned element
     targetNode.appendChild(cloneNode)
   }

@@ -8,16 +8,6 @@ typeof globalThis !== 'undefined'
   : typeof global !== 'undefined'
   ? global
   : {};
-function $parcel$defineInteropFlag(a) {
-  Object.defineProperty(a, '__esModule', {value: true, configurable: true});
-}
-function $parcel$export(e, n, v, s) {
-  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
-}
-
-$parcel$defineInteropFlag(module.exports);
-
-$parcel$export(module.exports, "default", () => $047f9defc20f6cd7$export$2e2bcd8739ae039);
 const $d4df80a29a2554d2$var$checkers = {
     isValidElementSelector: function(input) {
         try {
@@ -203,7 +193,7 @@ const $8e7efde313f1b90f$var$localhelpers = {
         // make a clone of the element
         let cloneNode = newNode.cloneNode(true);
         // remove the original element
-        newNode.remove();
+        // newNode.remove()
         // insert the cloned element
         existingNode.parentNode.insertBefore(cloneNode, existingNode.nextElementSibling);
     },
@@ -211,7 +201,7 @@ const $8e7efde313f1b90f$var$localhelpers = {
         // make a clone of the element
         let cloneNode = newNode.cloneNode(true);
         // remove the original element
-        newNode.remove();
+        // newNode.remove()
         // append the cloned element
         targetNode.appendChild(cloneNode);
     }
@@ -290,12 +280,14 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
 
 const { separateValueUnit: $a21d1168b2ad536e$var$separateValueUnit  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 const $a21d1168b2ad536e$var$localhelpers = {
-    isCssValueFunction: function(cssProp, callback, elementArr) {
+    cssIsValueFunction: function(cssProp, callback, elementArr) {
         for(let i = 0; i < elementArr.length; i++){
             const propValue = window.getComputedStyle(elementArr[i])[cssProp];
             const { unit: currentUnit  } = $a21d1168b2ad536e$var$separateValueUnit(propValue);
             const { value: givenValue , unit: givenUnit  } = $a21d1168b2ad536e$var$separateValueUnit(callback.call(elementArr[i], i, propValue));
+            // console.log(elementArr[i].style[cssProp])
             elementArr[i].style[cssProp] = givenValue + (givenUnit || currentUnit);
+        // console.log(elementArr[i].style[cssProp])
         }
     }
 };
@@ -304,7 +296,7 @@ var $a21d1168b2ad536e$export$2e2bcd8739ae039 = $a21d1168b2ad536e$var$localhelper
 
 const { isFunction: $a9a61dad2c314c2e$var$isFunction , isPlainObject: $a9a61dad2c314c2e$var$isPlainObject , isArrayLike: $a9a61dad2c314c2e$var$isArrayLike  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { separateValueUnit: $a9a61dad2c314c2e$var$separateValueUnit  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
-const { isCssValueFunction: $a9a61dad2c314c2e$var$isCssValueFunction  } = (0, $a21d1168b2ad536e$export$2e2bcd8739ae039);
+const { cssIsValueFunction: $a9a61dad2c314c2e$var$cssIsValueFunction  } = (0, $a21d1168b2ad536e$export$2e2bcd8739ae039);
 var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
     css: function(name, value) {
         if (typeof name === "string") {
@@ -316,14 +308,14 @@ var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
                     const newValue = currValue + Number(value.slice(2));
                     this[i].style[name] = newValue + unit;
                 } else this[i].style[name] = value;
-            } else if ($a9a61dad2c314c2e$var$isFunction(value)) $a9a61dad2c314c2e$var$isCssValueFunction(name, value, this);
+            } else if ($a9a61dad2c314c2e$var$isFunction(value)) $a9a61dad2c314c2e$var$cssIsValueFunction(name, value, this);
             else if (!value) return window.getComputedStyle(this["0"])[name];
         } else if ($a9a61dad2c314c2e$var$isArrayLike(name)) {
             let attrs = {};
             for(let i = 0; i < name.length; i++)attrs[name[i]] = window.getComputedStyle(this["0"])[name[i]];
             return attrs;
         } else if ($a9a61dad2c314c2e$var$isPlainObject(name)) for(let props in name){
-            if ($a9a61dad2c314c2e$var$isFunction(name[props])) $a9a61dad2c314c2e$var$isCssValueFunction(props, name[props], this);
+            if ($a9a61dad2c314c2e$var$isFunction(name[props])) $a9a61dad2c314c2e$var$cssIsValueFunction(props, name[props], this);
             else for(let i = 0; i < this.length; i++)this[i].style[props] = name[props];
         }
         return this;
@@ -358,6 +350,9 @@ var $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
                 }
             }
         } else if (typeof selector === "function") $047f9defc20f6cd7$var$handleDOMReady(selector);
+        else if (selector instanceof HTMLElement) this.nodes = [
+            selector
+        ];
         if (this.nodes?.length) {
             this.length = this.nodes.length;
             // assinging all elements to the object

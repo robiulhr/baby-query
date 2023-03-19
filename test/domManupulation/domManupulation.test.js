@@ -1,6 +1,6 @@
 'use strict'
-import $ from '../../src/babyQuery'
-// import $ from '../../examples/api/jquery/jquery'
+// import $ from '../../src/babyQuery'
+import $ from '../../examples/api/jquery/jquery'
 
 const setDefaultHtml = htmlText => {
   document.body.innerHTML = htmlText
@@ -117,6 +117,30 @@ describe('.after() method', () => {
     $('h2').after($newdiv1, [$newdiv2, newdiv3, existingdiv1])
     expect(document.body.innerHTML).toEqual(
       `<div class="container"><h2>Greetings</h2><div>element 1</div><div>element 2</div><div></div><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
+    )
+  })
+  test('$("p").css("width",function(i,ele){$("div").after(this) return "200px"})', () => {
+    const customHtml = `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('p').css('width', function (i, ele) {
+      $('div').after(this)
+      return '200px'
+    })
+    expect(document.body.innerHTML).toEqual(
+      `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><p>Test</p><div class="inner">Goodbye</div><p style="width: 200px;">Test</p><p style="width: 200px;">Test</p></div><p>Test</p><p>Test</p>`
+    )
+  })
+  test('$("p").css("width",function(i,ele){ $("div").after(this) return "200" * i })', () => {
+    const customHtml = `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('p').css('width', function (i, ele) {
+      $('div').after(this)
+      return '200' * i
+    })
+    expect(document.body.innerHTML).toEqual(
+      `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><p>Test</p><div class="inner">Goodbye</div><p style="width: 200px;">Test</p><p style="width: 0px;">Test</p></div><p>Test</p><p>Test</p>`
     )
   })
 })
@@ -259,7 +283,7 @@ describe('.html() method', () => {
     // set the html to default html
     const customHtml = `<div class="demo-container"><div class="demo-box">Demonstration Box</div></div><div class="demo-container"><div class="demo-box">Demonstration Box</div></div><h2>hello world</h2><h2>hello world</h2>`
     setDefaultHtml(customHtml)
-    $(".demo-container").html($("h2"))
+    $('.demo-container').html($('h2'))
     expect(document.body.innerHTML).toEqual(
       `<div class="demo-container"><h2>hello world</h2><h2>hello world</h2></div><div class="demo-container"><h2>hello world</h2><h2>hello world</h2></div>`
     )
@@ -278,8 +302,8 @@ describe('.html() method', () => {
   test("$('.demo-container').html(function( index,ele ) {return 'item number ' + ( index + 1 ) + ele})", () => {
     const customHtml = `<div class="demo-container"><div class="demo-box">Demonstration Box</div></div><div class="demo-container"><div class="demo-box">Demonstration Box</div></div><h2>hello world</h2><h2>hello world</h2>`
     setDefaultHtml(customHtml)
-    $(".demo-container").html(function( index,ele ) {
-      return "item number " + ( index + 1 ) + ele;
+    $('.demo-container').html(function (index, ele) {
+      return 'item number ' + (index + 1) + ele
     })
     expect(document.body.innerHTML).toEqual(
       `<div class="demo-container">item number 1<div class="demo-box">Demonstration Box</div></div><div class="demo-container">item number 2<div class="demo-box">Demonstration Box</div></div><h2>hello world</h2><h2>hello world</h2>`
@@ -302,24 +326,20 @@ describe('.text() method', () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
     $('div.demo-container').text('<p>This is a test.</p>')
-    expect($('div.demo-container').text()).toEqual(
-      `<p>This is a test.</p>`
-    )
+    expect($('div.demo-container').text()).toEqual(`<p>This is a test.</p>`)
   })
   test("$('div.demo-container').text('<p>This is a test.</p>','<p>hello world</p>')", () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
-    $( "div.demo-container" ).text( "<p>This is a test.</p>" ,"<p>hello world</p>")
-    expect($('div.demo-container').text()).toEqual(
-      `<p>This is a test.</p>`
-    )
+    $('div.demo-container').text('<p>This is a test.</p>', '<p>hello world</p>')
+    expect($('div.demo-container').text()).toEqual(`<p>This is a test.</p>`)
   })
   test("$('ul li').text(function( index ) {return 'item number' + ( index + 1 )})", () => {
     // set the html to default html
     const customHtml = `<div class="demo-container"><div class="demo-box">Demonstration Box</div><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul></div></body>`
     setDefaultHtml(customHtml)
-    $( "ul li" ).text(function( index ) {
-      return "item number " + ( index + 1 );
+    $('ul li').text(function (index) {
+      return 'item number ' + (index + 1)
     })
     expect(document.body.innerHTML).toEqual(
       `<div class="demo-container"><div class="demo-box">Demonstration Box</div><ul><li>item number 1</li><li>item number 2</li><li>item number 3</li></ul></div>`
@@ -329,8 +349,8 @@ describe('.text() method', () => {
     // set the html to default html
     const customHtml = `<div class="demo-container"><div class="demo-box">Demonstration Box</div><ul><li>item 1</li><li>item 2</li><li>item 3</li></ul></div></body>`
     setDefaultHtml(customHtml)
-    $( "ul li" ).text(function( index,text ) {
-      return "item number " + ( index + 1 ) + " previous text " + text;
+    $('ul li').text(function (index, text) {
+      return 'item number ' + (index + 1) + ' previous text ' + text
     })
     expect(document.body.innerHTML).toEqual(
       `<div class="demo-container"><div class="demo-box">Demonstration Box</div><ul><li>item number 1 previous text item 1</li><li>item number 2 previous text item 2</li><li>item number 3 previous text item 3</li></ul></div>`

@@ -14,7 +14,6 @@ export default (function (globalThis) {
     if (!selector) {
       return this
     }
-
     // if Developer pass a css selector
     if (typeof selector === 'string') {
       // HANDLE: $(".class") , $("#id") and more valid selector
@@ -37,6 +36,8 @@ export default (function (globalThis) {
       }
     } else if (typeof selector === 'function') {
       handleDOMReady(selector)
+    }else if(selector instanceof HTMLElement){
+      this.nodes = [selector];
     }
     if (this.nodes?.length) {
       this.length = this.nodes.length

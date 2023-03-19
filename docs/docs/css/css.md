@@ -2,7 +2,7 @@
 
 Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
 
-## Method Details 
+## Method Details
 
 | Method Call                                                    | Description                                                                                                                                                                                                                                                                                                         |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -38,7 +38,7 @@ Html code
 <div style="background-color: #f11"></div>
 ```
 
-add this `Baby Query` code to a js file 
+add this `Baby Query` code to a js file
 
 ```javascript
 console.log($('div').css('background-color'))
@@ -139,6 +139,30 @@ Now the html will look like below:
 <div style="background-color: rgb(15, 99, 30); width: 60px;">width is 60</div>
 <div style="background-color: rgb(18, 52, 86); width: 120px;">width is 120</div>
 <div style="background-color: rgb(255, 17, 17); width: 180px;">width is 180</div>
+```
+
+Inside the callback function a new `BabyQuery` object can be created passing the `this` keyword as a selector.
+
+remove the previous code snippet and add this code to the js file:
+
+```javascript
+$('div').css('width', function (index, value) {
+  $(this).text('new div here.')
+  return '200px'
+})
+```
+
+Here this code creating a new `Babyquery` object inside the callback function of `.css()` method and setting it `textContent` to `new div here` and since it's returning `200px` that's why each `div` `width` will be set to `200px`.
+
+> Note: Since here `this` keyword referencing the `div` itself. so, it will set `textContent` of each `div` to `new div here`. 
+
+Now the html will look like below:
+
+```javascript
+    <div style="background-color: blue; width: 200px;">new div here.</div>
+    <div style="background-color: rgb(15, 99, 30); width: 200px;">new div here.</div>
+    <div style="background-color: rgb(18, 52, 86); width: 200px;">new div here.</div>
+    <div style="background-color: rgb(255, 17, 17); width: 200px;">new div here.</div>
 ```
 
 ### .css(properties)

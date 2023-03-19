@@ -1,6 +1,6 @@
 'use strict'
-import $ from '../../src/babyQuery'
-// import $ from '../../examples/api/jquery/jquery'
+// import $ from '../../src/babyQuery'
+import $ from '../../examples/api/jquery/jquery'
 
 const setDefaultHtml = htmlText => {
   document.body.innerHTML = htmlText
@@ -51,6 +51,35 @@ describe('.css() method', () => {
     expect(window.getComputedStyle($('div')[1])['width']).toEqual('260px')
     expect(window.getComputedStyle($('div')[2])['width']).toEqual('260px')
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('260px')
+  })
+  test("$('div').css('width', '+=200px')", () => {
+    // set the html to default html
+    setDefaultHtml(defaultHtml)
+    $('div').css('width', '+=200px')
+    expect(window.getComputedStyle($('div')[0])['width']).toEqual('260px')
+    expect(window.getComputedStyle($('div')[1])['width']).toEqual('260px')
+    expect(window.getComputedStyle($('div')[2])['width']).toEqual('260px')
+    expect(window.getComputedStyle($('div')[3])['width']).toEqual('260px')
+    $('div').css('width', '+=200px')
+    expect(window.getComputedStyle($('div')[0])['width']).toEqual('460px')
+    expect(window.getComputedStyle($('div')[1])['width']).toEqual('460px')
+    expect(window.getComputedStyle($('div')[2])['width']).toEqual('460px')
+    expect(window.getComputedStyle($('div')[3])['width']).toEqual('460px')
+  })
+  test("$('div').css('width', '+=2rem') Note: this function is slidely diferent from jquery.", () => {
+    // set the html to default html
+    setDefaultHtml(defaultHtml)
+    $('div').css('width', '+=2rem')
+    expect(window.getComputedStyle($('div')[0])['width']).toEqual('5.75rem')
+    expect(window.getComputedStyle($('div')[1])['width']).toEqual('5.75rem')
+    expect(window.getComputedStyle($('div')[2])['width']).toEqual('5.75rem')
+    expect(window.getComputedStyle($('div')[3])['width']).toEqual('5.75rem')
+    $('div').css('width', '+=200px')
+    console.log(window.getComputedStyle($('div')[0])['width'])
+    expect(window.getComputedStyle($('div')[0])['width']).toEqual('292px')
+    expect(window.getComputedStyle($('div')[1])['width']).toEqual('292px')
+    expect(window.getComputedStyle($('div')[2])['width']).toEqual('292px')
+    expect(window.getComputedStyle($('div')[3])['width']).toEqual('292px')
   })
   test("$('div').css({'background-color': 'yellow','font-weight': 'bolder'})", () => {
     // set the html to default html
@@ -104,6 +133,45 @@ describe('.css() method', () => {
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('180px')
     expect(window.getComputedStyle($('div')[3])['height']).toEqual('180px')
   })
+  test('$("p").css("width",function(i,ele){return "+=200px"})', () => {
+    const customHtml = `<style>p{width: 100px;height: 30px;}</style><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('p').css('width', function (i, ele) {
+      return '+=200px'
+    })
+    expect(document.querySelector('.container').innerHTML).toEqual(
+      '<h2>Greetings</h2><div class="inner">Hello</div><p style="width: 300px;">Test</p><div class="inner">Goodbye</div><p style="width: 300px;">Test</p>'
+    )
+  })
+  test('$("p").css("width",function(i,ele){return "+=200"})', () => {
+    const customHtml = `<style>p{width: 100px;height: 30px;}</style><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('p').css('width', function (i, ele) {
+      return '+=200'
+    })
+    expect(document.querySelector('.container').innerHTML).toEqual(
+      '<h2>Greetings</h2><div class="inner">Hello</div><p style="width: 300px;">Test</p><div class="inner">Goodbye</div><p style="width: 300px;">Test</p>'
+    )
+  })
+  test('$("p").css("width",function(i,ele){return "+=2rem"}) Note: this function is slidely diferent from jquery.', () => {
+    const customHtml = `<style>p{width: 100px;height: 30px;}</style><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('p').css('width', function (i, ele) {
+      return '+=2rem'
+    })
+    expect(document.querySelector('.container').innerHTML).toEqual(
+      '<h2>Greetings</h2><div class="inner">Hello</div><p style="width: 8.25rem;">Test</p><div class="inner">Goodbye</div><p style="width: 8.25rem;">Test</p>'
+    )
+    $('p').css('width', function (i, ele) {
+      return '+=20px'
+    })
+    expect(document.querySelector('.container').innerHTML).toEqual(
+      '<h2>Greetings</h2><div class="inner">Hello</div><p style="width: 152px;">Test</p><div class="inner">Goodbye</div><p style="width: 152px;">Test</p>'
+    )
+  })
   test("$('div').css({width: function (index, value) { const width = parseFloat(value) * index this.textContent = `width is ${width}` return width },height: function (index, value) {const height = parseFloat(value) * index this.textContent = `width is ${height}` return height}})", () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
@@ -119,7 +187,7 @@ describe('.css() method', () => {
         return height
       }
     })
-    const allDivs = document.querySelectorAll("div")
+    const allDivs = document.querySelectorAll('div')
     expect(window.getComputedStyle($('div')[0])['width']).toEqual('0px')
     expect(window.getComputedStyle($('div')[0])['height']).toEqual('0px')
     expect(allDivs[0].textContent).toEqual('width is 0')
@@ -132,7 +200,6 @@ describe('.css() method', () => {
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('180px')
     expect(window.getComputedStyle($('div')[3])['height']).toEqual('180px')
     expect(allDivs[3].textContent).toEqual('width is 180')
-
   })
   test("$('div').css('width', function (index, value) {return parseFloat(value) * index})", () => {
     // set the html to default html
@@ -153,7 +220,7 @@ describe('.css() method', () => {
       this.textContent = `width is ${width}`
       return width
     })
-    const allDivs = document.querySelectorAll("div")
+    const allDivs = document.querySelectorAll('div')
     expect(window.getComputedStyle($('div')[0])['width']).toEqual('0px')
     expect(allDivs[0].textContent).toEqual('width is 0')
     expect(window.getComputedStyle($('div')[1])['width']).toEqual('60px')
@@ -162,5 +229,22 @@ describe('.css() method', () => {
     expect(allDivs[2].textContent).toEqual('width is 120')
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('180px')
     expect(allDivs[3].textContent).toEqual('width is 180')
+  })
+  test("$('div').css('width', function (index, value) { const width = parseFloat(value) * index this.textContent = `width is ${width}` return width})", () => {
+    // set the html to default html
+    setDefaultHtml(defaultHtml)
+    $('div').css('width', function (index, value) {
+      $(this).text('new div here.')
+      return '200px'
+    })
+    const allDivs = document.querySelectorAll('div')
+    expect(window.getComputedStyle($('div')[0])['width']).toEqual('200px')
+    expect(allDivs[0].textContent).toEqual('new div here.')
+    expect(window.getComputedStyle($('div')[1])['width']).toEqual('200px')
+    expect(allDivs[1].textContent).toEqual('new div here.')
+    expect(window.getComputedStyle($('div')[2])['width']).toEqual('200px')
+    expect(allDivs[2].textContent).toEqual('new div here.')
+    expect(window.getComputedStyle($('div')[3])['width']).toEqual('200px')
+    expect(allDivs[3].textContent).toEqual('new div here.')
   })
 })
