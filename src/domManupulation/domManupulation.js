@@ -1,9 +1,9 @@
 import checkers from '../checkers'
 import helpers from '../helpers'
 import localhelpers from './localhelpers'
-const { afterandAppendmethodRecursive, insertAfter, appendChild } = localhelpers
+const { afterandAppendmethodRecursive, insertAfterNormalElem, appendNormalChild } = localhelpers
 const { isFunction, isPlainObject, isValidHtmlElement, isBabyQueryObject } = checkers
-const { createHtmlElementDynamically, fileterDuplicateInaRow } = helpers
+const { createHtmlElementDynamically } = helpers
 
 export default {
   /**
@@ -16,29 +16,27 @@ export default {
     const afterandAppendmethodRecursiveBinded = afterandAppendmethodRecursive.bind(this)
     if (isFunction(element)) {
       for (let ind = 0; ind < this.length; ind++) {
-        insertAfter(createHtmlElementDynamically(element.call(this[ind]))[0], this[ind])
+        insertAfterNormalElem(createHtmlElementDynamically(element.call(this[ind]))[0], this[ind])
       }
     } else {
-      const filteredArguments = fileterDuplicateInaRow(arguments)
-      afterandAppendmethodRecursiveBinded(filteredArguments, 'after')
+      afterandAppendmethodRecursiveBinded(arguments, 'after')
     }
     return this
   },
   /**
-   * 
-   * @param {*} element 
-   * @returns 
+   * insert content, specified by the parameter, inside each element in the set of matched elements.
+   * @param {HTMLElement|String|Function} element Exp:
+   * @returns {Object} return the BabyQuery object
    */
   append: function (element) {
     // binding this to the  function
     const afterandAppendmethodRecursiveBinded = afterandAppendmethodRecursive.bind(this)
     if (isFunction(element)) {
       for (let ind = 0; ind < this.length; ind++) {
-        appendChild(createHtmlElementDynamically(element.call(this[ind]))[0], this[ind])
+        appendNormalChild(createHtmlElementDynamically(element.call(this[ind]))[0], this[ind])
       }
     } else {
-      const filteredArguments = fileterDuplicateInaRow(arguments)
-      afterandAppendmethodRecursiveBinded(filteredArguments, 'append')
+      afterandAppendmethodRecursiveBinded(arguments, 'append')
     }
     return this
   },
@@ -51,7 +49,7 @@ export default {
       } else if (isFunction(value)) {
         for (let i = 0; i < this.length; i++) {
           const currVal = this[i]?.getAttribute(name)
-          const newVal = value.call(this[i],i, currVal)
+          const newVal = value.call(this[i], i, currVal)
           newVal && this[i]?.setAttribute(name, newVal)
         }
       }
@@ -98,7 +96,7 @@ export default {
       }
     } else if (isFunction(text)) {
       for (let i = 0; i < this.length; i++) {
-        this[i].textContent = text.call(this[i],i, this[i].textContent)
+        this[i].textContent = text.call(this[i], i, this[i].textContent)
       }
     }
     return this

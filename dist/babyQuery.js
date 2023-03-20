@@ -8,6 +8,16 @@ typeof globalThis !== 'undefined'
   : typeof global !== 'undefined'
   ? global
   : {};
+function $parcel$defineInteropFlag(a) {
+  Object.defineProperty(a, '__esModule', {value: true, configurable: true});
+}
+function $parcel$export(e, n, v, s) {
+  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+}
+
+$parcel$defineInteropFlag(module.exports);
+
+$parcel$export(module.exports, "default", () => $047f9defc20f6cd7$export$2e2bcd8739ae039);
 const $d4df80a29a2554d2$var$checkers = {
     /**
    * checks the provided input is a value Css selector
@@ -199,7 +209,7 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
    * fillters the buplicate value which is reapeted in a row
    * @param {Array} array Exp: [2,3,3,2,4,4,2,3,4]
    * @returns {Array} Exp: [2,3,2,4,2,3,4]
-   * 
+   *
    */ fileterDuplicateInaRow: function(array) {
         if (!$20b4a97a61b3fccb$var$isArrayLike(array)) return;
         let filteredArr = [];
@@ -212,6 +222,18 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
             outerCount = innerCount;
         }
         return filteredArr;
+    },
+    /**
+   * filter all duplicate value in a array
+   * @param {Array} array Exp: [1,3,5,3,3,5,2,1]
+   * @returns {Array} return the filtered array Exp: [1, 3, 5, 2]
+   */ removeDuplicates: function(array) {
+        const unique = [];
+        for (const item of array){
+            const isDuplicate = unique.find((obj)=>$20b4a97a61b3fccb$var$isEqualObject(obj, item));
+            if (!isDuplicate) unique.push(item);
+        }
+        return unique;
     }
 };
 
@@ -224,60 +246,111 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
 const { isBabyQueryObject: $8e7efde313f1b90f$var$isBabyQueryObject , isArrayLike: $8e7efde313f1b90f$var$isArrayLike  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $8e7efde313f1b90f$var$createHtmlElementDynamically  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 const $8e7efde313f1b90f$var$localhelpers = {
-    afterandAppendmethodRecursive: function(elementArray, methodName) {
-        for(let index = methodName === "after" ? elementArray.length - 1 : 0; methodName === "after" ? index >= 0 : index < elementArray.length; methodName === "after" ? index-- : index++){
-            if (typeof elementArray[index] === "string") for(let ind = 0; ind < this.length; ind++)switch(methodName){
-                case "after":
-                    $8e7efde313f1b90f$var$localhelpers.insertAfter($8e7efde313f1b90f$var$createHtmlElementDynamically(elementArray[index])[0], this[ind]);
-                    break;
-                case "append":
-                    $8e7efde313f1b90f$var$localhelpers.appendChild($8e7efde313f1b90f$var$createHtmlElementDynamically(elementArray[index])[0], this[ind]);
-                    break;
-            }
-            else if ($8e7efde313f1b90f$var$isBabyQueryObject(elementArray[index])) {
-                for(let ind = 0; ind < this.length; ind++)for(let i = 0; i < elementArray[index].length; i++)switch(methodName){
+    /**
+   * function to run recursively in .after() and .append() method
+   * @param {Array} argumentArray array of arguments which has been passed in .after() method  
+   * @param {String} methodName after or append 
+   */ afterandAppendmethodRecursive: function(argumentArray, methodName) {
+        // keep all cloned element listed
+        let clonedNodeList = [];
+        for(let index = argumentArray.length - 1; index >= 0; index--){
+            if (typeof argumentArray[index] === "string" || argumentArray[index] instanceof HTMLElement) for(let ind = 0; ind < this.length; ind++){
+                const newElement = typeof argumentArray[index] === "string" ? $8e7efde313f1b90f$var$createHtmlElementDynamically(argumentArray[index])[0] : argumentArray[index];
+                switch(methodName){
                     case "after":
-                        $8e7efde313f1b90f$var$localhelpers.insertAfter(elementArray[index][i], this[ind]);
+                        $8e7efde313f1b90f$var$localhelpers.insertAfterNormalElem(newElement, this[ind], ind);
                         break;
                     case "append":
-                        $8e7efde313f1b90f$var$localhelpers.appendChild(elementArray[index][i], this[ind]);
+                        $8e7efde313f1b90f$var$localhelpers.appendNormalChild(newElement, this[ind]);
                         break;
                 }
-            } else if ($8e7efde313f1b90f$var$isArrayLike(elementArray[index]) && !elementArray[index].nodes) // call the afterandAppendmethodRecursive function again (recursively)
-            $8e7efde313f1b90f$var$localhelpers.afterandAppendmethodRecursive.call(this, elementArray[index], methodName);
-            else if (elementArray[index] instanceof HTMLElement) for(let ind = 0; ind < this.length; ind++)switch(methodName){
-                case "after":
-                    $8e7efde313f1b90f$var$localhelpers.insertAfter(elementArray[index], this[ind]);
-                    break;
-                case "append":
-                    $8e7efde313f1b90f$var$localhelpers.appendChild(elementArray[index], this[ind]);
-                    break;
             }
+            else if ($8e7efde313f1b90f$var$isBabyQueryObject(argumentArray[index])) {
+                for(let ind = 0; ind < this.length; ind++)for(let i = methodName === "after" ? argumentArray[index].length - 1 : 0; methodName === "after" ? i >= 0 : i < argumentArray[index].length; methodName === "after" ? i-- : i++){
+                    let clonedElement = argumentArray[index][i].cloneNode(true);
+                    switch(methodName){
+                        case "after":
+                            // check if the element is already in the clonedNodeList
+                            const alreadyClonedElement = clonedNodeList.find((ele)=>{
+                                return ele == argumentArray[index][i];
+                            });
+                            if (alreadyClonedElement) {
+                                // remove the element from the dom tree
+                                alreadyClonedElement.remove();
+                                // filter it from the clonedNodeList
+                                clonedNodeList = clonedNodeList.filter((ele)=>{
+                                    return ele !== alreadyClonedElement;
+                                });
+                            }
+                            clonedNodeList.push(clonedElement);
+                            $8e7efde313f1b90f$var$localhelpers.insertAfterBabyqueryObject(argumentArray[index][i], clonedElement, this[ind], ind, this.length);
+                            break;
+                        case "append":
+                            $8e7efde313f1b90f$var$localhelpers.appendBabyQueryChild(argumentArray[index][i], clonedElement, this[ind], ind, this.length);
+                            break;
+                    }
+                }
+            } else if ($8e7efde313f1b90f$var$isArrayLike(argumentArray[index]) && !argumentArray[index].nodes) // call the afterandAppendmethodRecursive function again (recursively)
+            $8e7efde313f1b90f$var$localhelpers.afterandAppendmethodRecursive.call(this, argumentArray[index], methodName);
         }
     },
-    insertAfter: function(newNode, existingNode) {
-        // make a clone of the element
-        let cloneNode = newNode.cloneNode(true);
-        // remove the original element
-        // newNode.remove()
-        // insert the cloned element
-        existingNode.parentNode.insertBefore(cloneNode, existingNode.nextElementSibling);
+    /**
+   * inserts new node after the context element (the existing element)
+   * @param {HTMLElement} newNode the new node which will be inserted
+   * @param {HTMLElement} existingNode the existing element which after the new element will take place
+   *
+   */ insertAfterNormalElem: function(newNode, existingNode) {
+        // if its the last existing element
+        existingNode.parentNode.insertBefore(newNode, existingNode.nextElementSibling);
     },
-    appendChild (newNode, targetNode) {
-        // make a clone of the element
-        let cloneNode = newNode.cloneNode(true);
-        // remove the original element
-        // newNode.remove()
-        // append the cloned element
-        targetNode.appendChild(cloneNode);
+    /**
+   * inserts new node after the context element (the existing element)
+   * @param {HTMLElement} newNode the new node which will be inserted
+   * @param {HTMLElement} existingNode the existing element which after the new element will take place
+   * @param {Number} elemIndex the index of context element (the existing element) which after the new element will take place
+   * @param {Number} totalElement total count of context element (the existing elements) which after the new element will take place [more specifically this.length property]
+   *
+   */ insertAfterBabyqueryObject: function(newNode, clonedNode, existingNode, elemIndex, totalElement) {
+        // if its the last existing element
+        if (elemIndex == totalElement - 1) existingNode.parentNode.insertBefore(newNode, existingNode.nextElementSibling);
+        else existingNode.parentNode.insertBefore(clonedNode, existingNode.nextElementSibling);
+    },
+    /**
+   * inserts new node inside the context element (the existing element)
+   * @param {HTMLElement} newNode the new node which will be inserted
+   * @param {HTMLElement} targetNode the existing element which after the new element will take place
+   */ appendNormalChild: function(newNode, targetNode) {
+        targetNode.appendChild(newNode);
+    },
+    /**
+   * inserts new node inside the context element (the existing element)
+   * @param {HTMLElement} newNode the new node which will be inserted
+   * @param {HTMLElement} existingNode the existing element which after the new element will take place
+   * @param {Number} elemIndex the index of context element (the existing element) which after the new element will take place
+   *
+   */ appendBabyQueryChild: function(newNode, clonedNode, targetNode, elemIndex, totalElement) {
+        // if its the last existing element
+        if (elemIndex == totalElement - 1) targetNode.appendChild(newNode);
+        else targetNode.appendChild(clonedNode);
+    },
+    /**
+   * check the parentNode have any cloned node of the provided node
+   * @param {HTMLElement} parentNode node to check inside
+   * @param {HTMLElement} node node to check of
+   */ checkHaveAnyClonedNode: function(parentNode, node) {
+        let ClonedElement = [];
+        parentNode.querySelectorAll("*").forEach((element)=>{
+            if (element !== node && element.isEqualNode(node)) ClonedElement.push(element);
+        });
+        return ClonedElement || false;
     }
 };
 var $8e7efde313f1b90f$export$2e2bcd8739ae039 = $8e7efde313f1b90f$var$localhelpers;
 
 
-const { afterandAppendmethodRecursive: $d8203bae9db46050$var$afterandAppendmethodRecursive , insertAfter: $d8203bae9db46050$var$insertAfter , appendChild: $d8203bae9db46050$var$appendChild  } = (0, $8e7efde313f1b90f$export$2e2bcd8739ae039);
+const { afterandAppendmethodRecursive: $d8203bae9db46050$var$afterandAppendmethodRecursive , insertAfterNormalElem: $d8203bae9db46050$var$insertAfterNormalElem , appendNormalChild: $d8203bae9db46050$var$appendNormalChild  } = (0, $8e7efde313f1b90f$export$2e2bcd8739ae039);
 const { isFunction: $d8203bae9db46050$var$isFunction , isPlainObject: $d8203bae9db46050$var$isPlainObject , isValidHtmlElement: $d8203bae9db46050$var$isValidHtmlElement , isBabyQueryObject: $d8203bae9db46050$var$isBabyQueryObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
-const { createHtmlElementDynamically: $d8203bae9db46050$var$createHtmlElementDynamically , fileterDuplicateInaRow: $d8203bae9db46050$var$fileterDuplicateInaRow  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
+const { createHtmlElementDynamically: $d8203bae9db46050$var$createHtmlElementDynamically  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 var $d8203bae9db46050$export$2e2bcd8739ae039 = {
     /**
    * Insert content, specified by the parameter, after each element in the set of matched elements.
@@ -286,25 +359,19 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
    */ after: function(element) {
         // binding this to the afterMethodRecursive function
         const afterandAppendmethodRecursiveBinded = $d8203bae9db46050$var$afterandAppendmethodRecursive.bind(this);
-        if ($d8203bae9db46050$var$isFunction(element)) for(let ind = 0; ind < this.length; ind++)$d8203bae9db46050$var$insertAfter($d8203bae9db46050$var$createHtmlElementDynamically(element.call(this[ind]))[0], this[ind]);
-        else {
-            const filteredArguments = $d8203bae9db46050$var$fileterDuplicateInaRow(arguments);
-            afterandAppendmethodRecursiveBinded(filteredArguments, "after");
-        }
+        if ($d8203bae9db46050$var$isFunction(element)) for(let ind = 0; ind < this.length; ind++)$d8203bae9db46050$var$insertAfterNormalElem($d8203bae9db46050$var$createHtmlElementDynamically(element.call(this[ind]))[0], this[ind]);
+        else afterandAppendmethodRecursiveBinded(arguments, "after");
         return this;
     },
     /**
-   * 
-   * @param {*} element 
-   * @returns 
+   * insert content, specified by the parameter, inside each element in the set of matched elements.
+   * @param {HTMLElement|String|Function} element Exp:
+   * @returns {Object} return the BabyQuery object
    */ append: function(element) {
         // binding this to the  function
         const afterandAppendmethodRecursiveBinded = $d8203bae9db46050$var$afterandAppendmethodRecursive.bind(this);
-        if ($d8203bae9db46050$var$isFunction(element)) for(let ind = 0; ind < this.length; ind++)$d8203bae9db46050$var$appendChild($d8203bae9db46050$var$createHtmlElementDynamically(element.call(this[ind]))[0], this[ind]);
-        else {
-            const filteredArguments = $d8203bae9db46050$var$fileterDuplicateInaRow(arguments);
-            afterandAppendmethodRecursiveBinded(filteredArguments, "append");
-        }
+        if ($d8203bae9db46050$var$isFunction(element)) for(let ind = 0; ind < this.length; ind++)$d8203bae9db46050$var$appendNormalChild($d8203bae9db46050$var$createHtmlElementDynamically(element.call(this[ind]))[0], this[ind]);
+        else afterandAppendmethodRecursiveBinded(arguments, "append");
         return this;
     },
     attr: function(name, value) {

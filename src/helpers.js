@@ -82,7 +82,7 @@ export default {
    * fillters the buplicate value which is reapeted in a row
    * @param {Array} array Exp: [2,3,3,2,4,4,2,3,4]
    * @returns {Array} Exp: [2,3,2,4,2,3,4]
-   * 
+   *
    */
   fileterDuplicateInaRow: function (array) {
     if (!isArrayLike(array)) return
@@ -100,5 +100,20 @@ export default {
       outerCount = innerCount
     }
     return filteredArr
+  },
+  /**
+   * filter all duplicate value in a array
+   * @param {Array} array Exp: [1,3,5,3,3,5,2,1]
+   * @returns {Array} return the filtered array Exp: [1, 3, 5, 2]
+   */
+  removeDuplicates: function (array) {
+    const unique = []
+    for (const item of array) {
+      const isDuplicate = unique.find(obj =>  isEqualObject(obj, item))
+      if (!isDuplicate) {
+        unique.push(item)
+      }
+    }
+    return unique;
   }
 }

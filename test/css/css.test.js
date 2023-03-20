@@ -1,6 +1,6 @@
 'use strict'
-import $ from '../../src/babyQuery'
-// import $ from '../../examples/api/jquery/jquery'
+// import $ from '../../src/babyQuery'
+import $ from '../../examples/api/jquery/jquery'
 
 const setDefaultHtml = htmlText => {
   document.body.innerHTML = htmlText
@@ -8,7 +8,7 @@ const setDefaultHtml = htmlText => {
 
 describe('.css() method', () => {
   // Set up the document body
-  const defaultHtml = `<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: blue"></div><div style="background-color: rgb(15, 99, 30)"></div><div style="background-color: #123456"></div><div style="background-color: #f11"></div>`
+  const defaultHtml = `<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: blue"></div><div style="background-color: rgb(15, 99, 30)"></div><div style="background-color: #123456"></div><div style="background-color: rgb(255, 17, 17)"></div>`
   test('.css()', () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
@@ -84,12 +84,12 @@ describe('.css() method', () => {
   //   // set the html to default html
   //   setDefaultHtml(defaultHtml)
   //   $('div').css('width', '+=2rem')
-  //   // somehow div width not updating. but it's working on the browser. 
-  //   expect(document.body.innerHTML).toBe('<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: blue; width: 5.75rem;"></div><div style="background-color: rgb(15, 99, 30); width: 5.75rem;"></div><div style="background-color: #123456; width: 5.75rem;"></div><div style="background-color: #f11; width: 5.75rem;"></div>')
-    
+  //   // somehow div width not updating. but it's working on the browser.
+  //   expect(document.body.innerHTML).toBe('<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: blue; width: 5.75rem;"></div><div style="background-color: rgb(15, 99, 30); width: 5.75rem;"></div><div style="background-color: #123456; width: 5.75rem;"></div><div style="background-color: rgb(255, 17, 17); width: 5.75rem;"></div>')
+
   //   $('div').css('width', '+=200px')
-  //   expect(document.body.innerHTML).toBe('<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: blue; width: 292px;"></div><div style="background-color: rgb(15, 99, 30); width: 292px;"></div><div style="background-color: #123456; width: 292px;"></div><div style="background-color: #f11; width: 292px;"></div>')
-   
+  //   expect(document.body.innerHTML).toBe('<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: blue; width: 292px;"></div><div style="background-color: rgb(15, 99, 30); width: 292px;"></div><div style="background-color: #123456; width: 292px;"></div><div style="background-color: rgb(255, 17, 17); width: 292px;"></div>')
+
   // })
   test("$('div').css({'background-color': 'yellow','font-weight': 'bolder'})", () => {
     // set the html to default html
@@ -258,11 +258,11 @@ describe('.css() method', () => {
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('200px')
     expect(allDivs[3].textContent).toEqual('new div here.')
   })
-  test(" $('div').css('width', function (index, value) {if(index!=0) $(this).text('new div here.')return '-=20px'})", () => {
+  test(" $('div').css('width', function (index, value) {if(index!=0) $(this).text('new div here.')return '-=20px'}) 1", () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
     $('div').css('width', function (index, value) {
-      if(index!=0) $(this).text('new div here.')
+      if (index != 0) $(this).text('new div here.')
       return '-=20px'
     })
     const allDivs = document.querySelectorAll('div')
@@ -274,5 +274,45 @@ describe('.css() method', () => {
     expect(allDivs[2].textContent).toEqual('new div here.')
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('40px')
     expect(allDivs[3].textContent).toEqual('new div here.')
+  })
+  test(" $('div').css('width', function (index, value) {if(index!=0) $(this).text('new div here.')return '-=20px'}) 2", () => {
+    // set the html to default html
+    setDefaultHtml(defaultHtml)
+    $('div').css('width', function (index, value) {
+      if (index != 0) $(this).text('new div here.')
+      return '-=20px'
+    })
+    const allDivs = document.querySelectorAll('div')
+    expect(window.getComputedStyle($('div')[0])['width']).toEqual('40px')
+    expect(allDivs[0].textContent).toEqual('')
+    expect(window.getComputedStyle($('div')[1])['width']).toEqual('40px')
+    expect(allDivs[1].textContent).toEqual('new div here.')
+    expect(window.getComputedStyle($('div')[2])['width']).toEqual('40px')
+    expect(allDivs[2].textContent).toEqual('new div here.')
+    expect(window.getComputedStyle($('div')[3])['width']).toEqual('40px')
+    expect(allDivs[3].textContent).toEqual('new div here.')
+  })
+  test("$('div').css('width', function (i, ele) {if (i === 3) $('span').after(this)return '+=20px'}))", () => {
+    // set the html to default html
+    setDefaultHtml(defaultHtml)
+    $('div').css('width', function (i, ele) {
+      if (i === 3) $('span').after(this)
+      return '+=20px'
+    })
+    expect(document.body.innerHTML).toEqual(
+      '<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: rgb(255, 17, 17); width: 80px;"></div><div style="background-color: blue; width: 80px;"></div><div style="background-color: rgb(15, 99, 30); width: 80px;"></div><div style="background-color: rgb(18, 52, 86); width: 80px;"></div>'
+    )
+  })
+  test(" $('div').css('width', function (index, value) {if(index!=0) $(this).text('new div here.')return '-=20px'})", () => {
+    const customHtml = `<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><span id="result">&nbsp;</span><div style="background-color: blue"></div><div style="background-color: rgb(15, 99, 30)"></div><div style="background-color: #123456"></div><div style="background-color: rgb(255, 17, 17)"></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('div').css('width', function (i, ele) {
+      if (i === 3) $('span').after(this)
+      return '+=20px'
+    })
+    expect(document.body.innerHTML).toEqual(
+      '<style>:root{font-size: 16px;}div {width: 60px;height: 60px;margin: 5px;float: left;}</style><span id="result">&nbsp;</span><div style="background-color: rgb(255, 17, 17)"></div><span id="result">&nbsp;</span><div style="background-color: rgb(255, 17, 17); width: 80px;"></div><div style="background-color: blue; width: 80px;"></div><div style="background-color: rgb(15, 99, 30); width: 80px;"></div><div style="background-color: rgb(18, 52, 86); width: 80px;"></div>'
+    )
   })
 })
