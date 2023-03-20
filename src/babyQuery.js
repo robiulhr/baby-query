@@ -5,6 +5,12 @@ import css from './css/css.js'
 const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction, isWindow, toType, isArrayLike, isEmptyObject } = checkers
 const { createHtmlElementDynamically, handleDOMReady, myExtend } = helpers
 export default (function (globalThis) {
+  /**
+   * BabyQuery Constructor function
+   * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
+   * @param {HTMLElement} context inside which the element should be created 
+   * @returns {Object} contains all element selected or created uning the provided selector
+   */
   function BabyQuery (selector, context) {
     // if Developer doesn't use the new keyword
     if (!(this instanceof BabyQuery)) {
@@ -48,7 +54,11 @@ export default (function (globalThis) {
     }
   }
   BabyQuery.fn = BabyQuery.prototype = {
-    // ready funciton = wait until all document and scripts get loads
+    /**
+     * .ready() waits until all document and scripts get loads
+     * @param {Function} callback which will wait to be load the dom and all other scripts 
+     * 
+     */
     ready: function (callback) {
       if (isFunction(callback)) {
         handleDOMReady(callback)
@@ -56,7 +66,7 @@ export default (function (globalThis) {
     }
   }
 
-  
+
   BabyQuery.extend = BabyQuery.fn.extend = myExtend
 
   BabyQuery.fn.extend(domManupulation,css)

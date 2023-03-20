@@ -1,4 +1,10 @@
 const checkers = {
+  /**
+   * checks the provided input is a value Css selector
+   * @param {String} input Exp: "width"
+   * @returns {Boolean} return true if the provided String(input) is valid CSS selector otherwise false
+   *
+   */
   isValidElementSelector: function (input) {
     try {
       document.createDocumentFragment().querySelector(input)
@@ -7,6 +13,11 @@ const checkers = {
     }
     return true
   },
+  /**
+   * check the provided String is a valid html element
+   * @param {String} html String to create a html element from it.
+   * @returns {Boolean}  return true if the provided String(html) is valid html element otherwise false
+   */
   isValidHtmlElement: html => {
     // Check for extra characters before the HTML code
     if (!/^\s*</.test(html)) {
@@ -46,38 +57,63 @@ const checkers = {
     }
     return stack.length === 0
   },
-  isFunction: function (obj) {
-    return typeof obj === 'function' && typeof obj.nodeType !== 'number' && typeof obj.item !== 'function'
+  /**
+   * checks the provided input is a funciton or not
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is valid function otherwise false
+   */
+  isFunction: function (input) {
+    return typeof input === 'function' && typeof input.nodeType !== 'number' && typeof input.item !== 'function'
   },
-  isWindow: function(obj) {
-    return obj != null && obj === obj.window
+  /**
+   * checks the provided input is a window object or not
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is window object otherwise false
+   *
+   */
+  isWindow: function (input) {
+    return input != null && input === input.window
   },
-  toType: function (obj) {
-    if (obj == null) {
-      return obj + ''
+  /**
+   * checks the type of the input value
+   * @param {*} input
+   * @returns {String} return the type of the value(input)
+   */
+  toType: function (input) {
+    if (input == null) {
+      return input + ''
     }
-    return typeof obj === 'object' || typeof obj === 'function' ? Object[Object.prototype.toString.call(obj)] || 'object' : typeof obj
+    return typeof input === 'object' || typeof input === 'function' ? Object[Object.prototype.toString.call(input)] || 'object' : typeof input
   },
-  isArrayLike: function (obj) {
-    var length = !!obj && 'length' in obj && obj.length,
-      type = checkers.toType(obj)
+  /**
+   * checks the input value is a Array
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is Array otherwise false
+   */
+  isArrayLike: function (input) {
+    var length = !!input && 'length' in input && input.length,
+      type = checkers.toType(input)
 
-    if (checkers.isFunction(obj) || checkers.isWindow(obj)) {
+    if (checkers.isFunction(input) || checkers.isWindow(input)) {
       return false
     }
 
-    return type === 'array' || length === 0 || (typeof length === 'number' && length > 0 && length - 1 in obj)
+    return type === 'array' || length === 0 || (typeof length === 'number' && length > 0 && length - 1 in input)
   },
-
-  isPlainObject: function (obj) {
+  /**
+   * checks the input value is a plainObject
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is plainObject otherwise false
+   */
+  isPlainObject: function (input) {
     var proto, Ctor
 
     // Detect obvious negatives
-    if (!obj || Object.prototype.toString.call(obj) !== '[object Object]') {
+    if (!input || Object.prototype.toString.call(input) !== '[object Object]') {
       return false
     }
 
-    proto = Object.getPrototypeOf(obj)
+    proto = Object.getPrototypeOf(input)
 
     // Objects with no prototype (e.g., `Object.create( null )`) are plain
     if (!proto) {
@@ -88,27 +124,37 @@ const checkers = {
     Ctor = Object.prototype.hasOwnProperty.call(proto, 'constructor') && proto.constructor
     return typeof Ctor === 'function' && Object.prototype.toString.call(Ctor) === Object.prototype.toString.call(Object)
   },
-
-  isEmptyObject: function (obj) {
+  /**
+   * checks the input value is a emptyObject
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is emptyObject otherwise false
+   */
+  isEmptyObject: function (input) {
     var name
-    for (name in obj) {
+    for (name in input) {
       return false
     }
     return true
   },
   /**
-   * @return {Boolean} true/false  
-   * can be pass as many as object exmple: isEqualObject(obj1,obj2,obj3);
+   *
+   * @returns {Boolean} return true if all the provided values are equal objects otherwise false
+   *
    */
-  isEqualObject(){
+  isEqualObject () {
     let first = JSON.stringify(arguments[0])
-    for(let i = 1;i<arguments.length;i++){
-      if(first !== JSON.stringify(arguments[i]))  return false 
+    for (let i = 1; i < arguments.length; i++) {
+      if (first !== JSON.stringify(arguments[i])) return false
     }
     return true
   },
-  isBabyQueryObject(obj){
-   return typeof obj === 'object' && !checkers.isPlainObject(obj) && obj.length && obj.nodes 
+  /**
+   * checks the input value is a BabyQuery Object
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is BabyQuery Object otherwise false
+   */
+  isBabyQueryObject (input) {
+    return typeof input === 'object' && !checkers.isPlainObject(input) && input.length && input.nodes
   }
 }
 

@@ -2,6 +2,11 @@ import checkers from './checkers'
 const { isArrayLike, isEqualObject } = checkers
 
 export default {
+  /**
+   * checks the document.readyState is completed ifso then call the funciton otherwise push it to domReadyQueue array to wait and once the DOMContentLoaded fire then call the funciton from the domReadyQueue array
+   * @param {Function} callback
+   *
+   */
   handleDOMReady: function (callback) {
     var domReadyQueue = []
     document.readyState === 'complete' ? callback.call(document) : domReadyQueue.push(callback)
@@ -13,11 +18,20 @@ export default {
       }
     })
   },
+  /**
+   * create html element from String
+   * @param {String} html Exp: "\<div>hello world\</div>"
+   * @returns {HTMLElement} returns the created html element from the String
+   */
   createHtmlElementDynamically: function (html) {
     var template = document.createElement('template')
     template.innerHTML = html
     return template.content.childNodes
   },
+  /**
+   * Extends provided objects to the main object
+   * @returns {Object} return the main object
+   */
   myExtend: function () {
     for (let i = 0; i < arguments.length; i++) {
       if (!arguments[i] || typeof arguments[i] !== 'object') {
@@ -43,6 +57,11 @@ export default {
 
     return this
   },
+  /**
+   * separates value, unit and operator from the provided value
+   * @param {String} valueStr Exp: "+=200px"
+   * @returns {Object} Exp : { value: 200, unit:"px", operator:"+=" }
+   */
   separateValueUnitOperators: function (valueStr) {
     let value = ''
     let unit = ''
@@ -59,6 +78,12 @@ export default {
     }
     return { value: Number(value), unit, operator }
   },
+  /**
+   * fillters the buplicate value which is reapeted in a row
+   * @param {Array} array Exp: [2,3,3,2,4,4,2,3,4]
+   * @returns {Array} Exp: [2,3,2,4,2,3,4]
+   * 
+   */
   fileterDuplicateInaRow: function (array) {
     if (!isArrayLike(array)) return
     let filteredArr = []

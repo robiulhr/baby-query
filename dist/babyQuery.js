@@ -9,7 +9,12 @@ typeof globalThis !== 'undefined'
   ? global
   : {};
 const $d4df80a29a2554d2$var$checkers = {
-    isValidElementSelector: function(input) {
+    /**
+   * checks the provided input is a value Css selector
+   * @param {String} input Exp: "width"
+   * @returns {Boolean} return true if the provided String(input) is valid CSS selector otherwise false
+   *
+   */ isValidElementSelector: function(input) {
         try {
             document.createDocumentFragment().querySelector(input);
         } catch  {
@@ -17,7 +22,11 @@ const $d4df80a29a2554d2$var$checkers = {
         }
         return true;
     },
-    isValidHtmlElement: (html)=>{
+    /**
+   * check the provided String is a valid html element
+   * @param {String} html String to create a html element from it.
+   * @returns {Boolean}  return true if the provided String(html) is valid html element otherwise false
+   */ isValidHtmlElement: (html)=>{
         // Check for extra characters before the HTML code
         if (!/^\s*</.test(html)) return false;
         // Check for extra characters after the HTML code
@@ -42,40 +51,66 @@ const $d4df80a29a2554d2$var$checkers = {
         }
         return stack.length === 0;
     },
-    isFunction: function(obj) {
-        return typeof obj === "function" && typeof obj.nodeType !== "number" && typeof obj.item !== "function";
+    /**
+   * checks the provided input is a funciton or not
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is valid function otherwise false
+   */ isFunction: function(input) {
+        return typeof input === "function" && typeof input.nodeType !== "number" && typeof input.item !== "function";
     },
-    isWindow: function(obj) {
-        return obj != null && obj === obj.window;
+    /**
+   * checks the provided input is a window object or not
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is window object otherwise false
+   *
+   */ isWindow: function(input) {
+        return input != null && input === input.window;
     },
-    toType: function(obj) {
-        if (obj == null) return obj + "";
-        return typeof obj === "object" || typeof obj === "function" ? Object[Object.prototype.toString.call(obj)] || "object" : typeof obj;
+    /**
+   * checks the type of the input value
+   * @param {*} input
+   * @returns {String} return the type of the value(input)
+   */ toType: function(input) {
+        if (input == null) return input + "";
+        return typeof input === "object" || typeof input === "function" ? Object[Object.prototype.toString.call(input)] || "object" : typeof input;
     },
-    isArrayLike: function(obj) {
-        var length = !!obj && "length" in obj && obj.length, type = $d4df80a29a2554d2$var$checkers.toType(obj);
-        if ($d4df80a29a2554d2$var$checkers.isFunction(obj) || $d4df80a29a2554d2$var$checkers.isWindow(obj)) return false;
-        return type === "array" || length === 0 || typeof length === "number" && length > 0 && length - 1 in obj;
+    /**
+   * checks the input value is a Array
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is Array otherwise false
+   */ isArrayLike: function(input) {
+        var length = !!input && "length" in input && input.length, type = $d4df80a29a2554d2$var$checkers.toType(input);
+        if ($d4df80a29a2554d2$var$checkers.isFunction(input) || $d4df80a29a2554d2$var$checkers.isWindow(input)) return false;
+        return type === "array" || length === 0 || typeof length === "number" && length > 0 && length - 1 in input;
     },
-    isPlainObject: function(obj) {
+    /**
+   * checks the input value is a plainObject
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is plainObject otherwise false
+   */ isPlainObject: function(input) {
         var proto, Ctor;
         // Detect obvious negatives
-        if (!obj || Object.prototype.toString.call(obj) !== "[object Object]") return false;
-        proto = Object.getPrototypeOf(obj);
+        if (!input || Object.prototype.toString.call(input) !== "[object Object]") return false;
+        proto = Object.getPrototypeOf(input);
         // Objects with no prototype (e.g., `Object.create( null )`) are plain
         if (!proto) return true;
         // Objects with prototype are plain iff they were constructed by a global Object function
         Ctor = Object.prototype.hasOwnProperty.call(proto, "constructor") && proto.constructor;
         return typeof Ctor === "function" && Object.prototype.toString.call(Ctor) === Object.prototype.toString.call(Object);
     },
-    isEmptyObject: function(obj) {
+    /**
+   * checks the input value is a emptyObject
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is emptyObject otherwise false
+   */ isEmptyObject: function(input) {
         var name;
-        for(name in obj)return false;
+        for(name in input)return false;
         return true;
     },
     /**
-   * @return {Boolean} true/false  
-   * can be pass as many as object exmple: isEqualObject(obj1,obj2,obj3);
+   *
+   * @returns {Boolean} return true if all the provided values are equal objects otherwise false
+   *
    */ isEqualObject () {
         let first = JSON.stringify(arguments[0]);
         for(let i = 1; i < arguments.length; i++){
@@ -83,8 +118,12 @@ const $d4df80a29a2554d2$var$checkers = {
         }
         return true;
     },
-    isBabyQueryObject (obj) {
-        return typeof obj === "object" && !$d4df80a29a2554d2$var$checkers.isPlainObject(obj) && obj.length && obj.nodes;
+    /**
+   * checks the input value is a BabyQuery Object
+   * @param {*} input
+   * @returns {Boolean} return true if the provided value (input) is BabyQuery Object otherwise false
+   */ isBabyQueryObject (input) {
+        return typeof input === "object" && !$d4df80a29a2554d2$var$checkers.isPlainObject(input) && input.length && input.nodes;
     }
 };
 var $d4df80a29a2554d2$export$2e2bcd8739ae039 = $d4df80a29a2554d2$var$checkers;
@@ -92,7 +131,11 @@ var $d4df80a29a2554d2$export$2e2bcd8739ae039 = $d4df80a29a2554d2$var$checkers;
 
 const { isArrayLike: $20b4a97a61b3fccb$var$isArrayLike , isEqualObject: $20b4a97a61b3fccb$var$isEqualObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
-    handleDOMReady: function(callback) {
+    /**
+   * checks the document.readyState is completed ifso then call the funciton otherwise push it to domReadyQueue array to wait and once the DOMContentLoaded fire then call the funciton from the domReadyQueue array
+   * @param {Function} callback
+   *
+   */ handleDOMReady: function(callback) {
         var domReadyQueue = [];
         document.readyState === "complete" ? callback.call(document) : domReadyQueue.push(callback);
         // running domReadyQueue funcitons after the dom loads.
@@ -101,12 +144,19 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
             while(domReadyQueue.length)domReadyQueue.shift().call(document);
         });
     },
-    createHtmlElementDynamically: function(html) {
+    /**
+   * create html element from String
+   * @param {String} html Exp: "\<div>hello world\</div>"
+   * @returns {HTMLElement} returns the created html element from the String
+   */ createHtmlElementDynamically: function(html) {
         var template = document.createElement("template");
         template.innerHTML = html;
         return template.content.childNodes;
     },
-    myExtend: function() {
+    /**
+   * Extends provided objects to the main object
+   * @returns {Object} return the main object
+   */ myExtend: function() {
         for(let i = 0; i < arguments.length; i++){
             if (!arguments[i] || typeof arguments[i] !== "object") continue;
             for(var key in arguments[i])if (Object.prototype.hasOwnProperty.call(arguments[i], key)) {
@@ -121,7 +171,11 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
         }
         return this;
     },
-    separateValueUnitOperators: function(valueStr) {
+    /**
+   * separates value, unit and operator from the provided value
+   * @param {String} valueStr Exp: "+=200px"
+   * @returns {Object} Exp : { value: 200, unit:"px", operator:"+=" }
+   */ separateValueUnitOperators: function(valueStr) {
         let value = "";
         let unit = "";
         let operator = "";
@@ -141,7 +195,12 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
             operator: operator
         };
     },
-    fileterDuplicateInaRow: function(array) {
+    /**
+   * fillters the buplicate value which is reapeted in a row
+   * @param {Array} array Exp: [2,3,3,2,4,4,2,3,4]
+   * @returns {Array} Exp: [2,3,2,4,2,3,4]
+   * 
+   */ fileterDuplicateInaRow: function(array) {
         if (!$20b4a97a61b3fccb$var$isArrayLike(array)) return;
         let filteredArr = [];
         let outerCount = 0;
@@ -220,7 +279,11 @@ const { afterandAppendmethodRecursive: $d8203bae9db46050$var$afterandAppendmetho
 const { isFunction: $d8203bae9db46050$var$isFunction , isPlainObject: $d8203bae9db46050$var$isPlainObject , isValidHtmlElement: $d8203bae9db46050$var$isValidHtmlElement , isBabyQueryObject: $d8203bae9db46050$var$isBabyQueryObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $d8203bae9db46050$var$createHtmlElementDynamically , fileterDuplicateInaRow: $d8203bae9db46050$var$fileterDuplicateInaRow  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 var $d8203bae9db46050$export$2e2bcd8739ae039 = {
-    after: function(element) {
+    /**
+   * Insert content, specified by the parameter, after each element in the set of matched elements.
+   * @param {HTMLElement|String|Function} element Exp:
+   * @returns {Object} return the BabyQuery object
+   */ after: function(element) {
         // binding this to the afterMethodRecursive function
         const afterandAppendmethodRecursiveBinded = $d8203bae9db46050$var$afterandAppendmethodRecursive.bind(this);
         if ($d8203bae9db46050$var$isFunction(element)) for(let ind = 0; ind < this.length; ind++)$d8203bae9db46050$var$insertAfter($d8203bae9db46050$var$createHtmlElementDynamically(element.call(this[ind]))[0], this[ind]);
@@ -230,7 +293,11 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
         }
         return this;
     },
-    append: function(element) {
+    /**
+   * 
+   * @param {*} element 
+   * @returns 
+   */ append: function(element) {
         // binding this to the  function
         const afterandAppendmethodRecursiveBinded = $d8203bae9db46050$var$afterandAppendmethodRecursive.bind(this);
         if ($d8203bae9db46050$var$isFunction(element)) for(let ind = 0; ind < this.length; ind++)$d8203bae9db46050$var$appendChild($d8203bae9db46050$var$createHtmlElementDynamically(element.call(this[ind]))[0], this[ind]);
@@ -410,7 +477,12 @@ var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
 const { isValidElementSelector: $047f9defc20f6cd7$var$isValidElementSelector , isValidHtmlElement: $047f9defc20f6cd7$var$isValidHtmlElement , isPlainObject: $047f9defc20f6cd7$var$isPlainObject , isFunction: $047f9defc20f6cd7$var$isFunction , isWindow: $047f9defc20f6cd7$var$isWindow , toType: $047f9defc20f6cd7$var$toType , isArrayLike: $047f9defc20f6cd7$var$isArrayLike , isEmptyObject: $047f9defc20f6cd7$var$isEmptyObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $047f9defc20f6cd7$var$createHtmlElementDynamically , handleDOMReady: $047f9defc20f6cd7$var$handleDOMReady , myExtend: $047f9defc20f6cd7$var$myExtend  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 var $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
-    function BabyQuery(selector, context) {
+    /**
+   * BabyQuery Constructor function
+   * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
+   * @param {HTMLElement} context inside which the element should be created 
+   * @returns {Object} contains all element selected or created uning the provided selector
+   */ function BabyQuery(selector, context) {
         // if Developer doesn't use the new keyword
         if (!(this instanceof BabyQuery)) return new BabyQuery(selector, context);
         // HANDLE: $(""), $(null), $(undefined), $(false)
@@ -440,8 +512,11 @@ var $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
         }
     }
     BabyQuery.fn = BabyQuery.prototype = {
-        // ready funciton = wait until all document and scripts get loads
-        ready: function(callback) {
+        /**
+     * .ready() waits until all document and scripts get loads
+     * @param {Function} callback which will wait to be load the dom and all other scripts 
+     * 
+     */ ready: function(callback) {
             if ($047f9defc20f6cd7$var$isFunction(callback)) $047f9defc20f6cd7$var$handleDOMReady(callback);
         }
     };

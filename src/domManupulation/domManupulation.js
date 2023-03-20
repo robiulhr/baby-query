@@ -6,6 +6,11 @@ const { isFunction, isPlainObject, isValidHtmlElement, isBabyQueryObject } = che
 const { createHtmlElementDynamically, fileterDuplicateInaRow } = helpers
 
 export default {
+  /**
+   * Insert content, specified by the parameter, after each element in the set of matched elements.
+   * @param {HTMLElement|String|Function} element Exp:
+   * @returns {Object} return the BabyQuery object
+   */
   after: function (element) {
     // binding this to the afterMethodRecursive function
     const afterandAppendmethodRecursiveBinded = afterandAppendmethodRecursive.bind(this)
@@ -19,6 +24,11 @@ export default {
     }
     return this
   },
+  /**
+   * 
+   * @param {*} element 
+   * @returns 
+   */
   append: function (element) {
     // binding this to the  function
     const afterandAppendmethodRecursiveBinded = afterandAppendmethodRecursive.bind(this)
