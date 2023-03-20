@@ -19,14 +19,14 @@ export default {
     return template.content.childNodes
   },
   myExtend: function () {
-    for(let i = 0;i<arguments.length;i++){
+    for (let i = 0; i < arguments.length; i++) {
       if (!arguments[i] || typeof arguments[i] !== 'object') {
-        continue;
+        continue
       }
       for (var key in arguments[i]) {
         if (Object.prototype.hasOwnProperty.call(arguments[i], key)) {
           var value = arguments[i][key]
-  
+
           if (value !== undefined) {
             if (typeof value === 'object' && value !== null) {
               if (!this[key] || typeof this[key] !== 'object') {
@@ -39,19 +39,25 @@ export default {
           }
         }
       }
-  
     }
-   
+
     return this
   },
-  separateValueUnit: function (valueStr) {
+  separateValueUnitOperators: function (valueStr) {
     let value = ''
     let unit = ''
-    if (typeof valueStr !== 'string') return { value: valueStr, unit }
+    let operator = ''
+    if (typeof valueStr !== 'string') return { value: valueStr, unit, operator }
     for (let i = 0; i < valueStr.length; i++) {
-      isNaN(+valueStr[i]) ? (unit += valueStr[i]) : (value += valueStr[i])
+      if (!isNaN(valueStr[i])) {
+        value += valueStr[i]
+      } else if (valueStr[i] === '+' || valueStr[i] === '-' || valueStr[i] === '=') {
+        operator += valueStr[i]
+      } else {
+        unit += valueStr[i]
+      }
     }
-    return { value: Number(value), unit }
+    return { value: Number(value), unit, operator }
   },
   fileterDuplicateInaRow: function (array) {
     if (!isArrayLike(array)) return

@@ -2151,7 +2151,7 @@
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/oc/package.json1678940100707427550 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/syntax/node/Number.js1678633366054108571 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/balanced-match/index.js1678610412196817043 0
-111/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/index.md.d6544ddc.js1679162338977350715 0
+111/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/index.md.d6544ddc.js1679214141028215064 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/data-urls/package.json1678631625078815117 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/test/PublicAsset.test.js1678633366126110183 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/asserts/generated1678610412680829620 1
@@ -2474,7 +2474,7 @@
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/ar-EG/_lib/formatLong/index.js1678940093059342274 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@sinclair/typebox/typebox.js1678610413040838974 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@vue/reactivity-transform/dist1678937398421895410 1
-84/media/robiul/HDD/data/project/make your own jquery/baby-query/dist/babyQuery.js.map1679209962454699566 0
+84/media/robiul/HDD/data/project/make your own jquery/baby-query/dist/babyQuery.js.map1679278341532885810 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/_Stack.js1678940089427301621 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/nl/_lib/localize/index.js1678940093927351977 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/repeat.js1678940089751305253 0
@@ -2669,7 +2669,7 @@
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/tr/index.js1678940094291356042 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch/css/dist/modal.css1678937400469948820 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/throttle.js1678940089819306013 0
-101/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/manupulation1679162339537363891 1
+101/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/manupulation1679214141684232951 1
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js1678636172771190900 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/is-fullwidth-code-point1678610412328820474 1
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/last.js1678940089603303592 0
@@ -2999,7 +2999,7 @@
 138/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/client/theme-default/components/VPNavScreen.vue1678937401149966555 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/sortedIndexOf.js1678940089779305566 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/wrapperValue.js1678940089879306687 0
-95/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/events1679162339533363797 1
+95/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/events1679214141680232842 1
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/kk/_lib/localize/index.js1678940096303378500 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/ajax/index.js.map1678940090187310137 0
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/clamp.js1678940089475302157 0
@@ -3009,7 +3009,7 @@
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/entriesIn.js1678940089531302788 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/addSeconds/package.json1678940097579392726 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/en-ZA/package.json1678940100575426079 0
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_object_index.md.2843a3fd.js1679162338981350808 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_object_index.md.2843a3fd.js1679214141028215064 0
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/mixin.js1678940089691304579 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/domutils/lib/stringify.d.ts.map1678633364246068093 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/repeat.js.map1678940090367312153 0
@@ -3379,7 +3379,7 @@
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yargs/build/lib/yerror.js1678610413032838766 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/HTMLTimeElement-impl.js1678631625430823303 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/daysToWeeks/index.js1678940092063331136 0
-125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/android-chrome-192x192.png1679162338561340927 0
+125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/android-chrome-192x192.png1679214140700206118 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/_util.js1678940089439301754 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/lastDayOfMonth1678940101963441512 1
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/HTMLTrackElement-impl.js1678631625430823303 0
@@ -3501,7 +3501,7 @@
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/update-browserslist-db/LICENSE1678610412216817564 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/update-browserslist-db/index.js1678610412356821200 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/update-browserslist-db1678610412492824734 1
-112/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/css/localhelpers.js.html1679162341113400969 0
+112/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/css/localhelpers.js.html1679277342383408358 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/is-fullwidth-code-point/readme.md1678610412376821721 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/scheduled/scheduleIterable.d.ts1678940091027319545 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/nextSaturday/package.json1678940099235411172 0
@@ -3679,7 +3679,7 @@
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-resolve/build/types.js1678610412792832530 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/terser/lib/utils/first_in_statement.js1678633365782102481 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/features/rel-noopener.js1678610413420848846 0
-108/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/tutorial/index.html1679162339541363984 0
+108/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/tutorial/index.html1679214141684232951 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-resolve/build/shouldLoadAsEsm.js1678610412780832217 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-resolve/build/nodeModulesPaths.js1678610412736831075 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/ar-EG/_lib/localize/index.js1678940093063342321 0
@@ -4183,7 +4183,7 @@
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/lastDayOfYear/index.js1678940093011341740 0
 165/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/package-browser-exclude/package.json1678633366246112872 0
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/valueOf.js1678940089867306553 0
-92/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/logo1679162338561340927 1
+92/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/logo1679214140700206118 1
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/setWeekWithOptions/index.js.flow1678940090203310317 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/prompts/dist/dateparts/datepart.js1678610412848833985 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/findIndex.js1678940089483302247 0
@@ -4320,7 +4320,7 @@
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/braces/LICENSE1678610412332820578 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/node_modules/semver1678633363922060838 1
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/test/fixture/packages1678633366170111170 1
-94/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/index.html1679162339541363984 0
+94/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/index.html1679214141684232951 0
 151/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/source-map/parcel_sourcemap_wasm/dist-node/parcel_sourcemap_wasm.js1678633364198067018 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@ampproject/remapping/README.md1678610412628828269 0
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/tslib/SECURITY.md1678633364034063347 0
@@ -4655,7 +4655,7 @@
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/resolve/readme.markdown1678610413244844273 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/spread.js1678940089787305656 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/regenerate-unicode-properties/Script_Extensions/Adlam.js1678636172639188932 0
-93/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/sorter.js1679162341105400780 0
+93/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/sorter.js1679277342235406330 0
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/watcher1678633366054108571 1
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-postcss/node_modules/.bin/semver1678633368174156041 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/shell-quote/test/op.js1678940089227299380 0
@@ -4678,7 +4678,7 @@
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/setSeconds/package.json1678940099335412282 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-postcss/src/constants.js1678633363742056808 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/HTMLOptionElement.js1678631625402822655 0
-81/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov.info1679162341113400969 0
+81/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov.info1679277342387408413 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/is/_lib/match1678940096219377561 1
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-postcss/src/PostCSSTransformer.js1678633364070064152 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rollup/dist/es/shared/node-entry.js1678937398265891341 0
@@ -4785,7 +4785,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/fa-IR/_lib/formatRelative1678940093371345761 1
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/features/shadowdom.js1678610413424848950 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/zipAll.js1678940089867306553 0
-132/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_chaining feature.md.3269e29d.lean.js1679162338985350904 0
+132/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_chaining feature.md.3269e29d.lean.js1679214141048215608 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/package-manager/node_modules/semver/semver.js1678633363866059584 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/esm/applyDecs2203R.js1678636172755190662 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/svg/SVGListBase.js1678631625482824514 0
@@ -4969,7 +4969,7 @@
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/differenceInCalendarQuarters/index.d.ts1678940101183432843 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/hoursToMinutes/index.d.ts1678940102407446444 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/lastDayOfWeek/index.js.flow1678940090435312913 0
-103/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/css/css.js.html1679162341113400969 0
+103/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/css/css.js.html1679277342379408303 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/_baseRange.js1678940089319300410 0
 86/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch1678937397897881742 1
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/json5/lib/stringify.js1678610412736831075 0
@@ -5512,10 +5512,10 @@
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/sourcemap-codec/README.md1678937398141888108 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/_baseSum.js1678940089327300500 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/_getAllKeysIn.js1678940089371300994 0
-130/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_tutorial_index.md.bc098e2c.lean.js1679162338985350904 0
+130/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_tutorial_index.md.bc098e2c.lean.js1679214141044215499 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/observable/forkJoin.ts1678940090851317572 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/observable/empty.ts1678940090839317439 0
-101/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/css/css.html1679162339537363891 0
+101/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/css/css.html1679214141684232951 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/estree-walker/src/package.json1678937398149888316 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/src/BundleGraph.js1678633365562097556 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/observable/timer.ts1678940091099320350 0
@@ -5546,7 +5546,7 @@
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/testing/ColdObservable.js.map1678940089959307584 0
 141/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/mutation-observer/MutationObserver-impl.js1678631625442823583 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/operators/count.ts1678940090803317035 0
-120/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_events_on.md.19deb13d.js1679162338981350808 0
+120/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_events_on.md.19deb13d.js1679214141028215064 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/operators/sequenceEqual.ts1678940091031319588 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/highlight/node_modules/escape-string-regexp1678610412328820474 1
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/operators/partition.ts1678940090975318960 0
@@ -6006,7 +6006,7 @@
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/globals/license1678610412444823488 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/terser/lib/compress/inline.js1678633365890104900 0
 143/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/builders/flow/createTypeAnnotationBasedOnTypeof.js1678610413012838245 0
-116/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/index.md.d6544ddc.lean.js1679162338985350904 0
+116/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/index.md.d6544ddc.lean.js1679214141044215499 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/regions/PM.js1678610413412848640 0
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/generator/lib/node1678610413072839804 1
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jridgewell/resolve-uri/dist1678610412628828269 1
@@ -6048,7 +6048,7 @@
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/eachWeekOfInterval/index.js1678940094795361669 0
 87/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-worker1678610413012838245 1
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/traverse/lib/path/removal.js.map1678610413128841259 0
-95/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/prettify.js1679162341105400780 0
+95/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/prettify.js1679277342235406330 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/is-core-module/test/index.js1678610412416822759 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/previousSaturday/package.json1678940100859429240 0
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/terser/lib/utils/index.js1678633365862104273 0
@@ -6118,7 +6118,7 @@
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/any.js1678940089443301801 0
 148/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/client/theme-default/components/icons/VPIconArrowLeft.vue1678937401133966137 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/operators/takeWhile.ts1678940091071320035 0
-103/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/block-navigation.js1679162341101400686 0
+103/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/block-navigation.js1679277342235406330 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/type-fest/source/async-return-type.d.ts1678610412496824839 0
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/first.js1678940089555303054 0
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/flatMap.js1678940089555303054 0
@@ -6249,7 +6249,7 @@
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch/react/dist/esm/constants.d.ts1678937400565951324 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-preset-algolia/dist/esm/index.d.ts1678937400505949757 0
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/escalade/sync/index.d.ts1678610412612827853 0
-105/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/feature/chain.png1679162338561340927 0
+105/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/feature/chain.png1679214140700206118 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/features/css-text-orientation.js1678610413280845210 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/previousFriday/index.js1678940095123365334 0
 86/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/ws/LICENSE1678631625022813816 0
@@ -6575,7 +6575,7 @@
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@bcoe/v8-coverage/dist/lib/ascii.mjs1678610412912835648 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/ajax/AjaxResponse.js1678940089255299692 0
 134/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/observable/bindCallbackInternals.js1678940089371300994 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_attr.md.f26d6191.js1679162338981350808 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_attr.md.f26d6191.js1679214141028215064 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/parse/_lib/parsers/LocalWeekParser.js1678940097443391208 0
 137/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-syntax-nullish-coalescing-operator/package.json1678610412336820682 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@types/prettier/parser-postcss.d.ts1678610412740831179 0
@@ -6742,7 +6742,7 @@
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/findLast.js1678940089547302965 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/SupportedType.js1678631625482824514 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/de/index.js1678940095791372786 0
-134/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_after.md.d9a056ae.lean.js1679162338985350904 0
+134/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_after.md.d9a056ae.lean.js1679214141044215499 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/last.js1678940089603303592 0
 143/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/preset-modules/lib/plugins/transform-tagged-template-caching1678636172731190303 1
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/timeout.d.ts1678940091087320216 0
@@ -6802,7 +6802,7 @@
 135/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/publishBehavior.d.ts.map1678940090327311705 0
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-proposal-unicode-property-regex/README.md1678636172639188932 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/previousDay/index.js1678940095119365287 0
-106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/markdown-examples.html1679162339541363984 0
+106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/markdown-examples.html1679214141684232951 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/util/isFunction.d.ts1678940090899318109 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/share.js1678940089743305163 0
 86/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/terser/lib1678633366014107677 1
@@ -6927,7 +6927,7 @@
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ja/_lib/formatDistance1678940096263378054 1
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/ordered-binary/.idea/modules.xml1678633364178066571 0
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/operators1678940089871306597 1
-131/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-cyrillic-ext.33bd5a8e.woff21679162338973350621 0
+131/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-cyrillic-ext.33bd5a8e.woff21679214141024214954 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-syntax-logical-assignment-operators/lib1678610412236818082 1
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/isSameMinute/package.json1678940098347401283 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/htmlnano/lib/modules/collapseBooleanAttributes.js1678633363958061645 0
@@ -7082,7 +7082,7 @@
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/concurrently/dist/src/flow-control/restart-process.js1678940089255299692 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/previousMonday/index.js1678940094487358230 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/mk/package.json1678940100679427238 0
-83/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist1679162339541363984 1
+83/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist1679214141684232951 1
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/setWith.js1678940089763305386 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/highlight/node_modules/chalk1678610412508825151 1
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-arrow-functions/lib1678636172655189170 1
@@ -7263,7 +7263,7 @@
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/path-key/index.js1678610412252818498 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/utils/src/prettyDiagnostic.js1678633365898105080 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/differenceInCalendarMonths/package.json1678940097623393216 0
-121/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_contribute.md.1070824a.js1679162338973350621 0
+121/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_contribute.md.1070824a.js1679214141040215389 0
 136/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/distinctUntilChanged.js.map1678940090023308301 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-syntax-optional-catch-binding1678610412336820682 1
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/HTMLFrameElement.js1678631625382822190 0
@@ -7285,7 +7285,7 @@
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/en-AU1678940105179477212 1
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/preact/debug/src/internal.d.ts1678937399521924098 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/setWith.js1678940089763305386 0
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_installation.md.06f379b8.js1679162338973350621 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_installation.md.06f379b8.js1679214141040215389 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/HTMLScriptElement.js1678631625410822838 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/bs/_lib/match1678940095699371762 1
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/packager-js1678633364502073825 1
@@ -7385,7 +7385,7 @@
 165/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/side-effects-false-glob/sub/index.js1678633365958106422 0
 134/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/runtime-service-worker/lib/ServiceWorkerRuntime.js1678633363682055465 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/util/isAsyncIterable.js.map1678940090203310317 0
-124/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-greek.8f4463c4.woff21679162338973350621 0
+124/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-greek.8f4463c4.woff21679214141024214954 0
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch/js/package.json1678937399781930877 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-block-scoping/lib/annex-B_3_3.js1678636172655189170 0
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/resolve/test/resolver.js1678610413196843027 0
@@ -7438,7 +7438,7 @@
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/exhaustAll.js.map1678940090055308659 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/_shortOut.js1678940089423301577 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/util/isIterable.js1678940089587303415 0
-85/media/robiul/HDD/data/project/make your own jquery/baby-query/test/babyQuery.test.js1678729332440500222 0
+85/media/robiul/HDD/data/project/make your own jquery/baby-query/test/babyQuery.test.js1679246330168457290 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/zipAll.js.map1678940090643315243 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/utility-types/dist1678633364306069435 1
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/preset-env/lib/plugins-compat-data.js.map1678636172743190482 0
@@ -7687,7 +7687,7 @@
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ar/_lib/formatRelative/index.js1678940095599370643 0
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/logger1678633363858059406 1
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/regenerate-unicode-properties/Script/Katakana.js1678636172803191377 0
-104/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/array/each.html1679162339537363891 0
+104/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/array/each.html1679214141684232951 0
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/materialize.d.ts.map1678940090243310764 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/terser/lib/compress/compressor-flags.js1678633365442094869 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/addYears/index.js1678940094691360508 0
@@ -7737,7 +7737,7 @@
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/require-directory1678610412416822759 1
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/acorn-walk/dist1678631625110815864 1
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ar-EG/_lib/formatRelative/index.js1678940095535369931 0
-103/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/events/on.html1679162339537363891 0
+103/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/events/on.html1679214141684232951 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/classExtractFieldDescriptor.js1678636172735190363 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/istanbul-reports/lib/clover/index.js1678610413016838349 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/single.js1678940089747305206 0
@@ -7793,7 +7793,7 @@
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/observable/empty.js.map1678940090027308344 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/nanoid/bin/nanoid.cjs1678937398141888108 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/temporalUndefined.js1678636172815191555 0
-127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-greek-ext.ab0619bc.woff21679162338973350621 0
+127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-greek-ext.ab0619bc.woff21679214141024214954 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/index.js.map1678610413276845106 0
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/svgo/plugins/mergePaths.js1678633365022085466 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-syntax-dynamic-import/lib1678636172639188932 1
@@ -7962,7 +7962,7 @@
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsonc-parser/package.json1678937398281891759 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/esm/applyDecs.js1678636172755190662 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yargs/build/lib/utils/set-blocking.js1678610412972837207 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_installation.md.06f379b8.lean.js1679162338985350904 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_installation.md.06f379b8.lean.js1679214141048215608 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/diagnostic/src/diagnostic.js1678633363798058062 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/materialize.js.map1678940090243310764 0
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/syntax/node1678633366146110633 1
@@ -8018,7 +8018,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/traverse/traverseFast.js.map1678610413284845314 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/ar/_lib/formatDistance1678940093107342813 1
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/allPass.js1678940089443301801 0
-105/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/babyQuery.js.html1679162341105400780 0
+105/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/babyQuery.js.html1679277342367408139 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/nextTuesday/package.json1678940100039420119 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/runtime-js/src/helpers1678633365102087257 1
 145/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jridgewell/source-map/node_modules/@jridgewell/gen-mapping/README.md1678633364050063704 0
@@ -8116,7 +8116,7 @@
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-module-imports/lib/index.js1678610412532825773 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/logger-console/index.js1678937399393920759 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/isWithinInterval/package.json1678940098891407340 0
-126/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_array_each.md.c855ac80.lean.js1679162338985350904 0
+126/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_array_each.md.c855ac80.lean.js1679214141048215608 0
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/HTMLSelectElement-impl.js1678631625410822838 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/src/config/files/index-browser.ts1678610413252844482 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/BehaviorSubject.js1678940089363300904 0
@@ -8164,7 +8164,7 @@
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/operators/switchAll.ts1678940091059319903 0
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yaml/README.md1678633365466095407 0
 141/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/modifications/typescript/removeTypeDuplicates.js1678610413280845210 0
-127/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/domManupulation/domManupulation.js.html1679162341113400969 0
+127/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/domManupulation/domManupulation.js.html1679277342387408413 0
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-what/lib/es1678633364570075347 1
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/node_modules/semver/LICENSE1678633363630054301 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/inherits.js1678636172791191199 0
@@ -8225,7 +8225,7 @@
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/zipObjectDeep.js1678940089887306777 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/clone/.npmignore1678633363686055555 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/getISOWeekYear/index.js1678940094899362830 0
-95/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/favicon.png1679162341101400686 0
+95/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/favicon.png1679277342235406330 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/sourcemap-codec/LICENSE1678937398117887482 0
 86/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest/build1678610412780832217 1
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/publishBehavior.js.map1678940090331311748 0
@@ -8374,7 +8374,7 @@
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jridgewell/trace-mapping/dist/types1678610412848833985 1
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/pipe.js1678940089727304982 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-snapshot/node_modules/semver/functions/coerce.js1678610412456823800 0
-106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/app.5ae4e7d9.js1679162338981350808 0
+106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/app.5ae4e7d9.js1679214141032215173 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-regenerator/lib1678636172655189170 1
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@types/node/crypto.d.ts1678610413604853628 0
 145/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-builder-binary-assignment-operator-visitor/package.json1678636172667189348 0
@@ -8385,7 +8385,7 @@
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/fs.realpath/package.json1678610412212817460 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/src1678633366478118065 1
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/endOfMonth/index.js.flow1678940091023319498 0
-109/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/style.53fee048.css1679162338985350904 0
+109/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/style.53fee048.css1679214141052215717 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/hr/index.d.ts1678940105263478142 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/cssstyle/lib/CSSStyleDeclaration.js1678631625242818931 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-babel/lib1678633364310069525 1
@@ -8408,7 +8408,7 @@
 80/media/robiul/HDD/data/project/make your own jquery/baby-query/.github/workflows1678949013762084536 1
 145/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/test/fixtures/invalid-target-source-missing/package.json1678633366578120304 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/common/TokenStream.js1678633366130110273 0
-125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_tutorial_index.md.bc098e2c.js1679162338981350808 0
+125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_tutorial_index.md.bc098e2c.js1679214141028215064 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/nextSunday1678940104427468870 1
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/addISOWeekYears/index.d.ts1678940101311434265 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/exhaust.js.map1678940090055308659 0
@@ -8440,7 +8440,7 @@
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/es1678940105211477566 1
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/dom-serializer/README.md1678633364174066481 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/bn/_lib/formatLong1678940095675371494 1
-83/media/robiul/HDD/data/project/make your own jquery/baby-query/test/css/css.test.js1679210085717703529 0
+83/media/robiul/HDD/data/project/make your own jquery/baby-query/test/css/css.test.js1679249689330754591 0
 138/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-core/dist/esm/types/AutocompleteState.js1678937400493949446 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/type-fest/source/utilities.d.ts1678610413020838454 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/compat-data/data/overlapping-plugins.json1678610412628828269 0
@@ -8557,7 +8557,7 @@
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/source-map/lib1678610412780832217 1
 133/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/combineLatestWith.js.map1678940089967307674 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/cache-common/dist/cache-common.d.ts1678937399413921278 0
-129/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-vietnamese.6ce511fb.woff21679162338973350621 0
+129/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-vietnamese.6ce511fb.woff21679214141024214954 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/scheduler/QueueAction.js1678940089671304356 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/minutesToMilliseconds/index.js.flow1678940090663315466 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/eachMinuteOfInterval/index.js1678940092107331631 0
@@ -8588,7 +8588,7 @@
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yaml/dist/PlainValue-ec8e588e.js1678633364786080183 0
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/cache-in-memory1678937400033937450 1
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-template-literals/lib/index.js1678636172655189170 0
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/markdown-examples.md.55e30a88.js1679162338981350808 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/markdown-examples.md.55e30a88.js1679214141036215283 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/dom-serializer/node_modules/entities/lib/decode.js1678633363714056180 0
 88/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/concurrently1678940089259299739 1
 91/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/split.js1678940089787305656 0
@@ -8690,7 +8690,7 @@
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/getPrototypeOf.js1678636172791191199 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/util/isObservable.d.ts.map1678940090215310451 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fromUnixTime/package.json1678940098687405070 0
-104/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/checkers.js.html1679162341109400875 0
+104/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/checkers.js.html1679277342371408194 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/previousWednesday/package.json1678940098519403198 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-modules-systemjs/LICENSE1678636172631188811 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/concatWith.js1678940089419301530 0
@@ -8809,9 +8809,9 @@
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/syntax/node/ClassSelector.js1678633364478073288 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-syntax-private-property-in-object1678636172663189290 1
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/HTMLAreaElement-impl.js1678631625362821725 0
-127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_chaining feature.md.3269e29d.js1679162338981350808 0
+127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_chaining feature.md.3269e29d.js1679214141036215283 0
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch/react/dist/esm/useDocSearchKeyboardEvents.js1678937400565951324 0
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_introduction.md.0d725fbe.js1679162338973350621 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_introduction.md.0d725fbe.js1679214141040215389 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/clamp1678940101555436977 1
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yargs/locales/ru.json1678610413120841054 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-syntax-import-meta/lib/index.js1678610412276819123 0
@@ -8837,7 +8837,7 @@
 88/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/y18n/LICENSE1678610412192816939 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/millisecondsToHours1678940105451480226 1
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/formatISODuration/index.js.flow1678940089807305880 0
-125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_events_on.md.19deb13d.lean.js1679162338985350904 0
+125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_events_on.md.19deb13d.lean.js1679214141044215499 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-modules-systemjs/lib/index.js1678636172667189348 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/packager-js/src1678633364494073645 1
 138/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-core/dist/esm/types/AutocompleteStore.js1678937400497949550 0
@@ -8859,7 +8859,7 @@
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/sample.js.map1678940090423312780 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/fi/_lib/formatDistance1678940095955374617 1
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/classPrivateMethodSet.js1678636172743190482 0
-126/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-cyrillic.5f2c6c8c.woff21679162338973350621 0
+126/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-cyrillic.5f2c6c8c.woff21679214141024214954 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/resolve/test/dotdot1678610413100840533 1
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/HTMLFrameElement-impl.js1678631625382822190 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/prompts/lib/dateparts/day.js1678610412916835752 0
@@ -8884,7 +8884,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/scheduler/animationFrame.ts1678940090683315690 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ms/_lib/match1678940096555381310 1
 146/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-preset-algolia/dist/esm/types/algoliasearch.d.ts1678937400821958000 0
-124/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/domManupulation/localhelpers.js.html1679162341117401062 0
+124/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/domManupulation/localhelpers.js.html1679277342391408467 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@types/prettier/LICENSE1678610412196817043 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-reserved-words/README.md1678636172639188932 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/tr/_lib/match/index.js1678940094291356042 0
@@ -8932,7 +8932,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-regenerator/README.md1678636172639188932 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/combineAll.js.map1678940089959307584 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/id/_lib/formatLong/index.js1678940096187377206 0
-90/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets1679162338985350904 1
+90/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets1679214141048215608 1
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/Performance.js1678631625462824049 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/ja/_lib/formatRelative/index.js1678940093619348533 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/cjs-module-lexer1678610412732830971 1
@@ -8979,7 +8979,7 @@
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/body-scroll-lock1678937399289918047 1
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/util/isDate.js1678940089579303325 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/ar-MA/_lib/formatDistance1678940093071342411 1
-116/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/favicon-16x16.png1679162338561340927 0
+116/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/favicon-16x16.png1679214140700206118 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/initializerWarningHelper.js1678636172795191257 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/node-cjs/cli.cjs1678937400561951220 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@tootallnate/once/dist/types.js.map1678631625198817907 0
@@ -9062,7 +9062,7 @@
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/operators/zip.ts1678940091135320754 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/isThursday1678940102623448844 1
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/az/_lib/match1678940095619370868 1
-96/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/prettify.css1679162341105400780 0
+96/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/prettify.css1679277342235406330 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/sampleTime.js1678940089719304892 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/iterableToArrayLimit.js1678636172799191317 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/test/fixtures/custom-targets1678633366546119587 1
@@ -9070,7 +9070,7 @@
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/lb/_lib/formatDistance/index.js1678940096371379256 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/bundler-default/LICENSE1678633363630054301 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/optimizer-image/package.json1678633363794057972 0
-115/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/site.webmanifest1679162338561340927 0
+115/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/site.webmanifest1679214140700206118 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/istanbul-lib-coverage1678610412684829724 1
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/nextFriday/index.d.ts1678940103387457329 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/shiki/languages/marko.tmLanguage.json1678937400113939536 0
@@ -9137,7 +9137,7 @@
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/highlight/node_modules/color-name/README.md1678610412328820474 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/lib/dumpGraphToGraphViz.js1678633365858104183 0
 140/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-core/dist/esm/types/AutocompleteContext.js1678937400485949238 0
-82/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/clover.xml1679162341121401157 0
+82/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/clover.xml1679277342443409180 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/zh-CN/_lib/match/index.js1678940094387357113 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/en-US/_lib/formatRelative1678940095851373456 1
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/cssom/StyleSheetList-impl.js1678631625478824420 0
@@ -9238,7 +9238,7 @@
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/Subscription.js.map1678940090499313631 0
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/natural-compare/index.js1678610412272819019 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/packager-html/src/HTMLPackager.js1678633363790057882 0
-106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/object/index.html1679162339537363891 0
+106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/object/index.html1679214141684232951 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/closestIndexTo/package.json1678940097991397318 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/utils/src/replaceBundleReferences.js1678633365922105617 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/dropWhile.js1678940089527302741 0
@@ -9298,7 +9298,7 @@
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jridgewell/sourcemap-codec/src/sourcemap-codec.ts1678610412712830450 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@lezer/common/dist/index.cjs1678633363842059047 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/WheelEventInit.js1678631625498824885 0
-95/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/feature1679162338561340927 1
+95/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/feature1679214140700206118 1
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/clone/cloneWithoutLoc.js.map1678610413152841884 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/formatDistanceStrict/package.json1678940099691416246 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/mapTo.d.ts.map1678940090243310764 0
@@ -9306,7 +9306,7 @@
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/timeInterval.js1678940089815305970 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/querystringify/index.js1678631624982812886 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/HTMLOrSVGElement-impl.js1678631625402822655 0
-77/media/robiul/HDD/data/project/make your own jquery/baby-query/src/css/css.js1679123988717252870 0
+77/media/robiul/HDD/data/project/make your own jquery/baby-query/src/css/css.js1679249675994456095 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/ansi-sequence-parser/CHANGELOG.md1678937398201889673 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/codeframe/src1678633365578097915 1
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/http-proxy-agent/dist/index.js.map1678631625114815954 0
@@ -9336,7 +9336,7 @@
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/arrayLikeToArray.js1678636172715190065 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/endOfToday1678940101279433909 1
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/differenceInWeeks/index.js1678940094759361268 0
-96/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/effects1679162339533363797 1
+96/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/effects1679214141680232842 1
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/htmlnano/lib/presets/max.js1678633364298069257 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-js/parcel-swc.darwin-x64.node1678633366998129708 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/utils/src/isDirectoryInside.js1678633365878104632 0
@@ -9371,7 +9371,7 @@
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/isSameMonth/index.d.ts1678940102567448222 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/packager-css1678633363854059316 1
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/closestTo/index.js.flow1678940090899318109 0
-78/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress1679162339549364173 1
+78/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress1679214141688233061 1
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-proposal-async-generator-functions1678636172687189647 1
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/client/theme-default/support/utils.js1678937401101965303 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/testing/ColdObservable.d.ts.map1678940089959307584 0
@@ -9401,7 +9401,7 @@
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/detect-newline/package.json1678610412276819123 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-module-transforms/lib/dynamic-import.js1678610412368821512 0
 164/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/package-main-directory/package.json1678633366262113229 0
-95/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/object1679162339537363891 1
+95/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/object1679214141680232842 1
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/makeerror/package.json1678610412332820578 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-module-imports/lib1678610412532825773 1
 136/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-define-polyfill-provider/lib/visitors/index.js1678636172739190424 0
@@ -9452,7 +9452,7 @@
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/preact/LICENSE1678937399393920759 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/isSameDay/index.js.flow1678940090383312333 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/differenceInCalendarMonths/index.js.flow1678940089387301174 0
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-greek.d5a6d92a.woff21679162338973350621 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-greek.d5a6d92a.woff21679214141024214954 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@swc/helpers/src/_class_private_field_update.mjs1678633365878104632 0
 78/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/docs/array1678946302760080301 1
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-syntax-optional-catch-binding/LICENSE1678610412200817147 0
@@ -9529,7 +9529,7 @@
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/dom-serializer/node_modules/entities/lib/index.d.ts.map1678633364202067108 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/flatMap.js.map1678940090091309062 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/client-common/dist/client-common.cjs.js1678937399669927957 0
-79/media/robiul/HDD/data/project/make your own jquery/baby-query/src/babyQuery.js1679210284038347500 0
+79/media/robiul/HDD/data/project/make your own jquery/baby-query/src/babyQuery.js1679249680746562471 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch/react/dist/esm/index.d.ts1678937400565951324 0
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/isSameSecond1678940102567448222 1
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/share.js.map1678940090463313227 0
@@ -9539,8 +9539,8 @@
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/isNaN.js1678940089623303818 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/_createOver.js1678940089359300860 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/tr1678940103291456263 1
-96/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/hashmap.json1679162339541363984 0
-105/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/sort-arrow-sprite.png1679162341105400780 0
+96/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/hashmap.json1679214141684232951 0
+105/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/sort-arrow-sprite.png1679277342235406330 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/minimatch/package.json1678610412400822345 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/isYesterday1678940105039475659 1
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/requires-port/LICENSE1678631625014813628 0
@@ -9551,7 +9551,7 @@
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/_lib/isSameUTCWeek/index.js1678940092183332480 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/features/input-range.js1678610413352847081 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/be/index.js.flow1678940091511324961 0
-106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/introduction.html1679162339541363984 0
+106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/introduction.html1679214141684232951 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/utils/src/throttle.js1678633365978106870 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/bg/_lib/formatRelative1678940095667371404 1
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/observable/iif.ts1678940090875317843 0
@@ -9576,7 +9576,7 @@
 83/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/api-examples.md1678937989774086699 0
 148/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-bugfix-v8-spread-parameters-in-optional-chaining/README.md1678636172643188992 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@vue/devtools-api/lib/cjs/api/app.js1678937400385946630 0
-119/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/apple-touch-icon.png1679162338561340927 0
+119/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/apple-touch-icon.png1679214140700206118 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/scheduler/async.d.ts1678940090731316230 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/regenerate-unicode-properties/Script/Kayah_Li.js1678636172811191497 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/postcss/lib/rule.js1678937398193889464 0
@@ -9683,7 +9683,7 @@
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/regions/YT.js1678610413448849575 0
 137/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/package-manager/test/validateModuleSpecifiers.test.js1678633365330092363 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/reverse.js1678940089755305296 0
-80/media/robiul/HDD/data/project/make your own jquery/baby-query/dist/babyQuery.js1679209962454699566 0
+80/media/robiul/HDD/data/project/make your own jquery/baby-query/dist/babyQuery.js1679278341524885896 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-computed-properties/package.json1678636172691189707 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-environment-visitor/README.md1678610412260818707 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/yearsToMonths/index.js1678940094623359749 0
@@ -9712,7 +9712,7 @@
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/isNativeReflectConstruct.js1678636172795191257 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/shareReplay.js.map1678940090467313274 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-core/dist/esm/getDefaultProps.d.ts1678937400385946630 0
-98/media/robiul/HDD/data/project/make your own jquery/baby-query/src/domManupulation/localhelpers.js1679113594890957387 0
+98/media/robiul/HDD/data/project/make your own jquery/baby-query/src/domManupulation/localhelpers.js1679217246054881111 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/tokenizer1678633366138110453 1
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/concurrently/dist/src/flow-control/log-output.js1678940089247299603 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/walker1678633365978106870 1
@@ -9755,7 +9755,7 @@
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/minutesToHours/index.d.ts1678940104395468513 0
 139/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/scheduler/AnimationFrameScheduler.d.ts1678940090691315780 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/isThisHour/index.js.flow1678940091455324334 0
-114/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/domManupulation/index.html1679162341113400969 0
+114/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/domManupulation/index.html1679277342383408358 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/esm/asyncGeneratorDelegate.js1678636172755190662 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/isThisYear/index.js.flow1678940091467324467 0
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/testing/TestScheduler.d.ts.map1678940090531313988 0
@@ -9830,7 +9830,7 @@
 137/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-define-polyfill-provider/lib/define-provider.js1678636172723190183 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/strip-bom/package.json1678610412196817043 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/millisecondsToSeconds/package.json1678940098443402353 0
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_css_css.md.5f22ea87.lean.js1679162338985350904 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_css_css.md.5f22ea87.lean.js1679214141048215608 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@swc/helpers/src/_possible_constructor_return.mjs1678633366006107497 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/workers/test1678633365074086630 1
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jridgewell/sourcemap-codec/dist/sourcemap-codec.mjs1678610412644828686 0
@@ -9870,7 +9870,7 @@
 136/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/requester-node-http/dist/requester-node-http.cjs.js1678937399213916065 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/is-fullwidth-code-point/package.json1678610412192816939 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/algoliasearch/lite.d.ts1678937399205915857 0
-88/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs1679162339537363891 1
+88/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs1679214141684232951 1
 133/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/regenerate-unicode-properties/Binary_Property/Extender.js1678636172775190960 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/definitions/placeholders.js.map1678610413232843963 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/parser/sequence.js1678633366102109646 0
@@ -9972,7 +9972,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/lib/errors/rewrite-stack-trace.js1678610413164842196 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-snapshot/node_modules/semver/package.json1678610413032838766 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/anymatch/README.md1678610412336820682 0
-98/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io1679162338561340927 1
+98/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io1679214140700206118 1
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/AbortSignal.js1678631625154816884 0
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-core/dist/esm/getDefaultProps.js1678937400389946734 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ru/_lib/formatDistance/index.js1678940096751383497 0
@@ -10115,7 +10115,7 @@
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/MessageEvent.js1678631625438823490 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/src/_empty.js1678633363702055913 0
 83/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/is-glob1678633363674055285 1
-92/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/base.css1679162341101400686 0
+92/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/base.css1679277342231406276 0
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/shell-quote/package.json1678940089239299513 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/zip.js1678940089863306506 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/parse5/dist/parser/open-element-stack.d.ts1678631625330820978 0
@@ -10146,7 +10146,7 @@
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/browserslist/error.d.ts1678610412680829620 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-shared/dist/esm/createRef.d.ts1678937399449922220 0
 141/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code.css1678937400837958418 0
-124/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-latin.bd3b6f56.woff21679162338973350621 0
+124/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-latin.bd3b6f56.woff21679214141024214954 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/observable/throwError.js1678940089807305880 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-shared/dist/esm/isEqual.d.ts1678937399465922634 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/regions/MK.js1678610413384847912 0
@@ -10167,7 +10167,7 @@
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/estree-walker/dist/esm1678937398145888212 1
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/scheduler/intervalProvider.js1678940089575303278 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/lib/config/files/package.js1678610413008838141 0
-133/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_attr.md.f26d6191.lean.js1679162338985350904 0
+133/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_attr.md.f26d6191.lean.js1679214141044215499 0
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/preact/debug/dist1678937399517923990 1
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/lt/index.js.flow1678940090591314662 0
 140/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-shared/dist/esm/getAttributeValueByPath.js1678937399457922428 0
@@ -10198,7 +10198,7 @@
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/distinct.d.ts.map1678940090023308301 0
 83/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/esprima1678610412512825255 1
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/p-locate/node_modules/p-limit/license1678610412224817772 0
-98/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/index.html1679162341105400780 0
+98/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/index.html1679277342359408030 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/count.js1678940089427301621 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-new-target1678636172655189170 1
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/util/isScheduler.js1678940089591303458 0
@@ -10232,7 +10232,7 @@
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/isYesterday/package.json1678940100471424924 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/scheduled/scheduleArray.js1678940089727304982 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch/react/dist/esm/useTrapFocus.js1678937400565951324 0
-107/media/robiul/HDD/data/project/make your own jquery/baby-query/test/domManupulation/domManupulation.test.js1679158749780947116 0
+107/media/robiul/HDD/data/project/make your own jquery/baby-query/test/domManupulation/domManupulation.test.js1679215831727546678 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@vue/compiler-dom/dist/compiler-dom.global.prod.js1678937399121913666 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/optimizer-css/LICENSE1678633363630054301 0
 135/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lmdb/dependencies/lmdb-data-v1/libraries/liblmdb/mdb_load.c1678633365330092363 0
@@ -10247,7 +10247,7 @@
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/workers/test/integration/workerfarm/console.js1678633364130065496 0
 143/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-skip-transparent-expression-wrappers/lib/index.js.map1678636172667189348 0
 81/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsesc1678610412580827022 1
-130/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-cyrillic-ext.e75737ce.woff21679162338973350621 0
+130/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-cyrillic-ext.e75737ce.woff21679214141020214845 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/previousThursday/index.js1678940095131365421 0
 136/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-postcss/node_modules/semver/package.json1678633363898060301 0
 88/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yaml/pair.js1678633364430072211 0
@@ -10292,7 +10292,7 @@
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ta/index.js.flow1678940091703327108 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/skipLast.js1678940089751305253 0
 134/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/client/theme-default/composables/outline.js1678937400853958832 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/markdown-examples.md.55e30a88.lean.js1679162338985350904 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/markdown-examples.md.55e30a88.lean.js1679214141044215499 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/DocumentFragment.js1678631625334821071 0
 152/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/cache-browser-local-storage/dist/cache-browser-local-storage.cjs.js1678937398985910116 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/getISOWeek/package.json1678940098711405337 0
@@ -10308,7 +10308,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/findIndex.js1678940089483302247 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/addMonths/index.d.ts1678940101131432265 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/pretty-format/build/index.js1678610412796832634 0
-115/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/chunks/theme.fee15fb3.js1679162338981350808 0
+115/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/chunks/theme.fee15fb3.js1679214141036215283 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-proposal-optional-catch-binding1678636172663189290 1
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@docsearch/react/dist/esm/icons/SelectIcon.d.ts1678937400581951741 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/isThisISOWeek/index.d.ts1678940104987475080 0
@@ -10339,7 +10339,7 @@
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/HTMLHeadingElement-impl.js1678631625386822280 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/lastDayOfYear/index.js1678940092683338070 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-spread/README.md1678636172639188932 0
-125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_effects_toggle.md.b20417a6.js1679162338981350808 0
+125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_effects_toggle.md.b20417a6.js1679214141036215283 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-parameters/package.json1678636172719190125 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@lezer/common/README.md1678633364038063435 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/HTMLSelectElement.js1678631625410822838 0
@@ -10426,7 +10426,7 @@
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-matcher-utils/LICENSE1678610412388822033 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/util/Immediate.js.map1678940090159309824 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/psl/package.json1678631625178817442 0
-67/media/robiul/HDD/data/project/make your own jquery/baby-query/dist1679209962454699566 1
+67/media/robiul/HDD/data/project/make your own jquery/baby-query/dist1679278341532885810 1
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@vue/runtime-dom/dist/runtime-dom.global.prod.js1678937398461896454 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/observable/timer.js.map1678940090563314349 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-classes/lib/transformClass.js1678636172699189827 0
@@ -10611,7 +10611,7 @@
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/sub/index.d.ts1678940103623459946 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/emittery/package.json1678610412384821929 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/finalize.js1678940089483302247 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_introduction.md.0d725fbe.lean.js1679162338985350904 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_introduction.md.0d725fbe.lean.js1679214141048215608 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helpers/lib/helpers/wrapRegExp.js.map1678610413104840637 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/test/fixtures/custom-format-infer-type1678633366530119229 1
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/traverse/lib/path/context.js1678610412792832530 0
@@ -10659,7 +10659,7 @@
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helpers/lib/index.js.map1678610413112840845 0
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/minutesToSeconds1678940105471480448 1
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/dom-serializer/lib/index.js1678633363926060928 0
-118/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/examples/api/jquery/jquery.js.html1679120794994638743 0
+118/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/examples/api/jquery/jquery.js.html1679277342359408030 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/xhr/xhr-sync-worker.js1678631625498824885 0
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/fr-CH/_lib/formatRelative/index.js1678940093395346029 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/optimizer-svgo/lib/SVGOOptimizer.js1678633363682055465 0
@@ -10702,7 +10702,7 @@
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/differenceInCalendarISOWeeks/index.d.ts1678940101175432753 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/observable/from.js.map1678940090107309242 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/traverse/package.json1678610413168842300 0
-94/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/array1679162339533363797 1
+94/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/array1679214141684232951 1
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/posthtml-parser/dist/location-tracker.d.ts1678633364034063347 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/babel-plugin-polyfill-corejs3/esm/index.mjs1678636172699189827 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/nth-check/lib/compile.js.map1678633364030063257 0
@@ -10713,7 +10713,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/nodes/NodeList-impl.js1678631625454823862 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/parse5/dist/index.d.ts1678631625326820885 0
 88/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/tmpl/license1678610412192816939 0
-127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-cyrillic.ea42a392.woff21679162338973350621 0
+127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-cyrillic.ea42a392.woff21679214141024214954 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/helpers/iterable-weak-set.js1678631625434823397 0
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/setMonth/index.js1678940097283389425 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vscode-oniguruma/NOTICES.txt1678937398205889777 0
@@ -10765,7 +10765,7 @@
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/eachWeekOfInterval1678940101435435643 1
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/previousThursday/package.json1678940098515403154 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/lib/config/files/module-types.js.map1678610413000837935 0
-92/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/404.html1679162339521363515 0
+92/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/404.html1679214141648231970 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/asynckit/lib/readable_parallel.js1678631625162817071 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/_lib/buildMatchPatternFn/index.js1678940093027341919 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@bcoe/v8-coverage/dist/lib/compare.d.ts1678610413064839596 0
@@ -10837,7 +10837,7 @@
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/preact/debug/package.json1678937399497923472 0
 142/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/client-personalization/dist/client-personalization.cjs.js1678937399405921072 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/gu1678940105247477963 1
-94/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/docs/manupulation/after.md1679160660142179651 0
+94/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/docs/manupulation/after.md1679214860231056520 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/markdown-ansi/src/markdown-ansi.js1678633363738056720 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/index.js1678940089543302922 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-compilation-targets/lib/index.js.map1678610412644828686 0
@@ -10907,7 +10907,7 @@
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/micromatch/index.js1678610412264818811 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@vue/compiler-core1678937399093912933 1
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/preact/devtools/dist/devtools.js.map1678937399501923576 0
-104/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/contribute.html1679162339541363984 0
+104/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/contribute.html1679214141684232951 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/skipUntil.js.map1678940090475313361 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/valuesIn.js1678940089871306597 0
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/getQuarter1678940101803439735 1
@@ -11228,7 +11228,7 @@
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/getYear/package.json1678940100323423279 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ms1678940105339478984 1
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/et/_lib/localize/index.js1678940093347345495 0
-125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/android-chrome-512x512.png1679162338561340927 0
+125/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/android-chrome-512x512.png1679214140700206118 0
 133/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-modules-commonjs/lib/index.js.map1678636172691189707 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/setWeekYearWithOptions/index.js.flow1678940090211310407 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/examples1678953695726979060 1
@@ -11396,7 +11396,7 @@
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/lib/config/files/types.js.map1678610413024838558 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/lib/config/files/index.js1678610412952836686 0
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsesc/jsesc.js1678610412260818707 0
-101/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/api-examples.html1679162339541363984 0
+101/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/api-examples.html1679214141684232951 0
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/addYears1678940101543436845 1
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-proposal-private-property-in-object1678636172687189647 1
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/millisecondsToHours/package.json1678940100787428440 0
@@ -11459,7 +11459,7 @@
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/lib/config/resolve-targets-browser.js1678610413124841155 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/areIntervalsOverlapping/index.js.flow1678940089359300860 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/lib/requests/WriteBundleRequest.js1678633366482118155 0
-112/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/manupulation/after.html1679162339541363984 0
+112/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/manupulation/after.html1679214141684232951 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/eachMinuteOfInterval/index.d.ts1678940103975463855 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/intervalToDuration/index.js.flow1678940090355312019 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/differenceInCalendarDays/index.d.ts1678940101367434886 0
@@ -11553,7 +11553,7 @@
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/catchError.js1678940089391301217 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/addMinutes/index.js.flow1678940090875317843 0
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/util/ArgumentOutOfRangeError.js1678940089339300633 0
-102/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/css/index.html1679162341109400875 0
+102/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/css/index.html1679277342375408249 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yaml/browser/seq.js1678633365122087705 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/p-try/index.d.ts1678610412228817877 0
 134/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/pure-rand/lib/distribution/UnsafeUniformIntDistribution.js1678610412700830140 0
@@ -11705,7 +11705,7 @@
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/core-js-compat/helpers.js1678636172655189170 0
 89/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/xor.js1678940089879306687 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/differenceInCalendarYears/index.d.ts1678940101595437423 0
-111/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/manupulation/attr.html1679162339537363891 0
+111/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/manupulation/attr.html1679214141684232951 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/traversal/TreeWalker-impl.js1678631625494824792 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/sl/_lib/localize1678940094159354566 1
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/Scheduler.js1678940089739305116 0
@@ -11734,7 +11734,7 @@
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/browser/default-stylesheet.js1678631625326820885 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/getDefaultOptions/package.json1678940100263422611 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@types/node/ts4.8/assert.d.ts1678610413812859033 0
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-latin.2ed14f66.woff21679162338973350621 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-latin.2ed14f66.woff21679214141024214954 0
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/features/css-first-letter.js1678610413256844586 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@types/node/ts4.8/cluster.d.ts1678610413816859137 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/features/aac.js1678610412648828787 0
@@ -11910,7 +11910,7 @@
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/concurrently/dist/src/prefix-color-selector.js1678940089255299692 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/sq/index.d.ts1678940103259455907 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/audit.js1678940089355300813 0
-116/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/favicon-32x32.png1679162338561340927 0
+116/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/favicon-32x32.png1679214140700206118 0
 145/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/aliased/index.js1678633365586098093 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/lib/transformation/util1678610413220843651 1
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/getWeekYear/index.js.flow1678940091151320930 0
@@ -12182,7 +12182,7 @@
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/is-generator-fn/readme.md1678610412384821929 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/runtime/helpers/toPropertyKey.js1678636172819191615 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/htmlnano/lib/modules/collapseAttributeWhitespace.js1678633363934061108 0
-104/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/feature/fast.png1679162338561340927 0
+104/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/feature/fast.png1679214140700206118 0
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jest/environment1678610412652828891 1
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/getDecade/package.json1678940099763417048 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/uz/_lib/match/index.js1678940097031386619 0
@@ -12332,7 +12332,7 @@
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-shorthand-properties/README.md1678636172639188932 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/sv/_lib/formatRelative/index.js1678940094223355283 0
 95/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yocto-queue/license1678610412196817043 0
-83/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/docs/css/css.md1679160912680666861 0
+83/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/docs/css/css.md1679214693090773365 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/nanoid/non-secure/index.cjs1678937398129887794 0
 130/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/formatDurationWithOptions/package.json1678940098167399278 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/util/not.js1678940089635303952 0
@@ -12442,7 +12442,7 @@
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/config.js.map1678940089987307898 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/KeyboardEvent.js1678631625438823490 0
 144/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css1678937400837958418 0
-94/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/index.html1679162341105400780 0
+94/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/index.html1679277342235406330 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/previousWednesday/index.d.ts1678940105535481159 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/skipWhile.js.map1678940090475313361 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jest/reporters/build1678610413092840325 1
@@ -12467,7 +12467,7 @@
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/isEqual/index.js1678940092623337402 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/intlFormat/package.json1678940098295400703 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/yargs/build/lib/parse-command.js1678610412936836272 0
-118/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_css_css.md.5f22ea87.js1679162338981350808 0
+118/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_css_css.md.5f22ea87.js1679214141036215283 0
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/balanced-match1678610412272819019 1
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/operators/concatMap.js.map1678940089979307808 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@sinclair/typebox/compiler/compiler.js1678610412660829099 0
@@ -12692,7 +12692,7 @@
 89/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/kleur/license1678610412332820578 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/lastDayOfWeekWithOptions/index.js1678940092683338070 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-environment-visitor1678610412364821408 1
-127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-latin-ext.0030eebd.woff21679162338973350621 0
+127/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-latin-ext.0030eebd.woff21679214141024214954 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/map.d.ts.map1678940090239310718 0
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/testing/HotObservable.d.ts.map1678940090139309600 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/endOfMinute1678940101267433774 1
@@ -12738,7 +12738,7 @@
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/src/internal/scheduler/AsapAction.ts1678940090727316183 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/index.d.ts.map1678940090171309956 0
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/util/argsOrArgArray.d.ts1678940090719316094 0
-86/media/robiul/HDD/data/project/make your own jquery/baby-query/examples/api/index.html1679118855688503210 0
+86/media/robiul/HDD/data/project/make your own jquery/baby-query/examples/api/index.html1679244953669715391 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/fp/dropRightWhile.js1678940089527302741 0
 136/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/scheduler/AnimationFrameScheduler.js1678940089287300053 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/css-tree/lib/syntax/scope/atrulePrelude.js1678633364174066481 0
@@ -12859,7 +12859,7 @@
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/fy/_lib/formatRelative/index.js1678940093423346344 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/uz-Cyrl/package.json1678940100759428128 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/shiki/languages/razor.tmLanguage.json1678937400229942561 0
-91/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/coverage-final.json1679162341101400686 0
+91/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/coverage-final.json1679277342215406055 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/util/identity.d.ts1678940090871317796 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/kk/_lib/formatDistance/index.js1678940093643348801 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/window.d.ts.map1678940090607314839 0
@@ -12879,7 +12879,7 @@
 133/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vitepress/dist/client/theme-default/components/VPHero.vue1678937401129966033 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/getWeekYearWithOptions1678940101835440090 1
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/util/pipe.d.ts.map1678940090323311659 0
-126/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_contribute.md.1070824a.lean.js1679162338981350808 0
+126/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_contribute.md.1070824a.lean.js1679214141048215608 0
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/hash/index.js.flow1678633363650054748 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/_lib/toInteger1678940092219332881 1
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/setHours/index.js1678940094527358678 0
@@ -13068,7 +13068,7 @@
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/types/lib/validators/react1678610413316846145 1
 87/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/terser/dist1678633366026107946 1
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/share.d.ts1678940091035319635 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_object_index.md.2843a3fd.lean.js1679162338985350904 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_object_index.md.2843a3fd.lean.js1679214141044215499 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/parse/_lib/parsers/AMPMMidnightParser.js1678940091899329303 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/raceWith.d.ts.map1678940090355312019 0
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/materialize.d.ts1678940090919318333 0
@@ -13283,7 +13283,7 @@
 154/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/test/fixture/node_modules/side-effects-false-glob/b1678633365854104095 1
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@jest/core/build/getNoTestsFoundMessage.js1678610413752857474 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/isMonday/package.json1678940098335401149 0
-130/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_effects_toggle.md.b20417a6.lean.js1679162338985350904 0
+130/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_effects_toggle.md.b20417a6.lean.js1679214141048215608 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/operators/windowTime.d.ts1678940091127320664 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-raw/src1678633363706056002 1
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-simple-access/LICENSE1678610412216817564 0
@@ -13365,7 +13365,7 @@
 139/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/packager-js/node_modules/type-fest/source/asyncify.d.ts1678633363902060391 0
 153/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@algolia/autocomplete-preset-algolia/dist/esm/requester/getAlgoliaFacets.d.ts1678937400801957479 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-proposal-optional-chaining/package.json1678636172691189707 0
-87/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img1679162338561340927 1
+87/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img1679214140700206118 1
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/util/reportUnhandledError.js1678940089691304579 0
 133/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/onErrorResumeNextWith.js1678940089655304175 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/watcher/src/unix/fts.cc1678633364126065406 0
@@ -13644,7 +13644,7 @@
 133/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/scheduled/scheduleAsyncIterable.js1678940089727304982 0
 129/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/cjs/internal/observable/fromSubscribable.js1678940089495302384 0
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/be-tarask/_lib/formatLong1678940095627370958 1
-112/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/logo/baby-query-logo.png1679162338561340927 0
+112/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/logo/baby-query-logo.png1679214140700206118 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rollup/dist/shared/rollup.js1678937398289891967 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/helper-wrap-function1678636172675189468 1
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/vite/dist/node/chunks/dep-53dc1ef4.js1678937399525924202 0
@@ -14155,7 +14155,7 @@
 146/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/core/test/fixtures/invalid-target-source-not-file/src/index.js1678633365930105795 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/events/lib/ValueEmitter.js1678633364050063704 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@swc/helpers/src/_skip_first_generator_next.mjs1678633366026107946 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-vietnamese.14ce25a6.woff21679162338973350621 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-roman-vietnamese.14ce25a6.woff21679214141024214954 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/svgo/plugins/removeXMLNS.js1678633365662099795 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/getDaysInYear/package.json1678940098699405204 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/caniuse-lite/data/features/flac.js1678610413328846457 0
@@ -14348,7 +14348,7 @@
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-json/src1678633363710056092 1
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/eo/index.js.flow1678940090519313854 0
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/svgo/plugins/removeDesc.js1678633365270091019 0
-97/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/chunks1679162338981350808 1
+97/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/chunks1679214141036215283 1
 122/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/combineAll.js1678940089403301350 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/domutils/lib/helpers.d.ts.map1678633364110065047 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/combineLatest.js1678940089407301397 0
@@ -14516,7 +14516,7 @@
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/ajax/types.js.map1678940090575314482 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/exhaustAll.js1678940089475302157 0
 128/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jsdom/lib/jsdom/living/generated/HTMLEmbedElement.js1678631625378822095 0
-114/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/examples/api/jquery/index.html1679120794806634006 0
+114/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/examples/api/jquery/index.html1679277342235406330 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/types/internal/util/pipe.d.ts1678940090975318960 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ka/_lib/formatRelative1678940096287378322 1
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/parse/_lib/parsers/MonthParser.js1678940097467391476 0
@@ -14748,7 +14748,7 @@
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/lastDayOfYear/index.d.ts1678940105091476235 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/shiki/languages/html.tmLanguage.json1678937400081938702 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/be-tarask/index.js.flow1678940091507324914 0
-101/media/robiul/HDD/data/project/make your own jquery/baby-query/src/domManupulation/domManupulation.js1679121200688840257 0
+101/media/robiul/HDD/data/project/make your own jquery/baby-query/src/domManupulation/domManupulation.js1679221875071546005 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ru/package.json1678940100723427728 0
 124/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/switchMapTo.js1678940089783305609 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/min/index.js.flow1678940090659315423 0
@@ -14877,7 +14877,7 @@
 138/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm5/internal/operators/onErrorResumeNextWith.js.map1678940090303311435 0
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/minutesToSeconds/index.js.flow1678940090663315466 0
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/optimizer-css/src1678633363714056180 1
-94/media/robiul/HDD/data/project/make your own jquery/baby-query/examples/api/jquery/jquery.html1679118859364595670 0
+94/media/robiul/HDD/data/project/make your own jquery/baby-query/examples/api/jquery/jquery.html1679243137233016737 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@sinclair/typebox/value/equal.js1678610412800832738 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/workers/lib/Handle.js1678633364298069257 0
 96/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/globals/package.json1678610412216817564 0
@@ -15053,7 +15053,7 @@
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/formatISO/index.d.ts1678940103735461191 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/addSeconds/index.js1678940092039330870 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/addSeconds/index.js.flow1678940089235299470 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-latin-ext.bd8920cc.woff21679162338973350621 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-latin-ext.bd8920cc.woff21679214141024214954 0
 85/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/is-stream1678610412352821096 1
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/addSeconds/index.d.ts1678940101135432309 0
 92/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/getDate1678940104767472640 1
@@ -15083,7 +15083,7 @@
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/getMonth/index.js.flow1678940091383323529 0
 120/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/eachWeekOfInterval/index.js.flow1678940090999319231 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/to-fast-properties/index.js1678610412260818707 0
-128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-greek-ext.4fbe9427.woff21679162338973350621 0
+128/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/inter-italic-greek-ext.4fbe9427.woff21679214141024214954 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/getMonth/package.json1678940100291422923 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/shiki/languages/astro.tmLanguage.json1678937399937934946 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/ug/_lib/match/index.js1678940094307356219 0
@@ -16537,7 +16537,7 @@
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/startOfDay/package.json1678940100159421452 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/hy/_lib/localize1678940096171377028 1
 117/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/eachHourOfIntervalWithOptions1678940103971463811 1
-123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/api-examples.md.2f4076d7.lean.js1679162338981350808 0
+123/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/api-examples.md.2f4076d7.lean.js1679214141048215608 0
 115/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/isLeapYear/package.json1678940098327401058 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/lv/_lib/match1678940093743349921 1
 127/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/rxjs/dist/esm/internal/operators/publishBehavior.js1678940089667304309 0
@@ -17242,7 +17242,7 @@
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/minutesToSeconds/index.d.ts1678940102007442002 0
 134/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/eachMinuteOfIntervalWithOptions/index.d.ts1678940101651438045 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/isDate/index.js1678940094963363547 0
-86/media/robiul/HDD/data/project/make your own jquery/baby-query/src/css/localhelpers.js1679209962498700658 0
+86/media/robiul/HDD/data/project/make your own jquery/baby-query/src/css/localhelpers.js1679278307757239614 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/svgo/plugins/removeEmptyText.js1678633365362093080 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/isDate/index.d.ts1678940104227466652 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/isDate/package.json1678940099863418159 0
@@ -17827,7 +17827,7 @@
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/terser/lib/equivalent-to.js1678633365726101229 0
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/parse/_lib/parsers/Hour1to12Parser.js1678940091955329930 0
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@vue/compiler-sfc1678937399069912310 1
-77/media/robiul/HDD/data/project/make your own jquery/baby-query/src/helpers.js1679059812598391620 0
+77/media/robiul/HDD/data/project/make your own jquery/baby-query/src/helpers.js1679249670430331528 0
 133/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/parse/_lib/parsers/FractionOfSecondParser.js1678940091943329794 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/deep-is/README.markdown1678631625078815117 0
 121/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/parse/_lib/parsers/YearParser.js1678940097547392368 0
@@ -18354,7 +18354,7 @@
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/jest-worker/node_modules/supports-color/license1678610412228817877 0
 116/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/isSameMonth/package.json1678940098351401327 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/eachMinuteOfIntervalWithOptions1678940101647438001 1
-108/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/effects/toggle.html1679162339537363891 0
+108/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/effects/toggle.html1679214141684232951 0
 137/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/eachMinuteOfIntervalWithOptions/index.js.flow1678940089691304579 0
 136/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/eachMinuteOfIntervalWithOptions/package.json1678940098087398385 0
 104/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/isSameMinute1678940101911440935 1
@@ -18520,7 +18520,7 @@
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/subISOWeekYears1678940102227444443 1
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/nth-check/lib/compile.d.ts.map1678633363978062092 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/setMonth/index.js1678940092779339146 0
-118/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/api-examples.md.2f4076d7.js1679162338973350621 0
+118/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/api-examples.md.2f4076d7.js1679214141040215389 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/regenerator-transform/src/index.js1678636172711190005 0
 98/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/_baseFlatten.js1678940089259299739 0
 88/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/lt.js1678940089671304356 0
@@ -19018,7 +19018,7 @@
 125/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/formatDistanceStrict/package.json1678940098151399100 0
 87/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/.bin/terser1678633368178156127 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/addYears/index.js1678940092399334896 0
-129/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_after.md.d9a056ae.js1679162338973350621 0
+129/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_manupulation_after.md.d9a056ae.js1679214141028215064 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/addYears/index.js.flow1678940089539302875 0
 113/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/core/src/config/files/index.ts1678610413252844482 0
 111/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/addYears/index.d.ts1678940101547436889 0
@@ -19936,7 +19936,7 @@
 146/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/node-resolver-core/test/fixture/packages/source-alias/other.js1678633366094109468 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/gl/_lib/formatLong1678940093451346658 1
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/locale/gl/_lib/formatLong/index.js1678940093451346658 0
-106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/installation.html1679162339541363984 0
+106/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/installation.html1679214141684232951 0
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/resolve/test/module_dir/ymodules/aaa1678610413124841155 1
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/mdn-data/index.js1678633363754057077 0
 132/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@parcel/transformer-posthtml/node_modules/semver/LICENSE1678633363630054301 0
@@ -21115,7 +21115,7 @@
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ko1678940105315478718 1
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ko/index.js1678940096367379213 0
 90/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/keys.js1678940089643304042 0
-119/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/chunks/framework.a6ff1387.js1679162338981350808 0
+119/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/chunks/framework.a6ff1387.js1679214141044215499 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ko/index.d.ts1678940105319478761 0
 123/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ko/_lib/formatDistance/index.js1678940096351379035 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ko/_lib/formatRelative1678940096359379122 1
@@ -21657,7 +21657,7 @@
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/esm/fp/isValid/index.d.ts1678940101947441335 0
 107/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/sk/package.json1678940100727427772 0
 109/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/mdn-data/css/syntaxes.schema.json1678633364946083766 0
-97/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/tutorial1679162339537363891 1
+97/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/tutorial1679214141680232842 1
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/kn1678940105307478630 1
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/kn/_lib/formatDistance1678940096331378810 1
 112/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/fp/getWeekYear/package.json1678940099827417760 0
@@ -21679,7 +21679,7 @@
 131/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-exponentiation-operator/LICENSE1678636172635188872 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/source-map/lib/array-set.js1678610412576826918 0
 110/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/hu/_lib/formatLong1678940096147376760 1
-110/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/favicon.ico1679162338561340927 0
+110/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/img/favicon_io/favicon.ico1679214140700206118 0
 94/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ja1678940105291478452 1
 119/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ht/_lib/formatLong/index.js1678940096131376580 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/date-fns/locale/ja/index.js.flow1678940091591325857 0
@@ -22833,7 +22833,7 @@
 126/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/@babel/plugin-transform-async-to-generator/LICENSE1678636172635188872 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/babel-plugin-polyfill-corejs3/package.json1678636172731190303 0
 118/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/pure-rand/lib/generator/MersenneTwister.js1678610413056839390 0
-103/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/helpers.js.html1679162341109400875 0
+103/media/robiul/HDD/data/project/make your own jquery/baby-query/coverage/lcov-report/src/helpers.js.html1679277342375408249 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/cross-spawn/lib/util/escape.js1678610412400822345 0
 114/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/cross-spawn/lib/util/resolveCommand.js1678610412576826918 0
 134/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/istanbul-reports/lib/html-spa/assets/sort-arrow-sprite.png1678610413156841988 0
@@ -22967,7 +22967,7 @@
 100/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/postcss/lib/container.js1678937398129887794 0
 97/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/postcss/lib/result.js1678937398193889464 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/postcss/lib/document.js1678937398141888108 0
-110/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/chaining feature.html1679162339537363891 0
+110/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/chaining feature.html1679214141680232842 0
 105/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/postcss/lib/previous-map.d.ts1678937398229890403 0
 93/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lodash/memoize.js1678940089683304489 0
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/postcss/lib/processor.d.ts1678937398229890403 0
@@ -23445,9 +23445,9 @@
 101/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lines-and-columns/LICENSE1678610412196817043 0
 103/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lines-and-columns/README.md1678610412380821825 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lines-and-columns/build1678610412380821825 1
-92/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/css1679162339533363797 1
+92/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/docs/css1679214141676232733 1
 102/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/resolve/test/module_dir.js1678610413184842714 0
-121/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_array_each.md.c855ac80.js1679162338973350621 0
+121/media/robiul/HDD/data/project/make your own jquery/baby-query/docs/.vitepress/dist/assets/docs_array_each.md.c855ac80.js1679214141044215499 0
 108/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lines-and-columns/build/index.js1678610412272819019 0
 106/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/lines-and-columns/package.json1678610412332820578 0
 99/media/robiul/HDD/data/project/make your own jquery/baby-query/node_modules/resolve/example/sync.js1678610413208843339 0

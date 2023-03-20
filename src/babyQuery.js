@@ -47,7 +47,6 @@ export default (function (globalThis) {
       }
     }
   }
-
   BabyQuery.fn = BabyQuery.prototype = {
     // ready funciton = wait until all document and scripts get loads
     ready: function (callback) {
@@ -57,6 +56,7 @@ export default (function (globalThis) {
     }
   }
 
+  
   BabyQuery.extend = BabyQuery.fn.extend = myExtend
 
   BabyQuery.fn.extend(domManupulation,css)

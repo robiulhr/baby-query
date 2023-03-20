@@ -121,17 +121,24 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
         }
         return this;
     },
-    separateValueUnit: function(valueStr) {
+    separateValueUnitOperators: function(valueStr) {
         let value = "";
         let unit = "";
+        let operator = "";
         if (typeof valueStr !== "string") return {
             value: valueStr,
-            unit: unit
+            unit: unit,
+            operator: operator
         };
-        for(let i = 0; i < valueStr.length; i++)isNaN(+valueStr[i]) ? unit += valueStr[i] : value += valueStr[i];
+        for(let i = 0; i < valueStr.length; i++){
+            if (!isNaN(valueStr[i])) value += valueStr[i];
+            else if (valueStr[i] === "+" || valueStr[i] === "-" || valueStr[i] === "=") operator += valueStr[i];
+            else unit += valueStr[i];
+        }
         return {
             value: Number(value),
-            unit: unit
+            unit: unit,
+            operator: operator
         };
     },
     fileterDuplicateInaRow: function(array) {
@@ -277,45 +284,118 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
 
 
 
-
-const { separateValueUnit: $a21d1168b2ad536e$var$separateValueUnit  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
+const { separateValueUnitOperators: $a21d1168b2ad536e$var$separateValueUnitOperators  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 const $a21d1168b2ad536e$var$localhelpers = {
-    cssIsValueFunction: function(cssProp, callback, elementArr) {
+    /**
+   * convert length value px to rem and rem to px
+   * @param {Number} value value wanna convert
+   * @param {String} fromUnit unit wanna convert from 
+   * @param {String} toUnit unit wanna convert to 
+   * @param {Number}[fonSize = parseFloat(getComputedStyle(document.documentElement).fontSize)] fontSize fonSize of the element 
+   * @returns {Number} round the result to 3 decimal places 
+   */ convertUnitsPxRem: function(value, fromUnit, toUnit, fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize)) {
+        // check if the input value is a string and contains a unit
+        const match = value.toString().match(/^([\d\.]+)(\w*)$/);
+        if (!match) throw new Error(`Invalid value: ${value}`);
+        const numericValue = parseFloat(match[1]);
+        const unit = match[2] || fromUnit;
+        // convert the input value to pixels if necessary
+        let pixels;
+        if (unit === "px") pixels = numericValue;
+        else if (unit === "rem") pixels = numericValue * fontSize;
+        else throw new Error(`Invalid unit: ${unit}`);
+        // convert the pixels to the target unit
+        let result;
+        if (toUnit === "px") result = pixels;
+        else if (toUnit === "rem") result = pixels / fontSize;
+        else throw new Error(`Invalid target unit: ${toUnit}`);
+        // round the result to 3 decimal places
+        return parseFloat(result.toFixed(3));
+    },
+    /**
+   * when .css(name,value) value is a funciton 
+   * @param {String} cssProp name passed in .css() method as property Exp: "width","backgroundColor"
+   * @param {Function} callback function passed in .css() method as value
+   * @param {Array} elementArr array of element in Babyquery object
+   * 
+   */ cssValueIsFunction: function(cssProp, callback, elementArr) {
         for(let i = 0; i < elementArr.length; i++){
             const propValue = window.getComputedStyle(elementArr[i])[cssProp];
-            const { unit: currentUnit  } = $a21d1168b2ad536e$var$separateValueUnit(propValue);
-            const { value: givenValue , unit: givenUnit  } = $a21d1168b2ad536e$var$separateValueUnit(callback.call(elementArr[i], i, propValue));
-            // console.log(elementArr[i].style[cssProp])
-            elementArr[i].style[cssProp] = givenValue + (givenUnit || currentUnit);
-        // console.log(elementArr[i].style[cssProp])
+            const givenValue = callback.call(elementArr[i], i, propValue);
+            $a21d1168b2ad536e$var$localhelpers.setIncreaseDecreaseLength(cssProp, givenValue, elementArr[i]);
         }
+    },
+    /**
+   * count increamented or decremented value for a element's css property
+   * @param {Number} currValue value which is now of a dom element
+   * @param {Number} givenValue value which is given to increase or decrease from the current value
+   * @param {String} operator "+=" (have to increase the value) or "-=" (have to decrease the value) 
+   * @returns {Number} calculated value after increasing or decreasing
+   * 
+   */ increDecreLength: function(currValue, givenValue, operator) {
+        return operator.slice(0, 1) === "+" ? currValue + givenValue : currValue - givenValue;
+    },
+    /**
+   * set or increment or decrement element's css property 
+   * @param {String} propName name passed in .css() method as property Exp: "width","backgroundColor"
+   * @param {String} givenValue the value has been given in as .css() value Exp: "+=200px" or "200px" or "200" 
+   * @param {HTMLElement} currElement html element which is now reffering.
+   * 
+   */ setIncreaseDecreaseLength: function(propName, givenValue, currElement) {
+        let toIncreaseDecrease = false;
+        const { value: givenValueParsed , unit: givenUnitParsed , operator: givenOparatorParsed  } = $a21d1168b2ad536e$var$separateValueUnitOperators(givenValue);
+        givenOparatorParsed && (toIncreaseDecrease = true);
+        const { value: currValue , unit: currentUnit  } = $a21d1168b2ad536e$var$separateValueUnitOperators(window.getComputedStyle(currElement)[propName]);
+        if (toIncreaseDecrease) {
+            let newValue;
+            let currValueConverted;
+            let newUnit;
+            if (currentUnit === givenUnitParsed) {
+                currValueConverted = currValue;
+                newUnit = currentUnit || "px";
+            } else if (givenUnitParsed === "px" && currentUnit === "rem" || givenUnitParsed === "rem" && currentUnit === "px") {
+                const fontSize = parseFloat(getComputedStyle(currElement).fontSize);
+                currValueConverted = $a21d1168b2ad536e$var$localhelpers.convertUnitsPxRem(currValue, currentUnit, givenUnitParsed, fontSize);
+                newUnit = givenUnitParsed;
+            } else if (!givenUnitParsed) {
+                currValueConverted = currValue;
+                newUnit = currentUnit || "px";
+            } else {
+                currValueConverted = currValue;
+                newUnit = "px";
+            }
+            newValue = $a21d1168b2ad536e$var$localhelpers.increDecreLength(currValueConverted, givenValueParsed, givenOparatorParsed) + newUnit;
+            currElement.style[propName] = newValue;
+        } else currElement.style[propName] = givenValueParsed + (givenUnitParsed || currentUnit);
     }
 };
 var $a21d1168b2ad536e$export$2e2bcd8739ae039 = $a21d1168b2ad536e$var$localhelpers;
 
 
 const { isFunction: $a9a61dad2c314c2e$var$isFunction , isPlainObject: $a9a61dad2c314c2e$var$isPlainObject , isArrayLike: $a9a61dad2c314c2e$var$isArrayLike  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
-const { separateValueUnit: $a9a61dad2c314c2e$var$separateValueUnit  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
-const { cssIsValueFunction: $a9a61dad2c314c2e$var$cssIsValueFunction  } = (0, $a21d1168b2ad536e$export$2e2bcd8739ae039);
+const { cssValueIsFunction: $a9a61dad2c314c2e$var$cssValueIsFunction , setIncreaseDecreaseLength: $a9a61dad2c314c2e$var$setIncreaseDecreaseLength  } = (0, $a21d1168b2ad536e$export$2e2bcd8739ae039);
 var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
-    css: function(name, value) {
+    /**
+   * Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
+   * @param {String | Object | Array} name Exp: "width" or {width:"200px",background:function(ele){return "200px"}} or ["width","background"]
+   * @param {String | function} value Exp: "200px" or "red" or function(ind,ele){return "+=200px"}
+   * @returns {String|Object} if the second parameter is absent then it will return String otherwise will return the BabyQuery object
+   */ css: function(name, value) {
         if (typeof name === "string") {
+            // handle .css("width","20px") or .css("width","+=20px") or .css("width","-=20px")
             if (typeof value === "string") {
-                let toIncrease = false;
-                value.slice(0, 2) == "+=" && (toIncrease = true);
-                for(let i = 0; i < this.length; i++)if (toIncrease) {
-                    const { value: currValue , unit: unit  } = $a9a61dad2c314c2e$var$separateValueUnit(window.getComputedStyle(this[i])[name]);
-                    const newValue = currValue + Number(value.slice(2));
-                    this[i].style[name] = newValue + unit;
-                } else this[i].style[name] = value;
-            } else if ($a9a61dad2c314c2e$var$isFunction(value)) $a9a61dad2c314c2e$var$cssIsValueFunction(name, value, this);
+                const isValueHaveNumber = (value.match(/[\d\.]+/) || [])[0];
+                if (isValueHaveNumber) for(let i = 0; i < this.length; i++)$a9a61dad2c314c2e$var$setIncreaseDecreaseLength(name, value, this[i]);
+                else if (!isValueHaveNumber) for(let i = 0; i < this.length; i++)this[i].style[name] = value;
+            } else if ($a9a61dad2c314c2e$var$isFunction(value)) $a9a61dad2c314c2e$var$cssValueIsFunction(name, value, this);
             else if (!value) return window.getComputedStyle(this["0"])[name];
         } else if ($a9a61dad2c314c2e$var$isArrayLike(name)) {
             let attrs = {};
             for(let i = 0; i < name.length; i++)attrs[name[i]] = window.getComputedStyle(this["0"])[name[i]];
             return attrs;
         } else if ($a9a61dad2c314c2e$var$isPlainObject(name)) for(let props in name){
-            if ($a9a61dad2c314c2e$var$isFunction(name[props])) $a9a61dad2c314c2e$var$cssIsValueFunction(props, name[props], this);
+            // .css({"background":function,"width":function})
+            if ($a9a61dad2c314c2e$var$isFunction(name[props])) $a9a61dad2c314c2e$var$cssValueIsFunction(props, name[props], this);
             else for(let i = 0; i < this.length; i++)this[i].style[props] = name[props];
         }
         return this;
