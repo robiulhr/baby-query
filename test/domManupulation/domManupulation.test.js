@@ -202,6 +202,42 @@ describe('.after() method', () => {
       `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><p>Test</p><div class="inner">Goodbye</div><p style="width: 200px;">Test</p><p style="width: 0px;">Test</p></div><p>Test</p><p>Test</p>`
     )
   })
+  test('$("h2").after(function(){return $(".inner")})', () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').after(function () {
+      return $('.inner')
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test('$("h2").after(function () {return "<p>hello world</p>"})', () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').after(function () {
+      return '<p>hello world</p>'
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test("$('h2').after(function () {return ['<p>hello world 1</p>', '<p>hello world 1</p>']})", () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').after(function () {
+      return ['<p>hello world 1</p>', '<p>hello world 1</p>']
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test("$('h2').after(function () {return [$('p'), $('.inner')]})", () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').after(function () {
+      return [$('p'), $('.inner')]
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
 })
 
 describe('.append() method', () => {
@@ -253,7 +289,7 @@ describe('.append() method', () => {
     const customHtml = `<h2>Greetings</h2><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p><p>Test</p></div><p>Test</p>`
     // set the html to default html
     setDefaultHtml(customHtml)
-    $('h2').append($('p'), $('p'))  
+    $('h2').append($('p'), $('p'))
     expect(document.body.innerHTML).toEqual(
       `<h2>Greetings<p>Test</p><p>Test</p><p>Test</p><p>Test</p></h2><div class="container"><h2>Greetings<p>Test</p><p>Test</p><p>Test</p><p>Test</p></h2><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
@@ -295,7 +331,6 @@ describe('.append() method', () => {
       `<h2>Greetings<div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p></h2><div class="container"><h2>Greetings<div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p></h2><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
   })
-
   test(".append(function () {return '<div>' + this.className + '</div>'})", () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
@@ -306,7 +341,7 @@ describe('.append() method', () => {
       `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><div class="inner">Goodbye</div><div>container</div></div>`
     )
   })
-  test('.append($newdiv1, [$newdiv2, newdiv3, existingdiv1])', () => {
+  test("$('h2').append($newdiv1, [$newdiv2, newdiv3, existingdiv1])", () => {
     // set the html to default html
     setDefaultHtml(defaultHtml)
     var $newdiv1 = $('<div>element 1</div>'),
@@ -317,6 +352,62 @@ describe('.append() method', () => {
     expect(document.body.innerHTML).toEqual(
       `<div class="container"><h2>Greetings<div>element 1</div><div>element 2</div><div></div><div class="inner">Hello</div></h2><div class="inner">Goodbye</div></div>`
     )
+  })
+  test('$("p").css("width",function(i,ele){$("div").append(this) return "200px"})', () => {
+    const customHtml = `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('p').css('width', function (i, ele) {
+      $('div').append(this)
+      return '200px'
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test('$("p").css("width",function(i,ele){ $("div").append(this) return "200" * i })', () => {
+    const customHtml = `<div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('p').css('width', function (i, ele) {
+      $('div').append(this)
+      return '200' * i
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test('$("h2").append(function(){return $(".inner")})', () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').append(function () {
+      return $('.inner')
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test('$("h2").append(function () {return "<p>hello world</p>"})', () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').append(function () {
+      return '<p>hello world</p>'
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test("$('h2').append(function () {return ['<p>hello world 1</p>', '<p>hello world 1</p>']})", () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').append(function () {
+      return ['<p>hello world 1</p>', '<p>hello world 1</p>']
+    })
+    expect(document.body.innerHTML).toEqual(``)
+  })
+  test("$('h2').append(function () {return [$('p'), $('.inner')]})", () => {
+    const customHtml = `<div class="container"><h2 class="heading 1">Greetings</h2><p class="paragraph 1">paragraph 1</p><p class="paragraph 2">paragraph 2</p><div class="inner">Hello</div><h2 class="heading 2">Hello world</h2><p class="paragraph 3">paragraph 3</p><p class="paragraph 3">paragraph 4</p><div class="inner">Goodbye</div></div><h2 class="heading 3">Greetings</h2>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').append(function () {
+      return [$('p'), $('.inner')]
+    })
+    expect(document.body.innerHTML).toEqual(``)
   })
 })
 
