@@ -5,12 +5,10 @@ import css from './css/css.js'
 const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction, isWindow, toType, isArrayLike, isEmptyObject } = checkers
 const { createHtmlElementDynamically, handleDOMReady, myExtend } = helpers
 export default (function (globalThis) {
-
-  
   /**
    * BabyQuery Constructor function
    * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
-   * @param {HTMLElement} context inside which the element should be created 
+   * @param {HTMLElement} context inside which the element should be created
    * @returns {Object} contains all element selected or created uning the provided selector
    */
   function BabyQuery (selector, context) {
@@ -44,8 +42,8 @@ export default (function (globalThis) {
       }
     } else if (typeof selector === 'function') {
       handleDOMReady(selector)
-    }else if(selector instanceof HTMLElement){
-      this.nodes = [selector];
+    } else if (selector instanceof HTMLElement) {
+      this.nodes = [selector]
     }
     if (this.nodes?.length) {
       this.length = this.nodes.length
@@ -58,8 +56,8 @@ export default (function (globalThis) {
   BabyQuery.fn = BabyQuery.prototype = {
     /**
      * .ready() waits until all document and scripts get loads
-     * @param {Function} callback which will wait to be load the dom and all other scripts 
-     * 
+     * @param {Function} callback which will wait to be load the dom and all other scripts
+     *
      */
     ready: function (callback) {
       if (isFunction(callback)) {
@@ -68,11 +66,10 @@ export default (function (globalThis) {
     }
   }
 
-
   BabyQuery.extend = BabyQuery.fn.extend = myExtend
 
-  BabyQuery.fn.extend(domManupulation,css)
-  
+  BabyQuery.fn.extend(domManupulation, css)
+
   globalThis.BabyQuery = globalThis.$ = BabyQuery
 
   return BabyQuery

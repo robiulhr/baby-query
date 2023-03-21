@@ -5,13 +5,13 @@ const { createHtmlElementDynamically } = helpers
 const localhelpers = {
   /**
    * function to run recursively in .after() and .append() method
-   * @param {Array} argumentArray array of arguments which has been passed in .after() method  
-   * @param {String} methodName after or append 
+   * @param {Array} argumentArray array of arguments which has been passed in .after() method
+   * @param {String} methodName after or append
    */
   afterandAppendmethodRecursive: function (argumentArray, methodName) {
     // keep all cloned element listed
     let clonedNodeList = []
-    for (let index = argumentArray.length - 1; index >= 0; index--) {
+    for (let index = methodName === 'after' ? argumentArray.length - 1 : 0; methodName === 'after' ? index >= 0 : index < argumentArray.length; methodName === 'after' ? index-- : index++) {
       if (typeof argumentArray[index] === 'string' || argumentArray[index] instanceof HTMLElement) {
         for (let ind = 0; ind < this.length; ind++) {
           const newElement = typeof argumentArray[index] === 'string' ? createHtmlElementDynamically(argumentArray[index])[0] : argumentArray[index]
@@ -27,26 +27,40 @@ const localhelpers = {
       } else if (isBabyQueryObject(argumentArray[index])) {
         for (let ind = 0; ind < this.length; ind++) {
           for (let i = methodName === 'after' ? argumentArray[index].length - 1 : 0; methodName === 'after' ? i >= 0 : i < argumentArray[index].length; methodName === 'after' ? i-- : i++) {
-            let clonedElement = argumentArray[index][i].cloneNode(true)
+            // clone the element
+            let newClonedElement = argumentArray[index][i].cloneNode(true)
+            // check if the element is already in the clonedNodeList
+            const alreadyClonedElementInd = clonedNodeList.findIndex(ele => {
+              return ele.originalElement === argumentArray[index][i] && ele.contextElementIndex === ind
+            })
             switch (methodName) {
               case 'after':
-                // check if the element is already in the clonedNodeList
-                const alreadyClonedElement = clonedNodeList.find(ele => {
-                  return ele == argumentArray[index][i]
-                })
-                if (alreadyClonedElement) {
+                if (alreadyClonedElementInd !== -1) {
                   // remove the element from the dom tree
-                  alreadyClonedElement.remove()
+                  clonedNodeList[alreadyClonedElementInd].oldClonedElement.replaceWith(newClonedElement)
+                  clonedNodeList[alreadyClonedElementInd].originalElement.replaceWith(argumentArray[index][i])
                   // filter it from the clonedNodeList
-                  clonedNodeList = clonedNodeList.filter(ele => {
-                    return ele !== alreadyClonedElement
+                  clonedNodeList = clonedNodeList.filter((ele, ind) => {
+                    return ind != alreadyClonedElementInd
                   })
+                } else {
+                  localhelpers.insertAfterBabyqueryObject(argumentArray[index][i], newClonedElement, this[ind], ind, this.length)
                 }
-                clonedNodeList.push(clonedElement)
-                localhelpers.insertAfterBabyqueryObject(argumentArray[index][i], clonedElement, this[ind], ind, this.length)
+                clonedNodeList.push({ contextElementIndex: ind, oldClonedElement: newClonedElement, originalElement: argumentArray[index][i] })
+
                 break
               case 'append':
-                localhelpers.appendBabyQueryChild(argumentArray[index][i], clonedElement, this[ind], ind, this.length)
+                if (alreadyClonedElementInd !== -1) {
+                  // remove the element from the dom tree
+                  clonedNodeList[alreadyClonedElementInd].oldClonedElement.remove()
+                  clonedNodeList[alreadyClonedElementInd].originalElement.remove()
+                  // filter it from the clonedNodeList
+                  clonedNodeList = clonedNodeList.filter((ele, ind) => {
+                    return ind != alreadyClonedElementInd
+                  })
+                }
+                clonedNodeList.push({ contextElementIndex: ind, oldClonedElement: newClonedElement, originalElement: argumentArray[index][i] })
+                localhelpers.appendBabyQueryChild(argumentArray[index][i], newClonedElement, this[ind], ind, this.length)
                 break
             }
           }

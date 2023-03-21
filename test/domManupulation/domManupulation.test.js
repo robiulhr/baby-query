@@ -105,7 +105,16 @@ describe('.after() method', () => {
       `<h2>Greetings</h2><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="last">last</div><div class="container"><h2>Greetings</h2><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="last">last</div><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
   })
-  test(".after($('p'), $('p'), $('.last'), $('.last'), $('p')) [Note:this functionality is slidely different from original jquery]", () => {
+  test("$('h2').after($('p'), $('.last'), $('p'))", () => {
+    const customHtml = `<h2>Greetings</h2><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p><p>Test</p></div><p>Test</p><div class="last">last</div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').after($('p'), $('.last'), $('p'))
+    expect(document.body.innerHTML).toEqual(
+      `<h2>Greetings</h2><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="container"><h2>Greetings</h2><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
+    )
+  })
+  test("$('h2').after($('p'), $('p'), $('.last'), $('.last'), $('p')) 1", () => {
     const customHtml = `<h2>Greetings</h2><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p><p>Test</p></div><p>Test</p><div class="last">last</div>`
     // set the html to default html
     setDefaultHtml(customHtml)
@@ -114,7 +123,7 @@ describe('.after() method', () => {
       `<h2>Greetings</h2><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="container"><h2>Greetings</h2><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
   })
-  test("$('h2').after($('p'), $('p'), $('.last'), $('.last'), $('p')) 2 [Note:this functionality is slidely different from original jquery]", () => {
+  test("$('h2').after($('p'), $('p'), $('.last'), $('.last'), $('p')) 2", () => {
     const customHtml = `<h2 class="heading 1">Greetings</h2><div class="container"><h2 class="heading 2">Greetings</h2><div class="inner">Hello</div><p class="paragraph 1">Test</p><div class="inner">Goodbye</div><p class="paragraph 2">Test</p><p class="paragraph 3">Test</p></div><p class="paragraph 4">Test</p><div class="last">last</div>`
     // set the html to default html
     setDefaultHtml(customHtml)
@@ -123,7 +132,7 @@ describe('.after() method', () => {
       `<h2 class="heading 1">Greetings</h2><div class="last">last</div><p class="paragraph 1">Test</p><p class="paragraph 2">Test</p><p class="paragraph 3">Test</p><p class="paragraph 4">Test</p><div class="container"><h2 class="heading 2">Greetings</h2><div class="last">last</div><p class="paragraph 1">Test</p><p class="paragraph 2">Test</p><p class="paragraph 3">Test</p><p class="paragraph 4">Test</p><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
   })
-  test("$('h2').append($('p'), $('p'), $('.last'), $('.last'), $('p')) 2 [Note:this functionality is slidely different from original jquery]", () => {
+  test("$('.main-container').css('width', function (ind, ele) {$('h2').after($('p')[ind], $('.last')[ind], $('p')[ind])})", () => {
     const customHtml = `<div class="main-container"><h2 class="heading 1">Greetings</h2><div class="container"><h2 class="heading 2">Greetings</h2><div class="inner">Hello</div><p class="paragraph 1">Test</p><div class="inner">Goodbye</div><p class="paragraph 2">Test</p><p class="paragraph 3">Test</p></div><p class="paragraph 4">Test</p><div class="last">last</div></div>`
     // set the html to default html
     setDefaultHtml(customHtml)
@@ -132,6 +141,19 @@ describe('.after() method', () => {
     })
     expect(document.body.innerHTML).toEqual(
       `<div class="main-container"><h2 class="heading 1">Greetings</h2><div class="last">last</div><p class="paragraph 1">Test</p><div class="container"><h2 class="heading 2">Greetings</h2><div class="last">last</div><p class="paragraph 1">Test</p><div class="inner">Hello</div><div class="inner">Goodbye</div><p class="paragraph 2">Test</p><p class="paragraph 3">Test</p></div><p class="paragraph 4">Test</p></div>`
+    )
+  })
+  test("$('h2').after($('p'), $('p'), $('.last'), $('.last'), $('p')) 4", () => {
+    const customHtml = `<h2>Greetings</h2><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p><p>Test</p></div><p>Test</p><div class="last">last</div>`
+    // set the html to default html
+    setDefaultHtml(customHtml)
+    $('h2').after($('p'), $('.last'), $('p'))
+    expect(document.body.innerHTML).toEqual(
+      `<h2>Greetings</h2><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="container"><h2>Greetings</h2><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
+    )
+    $('h2').after($('p'), $('p'), $('.last'), $('.last'), $('p'))
+    expect(document.body.innerHTML).toEqual(
+      `<h2>Greetings</h2><div class="last">last</div><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="container"><h2>Greetings</h2><div class="last">last</div><div class="last">last</div><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
   })
   test(".after(function () {return '<div>' + this.className + '</div>'})", () => {
@@ -231,7 +253,7 @@ describe('.append() method', () => {
     const customHtml = `<h2>Greetings</h2><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p><p>Test</p></div><p>Test</p>`
     // set the html to default html
     setDefaultHtml(customHtml)
-    $('h2').append($('p'), $('p'))
+    $('h2').append($('p'), $('p'))  
     expect(document.body.innerHTML).toEqual(
       `<h2>Greetings<p>Test</p><p>Test</p><p>Test</p><p>Test</p></h2><div class="container"><h2>Greetings<p>Test</p><p>Test</p><p>Test</p><p>Test</p></h2><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
@@ -264,7 +286,7 @@ describe('.append() method', () => {
       `<h2>Greetings<p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="last">last</div></h2><div class="container"><h2>Greetings<p>Test</p><p>Test</p><p>Test</p><p>Test</p><div class="last">last</div></h2><div class="inner">Hello</div><div class="inner">Goodbye</div></div>`
     )
   })
-  test("$('h2').append($('p'), $('p'), $('.last'), $('.last'), $('p')) 1 [Note:this functionality is slidely different from original jquery]", () => {
+  test("$('h2').append($('p'), $('p'), $('.last'), $('.last'), $('p')) 1", () => {
     const customHtml = `<h2>Greetings</h2><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p><p>Test</p></div><p>Test</p><div class="last">last</div>`
     // set the html to default html
     setDefaultHtml(customHtml)

@@ -8,16 +8,6 @@ typeof globalThis !== 'undefined'
   : typeof global !== 'undefined'
   ? global
   : {};
-function $parcel$defineInteropFlag(a) {
-  Object.defineProperty(a, '__esModule', {value: true, configurable: true});
-}
-function $parcel$export(e, n, v, s) {
-  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
-}
-
-$parcel$defineInteropFlag(module.exports);
-
-$parcel$export(module.exports, "default", () => $047f9defc20f6cd7$export$2e2bcd8739ae039);
 const $d4df80a29a2554d2$var$checkers = {
     /**
    * checks the provided input is a value Css selector
@@ -248,12 +238,12 @@ const { createHtmlElementDynamically: $8e7efde313f1b90f$var$createHtmlElementDyn
 const $8e7efde313f1b90f$var$localhelpers = {
     /**
    * function to run recursively in .after() and .append() method
-   * @param {Array} argumentArray array of arguments which has been passed in .after() method  
-   * @param {String} methodName after or append 
+   * @param {Array} argumentArray array of arguments which has been passed in .after() method
+   * @param {String} methodName after or append
    */ afterandAppendmethodRecursive: function(argumentArray, methodName) {
         // keep all cloned element listed
         let clonedNodeList = [];
-        for(let index = argumentArray.length - 1; index >= 0; index--){
+        for(let index = methodName === "after" ? argumentArray.length - 1 : 0; methodName === "after" ? index >= 0 : index < argumentArray.length; methodName === "after" ? index-- : index++){
             if (typeof argumentArray[index] === "string" || argumentArray[index] instanceof HTMLElement) for(let ind = 0; ind < this.length; ind++){
                 const newElement = typeof argumentArray[index] === "string" ? $8e7efde313f1b90f$var$createHtmlElementDynamically(argumentArray[index])[0] : argumentArray[index];
                 switch(methodName){
@@ -267,26 +257,45 @@ const $8e7efde313f1b90f$var$localhelpers = {
             }
             else if ($8e7efde313f1b90f$var$isBabyQueryObject(argumentArray[index])) {
                 for(let ind = 0; ind < this.length; ind++)for(let i = methodName === "after" ? argumentArray[index].length - 1 : 0; methodName === "after" ? i >= 0 : i < argumentArray[index].length; methodName === "after" ? i-- : i++){
-                    let clonedElement = argumentArray[index][i].cloneNode(true);
+                    // clone the element
+                    let newClonedElement = argumentArray[index][i].cloneNode(true);
+                    // check if the element is already in the clonedNodeList
+                    const alreadyClonedElementInd = clonedNodeList.findIndex((ele)=>{
+                        return ele.originalElement === argumentArray[index][i] && ele.contextElementIndex === ind;
+                    });
                     switch(methodName){
                         case "after":
-                            // check if the element is already in the clonedNodeList
-                            const alreadyClonedElement = clonedNodeList.find((ele)=>{
-                                return ele == argumentArray[index][i];
-                            });
-                            if (alreadyClonedElement) {
+                            if (alreadyClonedElementInd !== -1) {
                                 // remove the element from the dom tree
-                                alreadyClonedElement.remove();
+                                clonedNodeList[alreadyClonedElementInd].oldClonedElement.replaceWith(newClonedElement);
+                                clonedNodeList[alreadyClonedElementInd].originalElement.replaceWith(argumentArray[index][i]);
                                 // filter it from the clonedNodeList
-                                clonedNodeList = clonedNodeList.filter((ele)=>{
-                                    return ele !== alreadyClonedElement;
+                                clonedNodeList = clonedNodeList.filter((ele, ind)=>{
+                                    return ind != alreadyClonedElementInd;
                                 });
-                            }
-                            clonedNodeList.push(clonedElement);
-                            $8e7efde313f1b90f$var$localhelpers.insertAfterBabyqueryObject(argumentArray[index][i], clonedElement, this[ind], ind, this.length);
+                            } else $8e7efde313f1b90f$var$localhelpers.insertAfterBabyqueryObject(argumentArray[index][i], newClonedElement, this[ind], ind, this.length);
+                            clonedNodeList.push({
+                                contextElementIndex: ind,
+                                oldClonedElement: newClonedElement,
+                                originalElement: argumentArray[index][i]
+                            });
                             break;
                         case "append":
-                            $8e7efde313f1b90f$var$localhelpers.appendBabyQueryChild(argumentArray[index][i], clonedElement, this[ind], ind, this.length);
+                            if (alreadyClonedElementInd !== -1) {
+                                // remove the element from the dom tree
+                                clonedNodeList[alreadyClonedElementInd].oldClonedElement.remove();
+                                clonedNodeList[alreadyClonedElementInd].originalElement.remove();
+                                // filter it from the clonedNodeList
+                                clonedNodeList = clonedNodeList.filter((ele, ind)=>{
+                                    return ind != alreadyClonedElementInd;
+                                });
+                            }
+                            clonedNodeList.push({
+                                contextElementIndex: ind,
+                                oldClonedElement: newClonedElement,
+                                originalElement: argumentArray[index][i]
+                            });
+                            $8e7efde313f1b90f$var$localhelpers.appendBabyQueryChild(argumentArray[index][i], newClonedElement, this[ind], ind, this.length);
                             break;
                     }
                 }
@@ -547,7 +556,7 @@ var $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
     /**
    * BabyQuery Constructor function
    * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
-   * @param {HTMLElement} context inside which the element should be created 
+   * @param {HTMLElement} context inside which the element should be created
    * @returns {Object} contains all element selected or created uning the provided selector
    */ function BabyQuery(selector, context) {
         // if Developer doesn't use the new keyword
@@ -581,8 +590,8 @@ var $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
     BabyQuery.fn = BabyQuery.prototype = {
         /**
      * .ready() waits until all document and scripts get loads
-     * @param {Function} callback which will wait to be load the dom and all other scripts 
-     * 
+     * @param {Function} callback which will wait to be load the dom and all other scripts
+     *
      */ ready: function(callback) {
             if ($047f9defc20f6cd7$var$isFunction(callback)) $047f9defc20f6cd7$var$handleDOMReady(callback);
         }
