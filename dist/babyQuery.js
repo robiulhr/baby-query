@@ -79,6 +79,7 @@ const $d4df80a29a2554d2$var$checkers = {
    * @param {*} input
    * @returns {Boolean} return true if the provided value (input) is Array otherwise false
    */ isArrayLike: function(input) {
+        if (typeof input === "string") return false;
         var length = !!input && "length" in input && input.length, type = $d4df80a29a2554d2$var$checkers.toType(input);
         if ($d4df80a29a2554d2$var$checkers.isFunction(input) || $d4df80a29a2554d2$var$checkers.isWindow(input)) return false;
         return type === "array" || length === 0 || typeof length === "number" && length > 0 && length - 1 in input;
@@ -123,7 +124,7 @@ const $d4df80a29a2554d2$var$checkers = {
    * @param {*} input
    * @returns {Boolean} return true if the provided value (input) is BabyQuery Object otherwise false
    */ isBabyQueryObject (input) {
-        return typeof input === "object" && !$d4df80a29a2554d2$var$checkers.isPlainObject(input) && input.length && input.nodes;
+        return input instanceof window.$ || input instanceof $parcel$global.$;
     }
 };
 var $d4df80a29a2554d2$export$2e2bcd8739ae039 = $d4df80a29a2554d2$var$checkers;
@@ -231,7 +232,101 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
 
 
 
+
+const { isArrayLike: $8e7efde313f1b90f$var$isArrayLike , isBabyQueryObject: $8e7efde313f1b90f$var$isBabyQueryObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
+const { createHtmlElementDynamically: $8e7efde313f1b90f$var$createHtmlElementDynamically  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 const $8e7efde313f1b90f$var$localhelpers = {
+    afterElemCloneHandler: function(elem, thisIndex, clonedNodeList) {
+        // clone the element
+        let newClonedElement = elem.cloneNode(true);
+        // check if the element is already in the clonedNodeList
+        const alreadyClonedElementInd = clonedNodeList.findIndex((ele)=>{
+            return ele.originalElement === elem && ele.contextElementIndex === thisIndex;
+        });
+        if (alreadyClonedElementInd !== -1) {
+            // remove the element from the dom tree
+            clonedNodeList[alreadyClonedElementInd].oldClonedElement.replaceWith(newClonedElement);
+            clonedNodeList[alreadyClonedElementInd].originalElement.replaceWith(elem);
+            // filter it from the clonedNodeList
+            clonedNodeList = clonedNodeList.filter((ele, ind)=>{
+                return ind != alreadyClonedElementInd;
+            });
+        } else {
+            // remove the element from the dom tree
+            elem.remove();
+            $8e7efde313f1b90f$var$localhelpers.insertAfterBabyqueryObject(elem, newClonedElement, this[thisIndex], thisIndex, this.length);
+        }
+        clonedNodeList.push({
+            contextElementIndex: thisIndex,
+            oldClonedElement: newClonedElement,
+            originalElement: elem
+        });
+        return clonedNodeList;
+    },
+    /**
+   *
+   * @param {} input
+   * @param {} clonedNodeList
+   * @param {} thisIndex
+   * @returns
+   */ inputNotFunctionorArrayForAfter: function(input, clonedNodeList, thisIndex) {
+        if (typeof input === "string" || input instanceof HTMLElement) {
+            // Loop over BabyQuery context object Example: BabyQuery {0: h2, 1: h2, nodes: NodeList(2), length: 2}
+            const newElement = typeof input === "string" ? $8e7efde313f1b90f$var$createHtmlElementDynamically(input)[0] : input;
+            clonedNodeList = $8e7efde313f1b90f$var$localhelpers.afterElemCloneHandler.call(this, newElement, thisIndex, clonedNodeList);
+        } else if ($8e7efde313f1b90f$var$isArrayLike(input) && !input.nodes) input.reverse().forEach((ele)=>{
+            clonedNodeList = $8e7efde313f1b90f$var$localhelpers.inputNotFunctionorArrayForAfter.call(this, ele, clonedNodeList, thisIndex);
+        });
+        else if ($8e7efde313f1b90f$var$isBabyQueryObject(input)) for(let i = input.length - 1; i >= 0; i--)clonedNodeList = $8e7efde313f1b90f$var$localhelpers.afterElemCloneHandler.call(this, input[i], thisIndex, clonedNodeList);
+        return clonedNodeList;
+    },
+    /**
+   *
+   * @param {*} elem
+   * @param {*} thisIndex
+   * @param {*} clonedNodeList
+   */ appendElemCloneHandler: function(elem, thisIndex, clonedNodeList) {
+        // clone the element
+        let newClonedElement = elem.cloneNode(true);
+        // check if the element is already in the clonedNodeList
+        const alreadyClonedElementInd = clonedNodeList.findIndex((ele)=>{
+            return ele.originalElement === elem && ele.contextElementIndex === thisIndex;
+        });
+        if (alreadyClonedElementInd !== -1) {
+            // remove the element from the dom tree
+            clonedNodeList[alreadyClonedElementInd].oldClonedElement.remove();
+            clonedNodeList[alreadyClonedElementInd].originalElement.remove();
+            // filter it from the clonedNodeList
+            clonedNodeList = clonedNodeList.filter((elem, eleInd)=>{
+                return eleInd != alreadyClonedElementInd;
+            });
+        }
+        // remove the element from the dom tree
+        elem.remove();
+        $8e7efde313f1b90f$var$localhelpers.appendBabyQueryChild(elem, newClonedElement, this[thisIndex], thisIndex, this.length);
+        clonedNodeList.push({
+            contextElementIndex: thisIndex,
+            oldClonedElement: newClonedElement,
+            originalElement: elem
+        });
+        return clonedNodeList;
+    },
+    /**
+   *
+   * @param {String|Object|Array} input
+   * @param {Array} clonedNodeList
+   * @param {Number} thisIndex
+   *
+   */ inputNotFunctionorArrayForAppend: function(input, clonedNodeList, thisIndex) {
+        if (typeof input === "string" || input instanceof HTMLElement) {
+            const newElement = typeof input === "string" ? $8e7efde313f1b90f$var$createHtmlElementDynamically(input)[0] : input;
+            clonedNodeList = $8e7efde313f1b90f$var$localhelpers.appendElemCloneHandler.call(this, newElement, thisIndex, clonedNodeList);
+        } else if ($8e7efde313f1b90f$var$isArrayLike(input) && !input.nodes) input.forEach((ele)=>{
+            clonedNodeList = $8e7efde313f1b90f$var$localhelpers.inputNotFunctionorArrayForAppend.call(this, ele, clonedNodeList, thisIndex);
+        });
+        else if ($8e7efde313f1b90f$var$isBabyQueryObject(input)) for(let i = 0; i < input.length; i++)clonedNodeList = $8e7efde313f1b90f$var$localhelpers.appendElemCloneHandler.call(this, input[i], thisIndex, clonedNodeList);
+        return clonedNodeList;
+    },
     /**
    * inserts new node after the context element (the existing element)
    * @param {HTMLElement} newNode the new node which will be inserted
@@ -289,9 +384,8 @@ const $8e7efde313f1b90f$var$localhelpers = {
 var $8e7efde313f1b90f$export$2e2bcd8739ae039 = $8e7efde313f1b90f$var$localhelpers;
 
 
-const { insertAfterBabyqueryObject: $d8203bae9db46050$var$insertAfterBabyqueryObject , insertAfterNormalElem: $d8203bae9db46050$var$insertAfterNormalElem , appendBabyQueryChild: $d8203bae9db46050$var$appendBabyQueryChild , appendNormalChild: $d8203bae9db46050$var$appendNormalChild  } = (0, $8e7efde313f1b90f$export$2e2bcd8739ae039);
-const { createHtmlElementDynamically: $d8203bae9db46050$var$createHtmlElementDynamically  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
-const { isFunction: $d8203bae9db46050$var$isFunction , isPlainObject: $d8203bae9db46050$var$isPlainObject , isArrayLike: $d8203bae9db46050$var$isArrayLike , isValidHtmlElement: $d8203bae9db46050$var$isValidHtmlElement , isBabyQueryObject: $d8203bae9db46050$var$isBabyQueryObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
+const { inputNotFunctionorArrayForAppend: $d8203bae9db46050$var$inputNotFunctionorArrayForAppend , inputNotFunctionorArrayForAfter: $d8203bae9db46050$var$inputNotFunctionorArrayForAfter  } = (0, $8e7efde313f1b90f$export$2e2bcd8739ae039);
+const { isFunction: $d8203bae9db46050$var$isFunction , isPlainObject: $d8203bae9db46050$var$isPlainObject , isValidHtmlElement: $d8203bae9db46050$var$isValidHtmlElement , isBabyQueryObject: $d8203bae9db46050$var$isBabyQueryObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 var $d8203bae9db46050$export$2e2bcd8739ae039 = {
     /**
    * Insert content, specified by the parameter, after each element in the set of matched elements.
@@ -300,8 +394,8 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
    */ after: function() {
         // keep all cloned element listed
         let clonedNodeList = [];
-        for(let index = arguments.length - 1; index >= 0; index--)for(let ind = 0; ind < this.length; ind++){
-            if ($d8203bae9db46050$var$isFunction(arguments[index])) {
+        for(let index = arguments.length - 1; index >= 0; index--){
+            for(let ind = 0; ind < this.length; ind++)if ($d8203bae9db46050$var$isFunction(arguments[index])) {
                 const callBackReturnedValue = arguments[index].call(this[ind]);
                 /**
            * checks return value and handles it
@@ -309,34 +403,8 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
            * BabyQuery Object
            * array element
            * Html element
-           */ Array.isArray(callBackReturnedValue) ? this.after(...callBackReturnedValue) : this.after(callBackReturnedValue);
-            } else if (typeof arguments[index] === "string" || arguments[index] instanceof HTMLElement) {
-                // Loop over BabyQuery context object Example: BabyQuery {0: h2, 1: h2, nodes: NodeList(2), length: 2}
-                const newElement = typeof arguments[index] === "string" ? $d8203bae9db46050$var$createHtmlElementDynamically(arguments[index])[0] : arguments[index];
-                $d8203bae9db46050$var$insertAfterNormalElem(newElement, this[ind], ind);
-            } else if ($d8203bae9db46050$var$isArrayLike(arguments[index]) && !arguments[index].nodes) this.after(...arguments[index]);
-            else if ($d8203bae9db46050$var$isBabyQueryObject(arguments[index])) for(let i = arguments[index].length - 1; i >= 0; i--){
-                // clone the element
-                let newClonedElement = arguments[index][i].cloneNode(true);
-                // check if the element is already in the clonedNodeList
-                const alreadyClonedElementInd = clonedNodeList.findIndex((ele)=>{
-                    return ele.originalElement === arguments[index][i] && ele.contextElementIndex === ind;
-                });
-                if (alreadyClonedElementInd !== -1) {
-                    // remove the element from the dom tree
-                    clonedNodeList[alreadyClonedElementInd].oldClonedElement.replaceWith(newClonedElement);
-                    clonedNodeList[alreadyClonedElementInd].originalElement.replaceWith(arguments[index][i]);
-                    // filter it from the clonedNodeList
-                    clonedNodeList = clonedNodeList.filter((ele, ind)=>{
-                        return ind != alreadyClonedElementInd;
-                    });
-                } else $d8203bae9db46050$var$insertAfterBabyqueryObject(arguments[index][i], newClonedElement, this[ind], ind, this.length);
-                clonedNodeList.push({
-                    contextElementIndex: ind,
-                    oldClonedElement: newClonedElement,
-                    originalElement: arguments[index][i]
-                });
-            }
+           */ clonedNodeList = $d8203bae9db46050$var$inputNotFunctionorArrayForAfter.call(this, callBackReturnedValue, clonedNodeList, ind);
+            } else clonedNodeList = $d8203bae9db46050$var$inputNotFunctionorArrayForAfter.call(this, arguments[index], clonedNodeList, ind);
         }
         return this;
     },
@@ -347,8 +415,8 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
    */ append: function() {
         // keep all cloned element listed
         let clonedNodeList = [];
-        for(let index = 0; index < arguments.length; index++)for(let ind = 0; ind < this.length; ind++){
-            if ($d8203bae9db46050$var$isFunction(arguments[index])) {
+        for(let index = 0; index < arguments.length; index++){
+            for(let ind = 0; ind < this.length; ind++)if ($d8203bae9db46050$var$isFunction(arguments[index])) {
                 const callBackReturnedValue = arguments[index].call(this[ind]);
                 /**
            * checks return value and handles it
@@ -356,34 +424,8 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
            * BabyQuery Object
            * array element
            * Html element
-           */ this.append(callBackReturnedValue);
-            } else if (typeof arguments[index] === "string" || arguments[index] instanceof HTMLElement) {
-                const newElement = typeof arguments[index] === "string" ? $d8203bae9db46050$var$createHtmlElementDynamically(arguments[index])[0] : arguments[index];
-                $d8203bae9db46050$var$appendNormalChild(newElement, this[ind]);
-            } else if ($d8203bae9db46050$var$isArrayLike(arguments[index]) && !arguments[index].nodes) this.append(...arguments[index]);
-            else if ($d8203bae9db46050$var$isBabyQueryObject(arguments[index])) for(let i = 0; i < arguments[index].length; i++){
-                // clone the element
-                let newClonedElement = arguments[index][i].cloneNode(true);
-                // check if the element is already in the clonedNodeList
-                const alreadyClonedElementInd = clonedNodeList.findIndex((ele)=>{
-                    return ele.originalElement === arguments[index][i] && ele.contextElementIndex === ind;
-                });
-                if (alreadyClonedElementInd !== -1) {
-                    // remove the element from the dom tree
-                    clonedNodeList[alreadyClonedElementInd].oldClonedElement.remove();
-                    clonedNodeList[alreadyClonedElementInd].originalElement.remove();
-                    // filter it from the clonedNodeList
-                    clonedNodeList = clonedNodeList.filter((elem, eleInd)=>{
-                        return eleInd != alreadyClonedElementInd;
-                    });
-                }
-                clonedNodeList.push({
-                    contextElementIndex: ind,
-                    oldClonedElement: newClonedElement,
-                    originalElement: arguments[index][i]
-                });
-                $d8203bae9db46050$var$appendBabyQueryChild(arguments[index][i], newClonedElement, this[ind], ind, this.length);
-            }
+           */ clonedNodeList = $d8203bae9db46050$var$inputNotFunctionorArrayForAppend.call(this, callBackReturnedValue, clonedNodeList, ind);
+            } else clonedNodeList = $d8203bae9db46050$var$inputNotFunctionorArrayForAppend.call(this, arguments[index], clonedNodeList, ind);
         }
         return this;
     },
@@ -554,7 +596,7 @@ var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
 };
 
 
-const { isValidElementSelector: $047f9defc20f6cd7$var$isValidElementSelector , isValidHtmlElement: $047f9defc20f6cd7$var$isValidHtmlElement , isPlainObject: $047f9defc20f6cd7$var$isPlainObject , isFunction: $047f9defc20f6cd7$var$isFunction , isWindow: $047f9defc20f6cd7$var$isWindow , toType: $047f9defc20f6cd7$var$toType , isArrayLike: $047f9defc20f6cd7$var$isArrayLike , isEmptyObject: $047f9defc20f6cd7$var$isEmptyObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
+const { isValidElementSelector: $047f9defc20f6cd7$var$isValidElementSelector , isValidHtmlElement: $047f9defc20f6cd7$var$isValidHtmlElement , isPlainObject: $047f9defc20f6cd7$var$isPlainObject , isFunction: $047f9defc20f6cd7$var$isFunction  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $047f9defc20f6cd7$var$createHtmlElementDynamically , handleDOMReady: $047f9defc20f6cd7$var$handleDOMReady , myExtend: $047f9defc20f6cd7$var$myExtend  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 var $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
     /**

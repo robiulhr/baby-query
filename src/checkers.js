@@ -91,6 +91,7 @@ const checkers = {
    * @returns {Boolean} return true if the provided value (input) is Array otherwise false
    */
   isArrayLike: function (input) {
+    if(typeof input === "string") return false
     var length = !!input && 'length' in input && input.length,
       type = checkers.toType(input)
 
@@ -154,7 +155,7 @@ const checkers = {
    * @returns {Boolean} return true if the provided value (input) is BabyQuery Object otherwise false
    */
   isBabyQueryObject (input) {
-    return typeof input === 'object' && !checkers.isPlainObject(input) && input.length && input.nodes
+    return input instanceof window.$ || input instanceof global.$ 
   }
 }
 

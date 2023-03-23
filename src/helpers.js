@@ -1,4 +1,4 @@
-import checkers from './checkers'
+import checkers from "./checkers"
 const { isArrayLike, isEqualObject } = checkers
 
 export default {

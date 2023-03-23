@@ -1,9 +1,7 @@
 import checkers from '../checkers'
-import helpers from '../helpers'
 import localhelpers from './localhelpers'
-const { insertAfterBabyqueryObject, insertAfterNormalElem, appendBabyQueryChild, appendNormalChild } = localhelpers
-const { createHtmlElementDynamically } = helpers
-const { isFunction, isPlainObject, isArrayLike, isValidHtmlElement, isBabyQueryObject } = checkers
+const { inputNotFunctionorArrayForAppend, inputNotFunctionorArrayForAfter } = localhelpers
+const { isFunction, isPlainObject,isValidHtmlElement, isBabyQueryObject } = checkers
 
 export default {
   /**
@@ -25,34 +23,9 @@ export default {
            * array element
            * Html element
            */
-          Array.isArray(callBackReturnedValue) ? this.after(...callBackReturnedValue) : this.after(callBackReturnedValue)
-        } else if (typeof arguments[index] === 'string' || arguments[index] instanceof HTMLElement) {
-          // Loop over BabyQuery context object Example: BabyQuery {0: h2, 1: h2, nodes: NodeList(2), length: 2}
-          const newElement = typeof arguments[index] === 'string' ? createHtmlElementDynamically(arguments[index])[0] : arguments[index]
-          insertAfterNormalElem(newElement, this[ind], ind)
-        } else if (isArrayLike(arguments[index]) && !arguments[index].nodes) {
-          this.after(...arguments[index])
-        } else if (isBabyQueryObject(arguments[index])) {
-          for (let i = arguments[index].length - 1; i >= 0; i--) {
-            // clone the element
-            let newClonedElement = arguments[index][i].cloneNode(true)
-            // check if the element is already in the clonedNodeList
-            const alreadyClonedElementInd = clonedNodeList.findIndex(ele => {
-              return ele.originalElement === arguments[index][i] && ele.contextElementIndex === ind
-            })
-            if (alreadyClonedElementInd !== -1) {
-              // remove the element from the dom tree
-              clonedNodeList[alreadyClonedElementInd].oldClonedElement.replaceWith(newClonedElement)
-              clonedNodeList[alreadyClonedElementInd].originalElement.replaceWith(arguments[index][i])
-              // filter it from the clonedNodeList
-              clonedNodeList = clonedNodeList.filter((ele, ind) => {
-                return ind != alreadyClonedElementInd
-              })
-            } else {
-              insertAfterBabyqueryObject(arguments[index][i], newClonedElement, this[ind], ind, this.length)
-            }
-            clonedNodeList.push({ contextElementIndex: ind, oldClonedElement: newClonedElement, originalElement: arguments[index][i] })
-          }
+          clonedNodeList = inputNotFunctionorArrayForAfter.call(this, callBackReturnedValue, clonedNodeList, ind)
+        } else {
+          clonedNodeList = inputNotFunctionorArrayForAfter.call(this, arguments[index], clonedNodeList, ind)
         }
       }
     }
@@ -77,36 +50,12 @@ export default {
            * array element
            * Html element
            */
-          this.append(callBackReturnedValue)
-        } else if (typeof arguments[index] === 'string' || arguments[index] instanceof HTMLElement) {
-          const newElement = typeof arguments[index] === 'string' ? createHtmlElementDynamically(arguments[index])[0] : arguments[index]
-          appendNormalChild(newElement, this[ind])
-        } else if (isArrayLike(arguments[index]) && !arguments[index].nodes) {
-          this.append(...arguments[index])
-        } else if (isBabyQueryObject(arguments[index])) {
-          for (let i = 0; i < arguments[index].length; i++) {
-            // clone the element
-            let newClonedElement = arguments[index][i].cloneNode(true)
-            // check if the element is already in the clonedNodeList
-            const alreadyClonedElementInd = clonedNodeList.findIndex(ele => {
-              return ele.originalElement === arguments[index][i] && ele.contextElementIndex === ind
-            })
-            if (alreadyClonedElementInd !== -1) {
-              // remove the element from the dom tree
-              clonedNodeList[alreadyClonedElementInd].oldClonedElement.remove()
-              clonedNodeList[alreadyClonedElementInd].originalElement.remove()
-              // filter it from the clonedNodeList
-              clonedNodeList = clonedNodeList.filter((elem, eleInd) => {
-                return eleInd != alreadyClonedElementInd
-              })
-            }
-            clonedNodeList.push({ contextElementIndex: ind, oldClonedElement: newClonedElement, originalElement: arguments[index][i] })
-            appendBabyQueryChild(arguments[index][i], newClonedElement, this[ind], ind, this.length)
-          }
+          clonedNodeList = inputNotFunctionorArrayForAppend.call(this, callBackReturnedValue, clonedNodeList, ind)
+        } else {
+          clonedNodeList = inputNotFunctionorArrayForAppend.call(this, arguments[index], clonedNodeList, ind)
         }
       }
     }
-
     return this
   },
   attr: function (name, value) {

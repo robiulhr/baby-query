@@ -2,7 +2,7 @@ import helpers from './helpers.js'
 import checkers from './checkers.js'
 import domManupulation from './domManupulation/domManupulation.js'
 import css from './css/css.js'
-const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction, isWindow, toType, isArrayLike, isEmptyObject } = checkers
+const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction } = checkers
 const { createHtmlElementDynamically, handleDOMReady, myExtend } = helpers
 export default (function (globalThis) {
   

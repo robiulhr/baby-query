@@ -1,6 +1,6 @@
 'use strict'
-// import $ from '../../src/babyQuery'
-import $ from '../../examples/api/jquery/jquery'
+import $ from '../../src/babyQuery'
+// import $ from '../../examples/api/jquery/jquery'
 
 const setDefaultHtml = htmlText => {
   document.body.innerHTML = htmlText
