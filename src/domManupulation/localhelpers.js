@@ -3,6 +3,14 @@ import helpers from '../helpers'
 const { isArrayLike, isBabyQueryObject } = checkers
 const { createHtmlElementDynamically } = helpers
 const localhelpers = {
+  /**
+   * 
+   * @param {HTMLElement} elem 
+   * @param {Number} thisIndex 
+   * @param {Array} clonedNodeList 
+   * @returns {Array}
+   * 
+   */
   afterElemCloneHandler: function (elem, thisIndex, clonedNodeList) {
     // clone the element
     let newClonedElement = elem.cloneNode(true)

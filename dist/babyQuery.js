@@ -236,7 +236,14 @@ var $20b4a97a61b3fccb$export$2e2bcd8739ae039 = {
 const { isArrayLike: $8e7efde313f1b90f$var$isArrayLike , isBabyQueryObject: $8e7efde313f1b90f$var$isBabyQueryObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $8e7efde313f1b90f$var$createHtmlElementDynamically  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 const $8e7efde313f1b90f$var$localhelpers = {
-    afterElemCloneHandler: function(elem, thisIndex, clonedNodeList) {
+    /**
+   * 
+   * @param {HTMLElement} elem 
+   * @param {Number} thisIndex 
+   * @param {Array} clonedNodeList 
+   * @returns {Array}
+   * 
+   */ afterElemCloneHandler: function(elem, thisIndex, clonedNodeList) {
         // clone the element
         let newClonedElement = elem.cloneNode(true);
         // check if the element is already in the clonedNodeList

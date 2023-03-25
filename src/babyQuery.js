@@ -54,6 +54,8 @@ export default (function (globalThis) {
       }
     }
   }
+
+  
   BabyQuery.fn = BabyQuery.prototype = {
     /**
      * .ready() waits until all document and scripts get loads

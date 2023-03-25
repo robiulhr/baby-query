@@ -80,7 +80,7 @@ describe('.css() method', () => {
     expect(window.getComputedStyle($('div')[2])['width']).toEqual('20px')
     expect(window.getComputedStyle($('div')[3])['width']).toEqual('20px')
   })
-  // test("$('div').css('width', '+=2rem') Note: this function is slidely diferent from jquery.", () => {
+  // test("$('div').css('width', '+=2rem')", () => {
   //   // set the html to default html
   //   setDefaultHtml(defaultHtml)
   //   $('div').css('width', '+=2rem')
@@ -165,7 +165,7 @@ describe('.css() method', () => {
       '<h2>Greetings</h2><div class="inner">Hello</div><p style="width: 300px;">Test</p><div class="inner">Goodbye</div><p style="width: 300px;">Test</p>'
     )
   })
-  // test('$("p").css("width",function(i,ele){return "+=2rem"}) Note: this function is slidely diferent from jquery.', () => {
+  // test('$("p").css("width",function(i,ele){return "+=2rem"})', () => {
   //   const customHtml = `<style>p{width: 100px;height: 30px;}</style><div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>`
   //   // set the html to default html
   //   setDefaultHtml(customHtml)
