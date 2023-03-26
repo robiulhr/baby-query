@@ -62,6 +62,7 @@ const localhelpers = {
    * @param {*} elem
    * @param {*} thisIndex
    * @param {*} clonedNodeList
+   * 
    */
   appendElemCloneHandler: function (elem, thisIndex, clonedNodeList) {
     // clone the element

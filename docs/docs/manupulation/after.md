@@ -40,3 +40,20 @@ $('.inner').after('<p>Test</p>')
 </div>
 ```
 
+# My Code Example
+
+<CodePreview>
+  <template v-slot:code>
+    <pre>
+      <code class="language-html">
+        <h1>Hello World</h1>
+        <p>This is some sample HTML</p>
+      </code>
+    </pre>
+  </template>
+
+  <template v-slot:result>
+    <h1>Hello World</h1>
+    <p>This is some sample HTML</p>
+  </template>
+</CodePreview>

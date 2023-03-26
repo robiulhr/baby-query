@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+const { registerComponents } = require('@vuepress/plugin-registered-components')
 
 export default defineConfig({
   title: 'Baby Query',
@@ -119,5 +120,12 @@ export default defineConfig({
     footer: {
       message: 'Released under the MIT License'
     }
-  }
+  },
+  plugins: [
+    ['@vuepress/plugin-register-components', {
+      components: {
+        'CodePreview': '/components/CodePreview.vue'
+      }
+    }]
+  ]
 })

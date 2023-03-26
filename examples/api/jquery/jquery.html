@@ -4,8 +4,65 @@
     <meta charset="utf-8" />
     <title>jquery api demo</title>
     <script src="./jquery.js"></script>
+    <style>
+      tr {
+        padding: 30px;
+        display: block;
+        background-color: red;
+        margin: 30px;
+      }
+      td {
+        padding: 20px;
+        background-color: blue;
+      }
+      tbody {
+        padding: 20px;
+        background-color: aqua;
+      }
+    </style>
   </head>
   <body>
-    <div class="container"><h2>Greetings</h2><div class="inner">Hello</div><p>Test</p><div class="inner">Goodbye</div><p>Test</p></div>
-    </body>
+    <!-- <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Row 1, Column 1</td>
+          <td>Row 1, Column 2</td>
+          <td>Row 1, Column 3</td>
+        </tr>
+        <tr>
+          <td>Row 2, Column 1</td>
+          <td>Row 2, Column 2</td>
+          <td>Row 2, Column 3</td>
+        </tr>
+        <tr>
+          <td>Row 3, Column 1</td>
+          <td>Row 3, Column 2</td>
+          <td>Row 3, Column 3</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <table id="dataTable">
+      <tbody>
+        <tr>
+          <td>Row 1<span style="color:aliceblue">hello world</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // $("#dataTable tbody tr").on("click", function () {
+      //   console.log($(this).text());
+      // });
+      // $("#dataTable tbody").on("click", "tr", function () {
+      //   console.log($(this).text());
+      // });
+    </script>
+  </body>
 </html>
