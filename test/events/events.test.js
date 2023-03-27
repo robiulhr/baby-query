@@ -1,6 +1,6 @@
 'use strict'
-// import $ from '../../src/babyQuery'
-import $ from '../../examples/api/jquery/jquery'
+import $ from '../../src/babyQuery'
+// import $ from '../../examples/api/jquery/jquery'
 
 const setDefaultHtml = htmlText => {
   document.body.innerHTML = htmlText
@@ -12,10 +12,10 @@ describe('.on() method', () => {
   test('should add a click event listener to the button', () => {
     const customHtml = `<div><button id="my-button">Click me</button></div>`
     setDefaultHtml(customHtml)
-    const button = document.getElementById('my-button')
+    const button = $('#my-button')
     const callback = jest.fn()
-    $('#my-button').on('click', callback)
-    button.click()
+    button.on('click', callback)
+    button.trigger("click")
     expect(callback).toHaveBeenCalled()
   })
   test('On a data table with 1,000 rows in its tbody, this example attaches a handler to 1,000 elements', () => {
@@ -299,18 +299,76 @@ describe('.on() method', () => {
     expect(customFunc).toHaveBeenNthCalledWith(3, 'Another paragraph! 3')
   })
   test("Display each paragraph's text in an alert box whenever it is clicked", () => {
-    $('body').on('click', 'p', function () {
-      alert($(this).text())
+    const customHtml = `<div class="wrapper"><p class="paragraph-1">Click me!</p><p class="paragraph-2"><span class="inside-paragraph">hello from inside paragraph</span></p></div>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const body = $('body')
+    // jQuery event handler:
+    const mockCallback = jest.fn(function (e,elem) {
+      $(this).attr("customAttr", elem)
     })
+    // attach click event
+    body.on('click', 'p', mockCallback)
+    // click the p for first time
+    const p1 = $('p.paragraph-1')
+    p1.trigger('click',"paragraph 1")
+    customFunc(p1.attr("customAttr"))
+    // click the p for second time
+    const p2 = $('p.paragraph-2')
+    p2.trigger('click',"paragraph 2")
+    customFunc(p2.attr("customAttr"))
+    // click the outer div
+    const wrapperDiv = $('div.wrapper');
+    wrapperDiv.trigger('click',"wrapper div")
+    customFunc(wrapperDiv.attr("customAttr"))
+    // click the inner div
+    const insideParagraphSpn = $('span.inside-paragraph');
+    insideParagraphSpn.trigger('click',"inside paragraph")
+    customFunc(insideParagraphSpn.attr("customAttr"))
+
+    expect(mockCallback.mock.calls.length).toBe(3)
+    expect(customFunc.mock.calls.length).toBe(4)
+    expect(customFunc).toHaveBeenNthCalledWith(1, 'paragraph 1')
+    expect(customFunc).toHaveBeenNthCalledWith(2, 'paragraph 2')
+    expect(customFunc).toHaveBeenNthCalledWith(3, undefined)
+    expect(customFunc).toHaveBeenNthCalledWith(4, undefined)
+   
+  })
+  test('Attach multiple events—one on mouseenter and one on mouseleave to the same element', () => {
+    const customHtml = `<div class="wrapper">hello world</div>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const div = $('div.wrapper')
+    // attach click event
+    div.on('mouseenter mouseleave', function (event) {
+      customFunc(event.type)
+    })
+    // fire the mouseenter event
+    div.trigger("mouseenter")
+    // fire the mouseleave event
+    div.trigger("mouseleave")
+
+    expect(customFunc.mock.calls.length).toBe(2)
+    expect(customFunc).toHaveBeenNthCalledWith(1, 'mouseenter')
+    expect(customFunc).toHaveBeenNthCalledWith(2, 'mouseleave')
   })
   test("Cancel a link's default action using the .preventDefault() method", () => {
     $('body').on('click', 'a', function (event) {
       event.preventDefault()
     })
   })
-  test('Attach multiple events—one on mouseenter and one on mouseleave to the same element', () => {
-    $('#cart').on('mouseenter mouseleave', function (event) {
-      $(this).toggleClass('active')
-    })
+})
+
+describe('.trigger() method', () => {
+  // Set up the document body
+  //   const defaultHtml = `<style>p {color: red;}span {color: blue;}</style><p>Has an attached custom event.</p><button>Trigger custom event</button><span style="display:none;"></span>`
+  test('should add a click event listener to the button', () => {
+    const customHtml = `<div><button id="my-button">Click me</button></div>`
+    setDefaultHtml(customHtml)
+    const button = $('#my-button')
+    const callback = jest.fn()
+    button.on('click', callback)
+    button.trigger("click")
+    expect(callback).toHaveBeenCalled()
   })
 })

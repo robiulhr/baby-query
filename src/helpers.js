@@ -1,5 +1,5 @@
-import checkers from "./checkers"
-const { isArrayLike, isEqualObject } = checkers
+import checkers from './checkers'
+const { isArrayLike, isEqualObject, isPlainObject } = checkers
 
 export default {
   /**
@@ -31,18 +31,18 @@ export default {
   /**
    * Extends provided objects to the main object
    * @returns {Object} return the main object
+   * Note: if the property is not a function won't be Added
    */
   myExtend: function () {
     for (let i = 0; i < arguments.length; i++) {
       if (!arguments[i] || typeof arguments[i] !== 'object') {
         continue
       }
-      for (var key in arguments[i]) {
+      for (let key in arguments[i]) {
         if (Object.prototype.hasOwnProperty.call(arguments[i], key)) {
-          var value = arguments[i][key]
-
+          let value = arguments[i][key]
           if (value !== undefined) {
-            if (typeof value === 'object' && value !== null) {
+            if (typeof value === 'object' && value !== null && !isPlainObject(value) && !isArrayLike(value)) {
               if (!this[key] || typeof this[key] !== 'object') {
                 this[key] = {}
               }
@@ -109,11 +109,11 @@ export default {
   removeDuplicates: function (array) {
     const unique = []
     for (const item of array) {
-      const isDuplicate = unique.find(obj =>  isEqualObject(obj, item))
+      const isDuplicate = unique.find(obj => isEqualObject(obj, item))
       if (!isDuplicate) {
         unique.push(item)
       }
     }
-    return unique;
+    return unique
   }
 }
