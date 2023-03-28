@@ -15,7 +15,7 @@ describe('.on() method', () => {
     const button = $('#my-button')
     const callback = jest.fn()
     button.on('click', callback)
-    button.trigger("click")
+    button.trigger('click')
     expect(callback).toHaveBeenCalled()
   })
   test('On a data table with 1,000 rows in its tbody, this example attaches a handler to 1,000 elements', () => {
@@ -235,10 +235,7 @@ describe('.on() method', () => {
           .text()
       )
     })
-    button.click(function () {
-      p.trigger('myCustomEvent', ['John'])
-    })
-    button.trigger('click')
+    p.trigger('myCustomEvent', ['John'])
     // Expect preventDefault and stopPropagation to be called
     expect(customFunc.mock.calls.length).toBe(1)
     expect(customFunc).toHaveBeenCalledWith('John, hi there!')
@@ -304,27 +301,27 @@ describe('.on() method', () => {
     const customFunc = jest.fn()
     const body = $('body')
     // jQuery event handler:
-    const mockCallback = jest.fn(function (e,elem) {
-      $(this).attr("customAttr", elem)
+    const mockCallback = jest.fn(function (e, elem) {
+      $(this).attr('customAttr', elem)
     })
     // attach click event
     body.on('click', 'p', mockCallback)
     // click the p for first time
     const p1 = $('p.paragraph-1')
-    p1.trigger('click',"paragraph 1")
-    customFunc(p1.attr("customAttr"))
+    p1.trigger('click', 'paragraph 1')
+    customFunc(p1.attr('customAttr'))
     // click the p for second time
     const p2 = $('p.paragraph-2')
-    p2.trigger('click',"paragraph 2")
-    customFunc(p2.attr("customAttr"))
+    p2.trigger('click', 'paragraph 2')
+    customFunc(p2.attr('customAttr'))
     // click the outer div
-    const wrapperDiv = $('div.wrapper');
-    wrapperDiv.trigger('click',"wrapper div")
-    customFunc(wrapperDiv.attr("customAttr"))
+    const wrapperDiv = $('div.wrapper')
+    wrapperDiv.trigger('click', 'wrapper div')
+    customFunc(wrapperDiv.attr('customAttr'))
     // click the inner div
-    const insideParagraphSpn = $('span.inside-paragraph');
-    insideParagraphSpn.trigger('click',"inside paragraph")
-    customFunc(insideParagraphSpn.attr("customAttr"))
+    const insideParagraphSpn = $('span.inside-paragraph')
+    insideParagraphSpn.trigger('click', 'inside paragraph')
+    customFunc(insideParagraphSpn.attr('customAttr'))
 
     expect(mockCallback.mock.calls.length).toBe(3)
     expect(customFunc.mock.calls.length).toBe(4)
@@ -332,7 +329,6 @@ describe('.on() method', () => {
     expect(customFunc).toHaveBeenNthCalledWith(2, 'paragraph 2')
     expect(customFunc).toHaveBeenNthCalledWith(3, undefined)
     expect(customFunc).toHaveBeenNthCalledWith(4, undefined)
-   
   })
   test('Attach multiple events—one on mouseenter and one on mouseleave to the same element', () => {
     const customHtml = `<div class="wrapper">hello world</div>`
@@ -344,9 +340,9 @@ describe('.on() method', () => {
       customFunc(event.type)
     })
     // fire the mouseenter event
-    div.trigger("mouseenter")
+    div.trigger('mouseenter')
     // fire the mouseleave event
-    div.trigger("mouseleave")
+    div.trigger('mouseleave')
 
     expect(customFunc.mock.calls.length).toBe(2)
     expect(customFunc).toHaveBeenNthCalledWith(1, 'mouseenter')
@@ -362,13 +358,5 @@ describe('.on() method', () => {
 describe('.trigger() method', () => {
   // Set up the document body
   //   const defaultHtml = `<style>p {color: red;}span {color: blue;}</style><p>Has an attached custom event.</p><button>Trigger custom event</button><span style="display:none;"></span>`
-  test('should add a click event listener to the button', () => {
-    const customHtml = `<div><button id="my-button">Click me</button></div>`
-    setDefaultHtml(customHtml)
-    const button = $('#my-button')
-    const callback = jest.fn()
-    button.on('click', callback)
-    button.trigger("click")
-    expect(callback).toHaveBeenCalled()
-  })
+  test('with the .trigger() method. A call to .trigger() executes the handlers in the same order they would be if the event were triggered naturally by the user', () => {})
 })

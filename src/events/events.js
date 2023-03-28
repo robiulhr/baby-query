@@ -1,5 +1,5 @@
 import checkers from '../checkers'
-const { isPlainObject } = checkers
+const { isFunction, isArrayLike, isPlainObject } = checkers
 export default {
   _allEventListeners: {},
   /**
@@ -34,11 +34,12 @@ export default {
     } else if (typeof eventType == 'string') {
       const events = eventType.split(' ')
       for (let index = 0; index < events.length; index++) {
-        const namespaces = events[index].split('.')
-        const singleEventType = [...namespaces].shift()
+        const splitedEventType = events[index].split('.')
+        const namespaces = [...splitedEventType].slice(1)
+        const singleEventType = [...splitedEventType].shift()
         const singleEvent = {
           data: data,
-          namespace: [...namespaces].slice(1),
+          namespace: namespaces,
           handler: callback,
           selector: selector,
           type: singleEventType
@@ -51,7 +52,7 @@ export default {
             event.isPropagationStopped = function () {}
             data && (event.data = data)
             if (selector) {
-              if (callback === false || callback.call(this, event) === false) {
+              if (callback === false || (typeof callback === 'function' && callback.toString().search(/return\s+(true|false)/gi) !== -1)) {
                 event.preventDefault()
                 event.stopPropagation()
               } else {
@@ -64,19 +65,54 @@ export default {
                 }
               }
             } else {
-              if (callback === false || callback.call(this, event) === false) {
+              if (callback === false || (typeof callback === 'function' && callback.toString().search(/return\s+(true|false)/gi) !== -1)) {
                 event.preventDefault()
                 event.stopPropagation()
+              } else {
               }
             }
-            callback.call(this, event)
+            // event has been dispatched using the .trigger() method
+            if (event.__triggered && isFunction(callback)) {
+              isArrayLike(event.detail) ? callback.call(this, event, ...event.detail) : callback.call(this, event, event.detail)
+            } else if (isFunction(callback)) {
+              callback.call(this, event)
+            }
           }
-          this[ind].addEventListener(singleEventType, eventListener.bind(this[ind], selector, data, callback))
+          console.log(namespaces.length > 0 ? [singleEventType, ...namespaces].join('.') : singleEventType)
+          this[ind].addEventListener(namespaces.length > 0 ? [singleEventType, ...namespaces].join('.') : singleEventType, eventListener.bind(this[ind], selector, data, callback))
         }
       }
     }
+    return this
   },
-  trigger: function () {},
+  /**
+   *
+   * @param {Object|String} eventType
+   * @param {Array|Object} data
+   */
+  trigger: function (eventType, data) {
+    if (typeof eventType === 'string') {
+      for (let index = 0; index < this.length; index++) {
+        const event = new CustomEvent(eventType, { bubbles: true, detail: data })
+        event.__triggered = true
+        this[index].dispatchEvent(event)
+      }
+    } else if (isPlainObject(eventType)) {
+      for (let index = 0; index < this.length; index++) {
+        const event = new CustomEvent(eventType.type, { bubbles: true, detail: data })
+        for (let item in eventType) {
+          // have to check if the item can be change or only have the getter
+          if (item !== 'type') {
+            event[item] = eventType[item]
+          }
+        }
+        event.__triggered = true
+        this[index].dispatchEvent(event)
+      }
+    } else if (eventType instanceof Event) {
+    }
+    return this
+  },
   click: function () {},
 
   gptOne: function (eventTypes, selector, data, callback, options) {
@@ -258,4 +294,3 @@ export default {
     }
   }
 }
-
