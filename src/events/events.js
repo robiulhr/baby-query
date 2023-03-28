@@ -1,5 +1,7 @@
 import checkers from '../checkers'
-const { isFunction, isArrayLike, isPlainObject } = checkers
+import localhelpers from './localhelpers'
+const { isPlainObject } = checkers
+const { onMethodCallbackHandler } = localhelpers
 export default {
   _allEventListeners: {},
   /**
@@ -14,17 +16,20 @@ export default {
    */
   on: function (eventType, selector, data, callback) {
     // handle arguments
-    if (typeof selector === 'function') {
+    if (typeof selector === 'function' || selector === false) {
       ;(callback = selector), (selector = undefined), (data = undefined)
-    } else if (typeof data === 'function' && typeof selector === 'string') {
+    } else if ((typeof data === 'function' || data === false) && typeof selector === 'string') {
       ;(callback = data), (data = undefined)
-    } else if (typeof data === 'function' && typeof selector !== 'string') {
-      ;(callback = data), (selector = undefined)
-    }
+    } else if ((typeof data === 'function' || data === false) && typeof selector !== 'string') {
+      ;(callback = data), (data = selector),(selector = undefined)
+    } 
+    // console.log(eventType)
+    // console.log(selector)
+    // console.log(data)
+    // console.log(callback)
     // check eventType and callback are available
     if (!callback || !eventType) new Error('Must provide event type and event handler.')
     // loop over all this elements
-
     if (isPlainObject(eventType)) {
       for (let index = 0; index < this.length; index++) {
         for (let items in eventType) {
@@ -48,37 +53,38 @@ export default {
           ;(this._allEventListeners[this[ind]] ??= {}) && (this._allEventListeners[this[ind]][eventType] ??= [])
           this._allEventListeners[this[ind]][eventType].push(singleEvent)
           const eventListener = function (selector, data, callback, event) {
-            event.isDefaultPrevented = function () {}
-            event.isPropagationStopped = function () {}
+            // customise the event object
+            event.isDefaultPrevented = function () {
+              return event.defaultPrevented
+            }
+            event.isPropagationStopped = function () {
+             return event.cancelBubble
+            }
             data && (event.data = data)
+            // define callback return value checker
+            let callbackReturnedValue = true
+            // check if selector in available
             if (selector) {
-              if (callback === false || (typeof callback === 'function' && callback.toString().search(/return\s+(true|false)/gi) !== -1)) {
-                event.preventDefault()
-                event.stopPropagation()
-              } else {
-                const selectorElements = this.querySelector(selector)
-                const clickedTargetEle = event.target
-                for (let i = 0; i < selectorElements.length; i++) {
-                  if (clickedTargetEle === this || !(event.composedPath ? event.composedPath() : event.path).includes(selectorElements[i])) {
-                    event.stopPropagation()
-                  }
+              let clickedTargetEle = event.target
+              while (clickedTargetEle) {
+                if (clickedTargetEle.matches(selector)) {
+                  const selectorElm = clickedTargetEle.closest(selector)
+                  // call the callback
+                  callbackReturnedValue = onMethodCallbackHandler.call(selectorElm ? selectorElm : this, event, callback)
+                  break
                 }
+                clickedTargetEle = clickedTargetEle.parentElement
               }
             } else {
-              if (callback === false || (typeof callback === 'function' && callback.toString().search(/return\s+(true|false)/gi) !== -1)) {
-                event.preventDefault()
-                event.stopPropagation()
-              } else {
-              }
+              // call the callback
+              callbackReturnedValue = onMethodCallbackHandler.call(this, event, callback)
             }
-            // event has been dispatched using the .trigger() method
-            if (event.__triggered && isFunction(callback)) {
-              isArrayLike(event.detail) ? callback.call(this, event, ...event.detail) : callback.call(this, event, event.detail)
-            } else if (isFunction(callback)) {
-              callback.call(this, event)
+            // check if the callback value is false or callback returns false
+            if (callback === false || callbackReturnedValue === false) {
+              event.preventDefault()
+              event.stopPropagation()
             }
           }
-          console.log(namespaces.length > 0 ? [singleEventType, ...namespaces].join('.') : singleEventType)
           this[ind].addEventListener(namespaces.length > 0 ? [singleEventType, ...namespaces].join('.') : singleEventType, eventListener.bind(this[ind], selector, data, callback))
         }
       }

@@ -616,7 +616,19 @@ var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
 
 
 
-const { isFunction: $6003777f4412a1bb$var$isFunction , isArrayLike: $6003777f4412a1bb$var$isArrayLike , isPlainObject: $6003777f4412a1bb$var$isPlainObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
+
+const { isFunction: $5d3be07a2d287b78$var$isFunction , isArrayLike: $5d3be07a2d287b78$var$isArrayLike  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
+var $5d3be07a2d287b78$export$2e2bcd8739ae039 = {
+    onMethodCallbackHandler: function(event, callback) {
+        // event has been dispatched using the .trigger() method
+        if (event.__triggered && $5d3be07a2d287b78$var$isFunction(callback) && event.detail) return $5d3be07a2d287b78$var$isArrayLike(event.detail) ? callback.call(this, event, ...event.detail) : callback.call(this, event, event.detail);
+        else if ($5d3be07a2d287b78$var$isFunction(callback)) return callback.call(this, event);
+    }
+};
+
+
+const { isPlainObject: $6003777f4412a1bb$var$isPlainObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
+const { onMethodCallbackHandler: $6003777f4412a1bb$var$onMethodCallbackHandler  } = (0, $5d3be07a2d287b78$export$2e2bcd8739ae039);
 var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
     _allEventListeners: {},
     /**
@@ -630,9 +642,13 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
    *
    */ on: function(eventType, selector, data, callback) {
         // handle arguments
-        if (typeof selector === "function") callback = selector, selector = undefined, data = undefined;
-        else if (typeof data === "function" && typeof selector === "string") callback = data, data = undefined;
-        else if (typeof data === "function" && typeof selector !== "string") callback = data, selector = undefined;
+        if (typeof selector === "function" || selector === false) callback = selector, selector = undefined, data = undefined;
+        else if ((typeof data === "function" || data === false) && typeof selector === "string") callback = data, data = undefined;
+        else if ((typeof data === "function" || data === false) && typeof selector !== "string") callback = data, data = selector, selector = undefined;
+        // console.log(eventType)
+        // console.log(selector)
+        // console.log(data)
+        // console.log(callback)
         // check eventType and callback are available
         if (!callback || !eventType) new Error("Must provide event type and event handler.");
         // loop over all this elements
@@ -659,30 +675,36 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
                     (this._allEventListeners[this[ind]] ??= {}) && (this._allEventListeners[this[ind]][eventType] ??= []);
                     this._allEventListeners[this[ind]][eventType].push(singleEvent);
                     const eventListener = function(selector, data, callback, event) {
-                        event.isDefaultPrevented = function() {};
-                        event.isPropagationStopped = function() {};
+                        // customise the event object
+                        event.isDefaultPrevented = function() {
+                            return event.defaultPrevented;
+                        };
+                        event.isPropagationStopped = function() {
+                            return event.cancelBubble;
+                        };
                         data && (event.data = data);
+                        // define callback return value checker
+                        let callbackReturnedValue = true;
+                        // check if selector in available
                         if (selector) {
-                            if (callback === false || typeof callback === "function" && callback.toString().search(/return\s+(true|false)/gi) !== -1) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            } else {
-                                const selectorElements = this.querySelector(selector);
-                                const clickedTargetEle = event.target;
-                                for(let i = 0; i < selectorElements.length; i++)if (clickedTargetEle === this || !(event.composedPath ? event.composedPath() : event.path).includes(selectorElements[i])) event.stopPropagation();
+                            let clickedTargetEle = event.target;
+                            while(clickedTargetEle){
+                                if (clickedTargetEle.matches(selector)) {
+                                    const selectorElm = clickedTargetEle.closest(selector);
+                                    // call the callback
+                                    callbackReturnedValue = $6003777f4412a1bb$var$onMethodCallbackHandler.call(selectorElm ? selectorElm : this, event, callback);
+                                    break;
+                                }
+                                clickedTargetEle = clickedTargetEle.parentElement;
                             }
-                        } else if (callback === false || typeof callback === "function" && callback.toString().search(/return\s+(true|false)/gi) !== -1) {
+                        } else // call the callback
+                        callbackReturnedValue = $6003777f4412a1bb$var$onMethodCallbackHandler.call(this, event, callback);
+                        // check if the callback value is false or callback returns false
+                        if (callback === false || callbackReturnedValue === false) {
                             event.preventDefault();
                             event.stopPropagation();
                         }
-                        // event has been dispatched using the .trigger() method
-                        if (event.__triggered && $6003777f4412a1bb$var$isFunction(callback)) $6003777f4412a1bb$var$isArrayLike(event.detail) ? callback.call(this, event, ...event.detail) : callback.call(this, event, event.detail);
-                        else if ($6003777f4412a1bb$var$isFunction(callback)) callback.call(this, event);
                     };
-                    console.log(namespaces.length > 0 ? [
-                        singleEventType,
-                        ...namespaces
-                    ].join(".") : singleEventType);
                     this[ind].addEventListener(namespaces.length > 0 ? [
                         singleEventType,
                         ...namespaces

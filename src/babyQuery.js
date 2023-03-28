@@ -68,6 +68,7 @@ export default (function (globalThis) {
       }
     }
   }
+
   BabyQuery.extend = BabyQuery.fn.extend = myExtend
 
   BabyQuery.fn.extend(domManupulation, css, events)
