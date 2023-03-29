@@ -7,8 +7,6 @@ const setDefaultHtml = htmlText => {
 }
 
 describe('.on() method', () => {
-  // Set up the document body
-  //   const defaultHtml = `<style>p {color: red;}span {color: blue;}</style><p>Has an attached custom event.</p><button>Trigger custom event</button><span style="display:none;"></span>`
   test('should add a click event listener to the button', () => {
     const customHtml = `<div><button id="my-button">Click me</button></div>`
     setDefaultHtml(customHtml)
@@ -273,20 +271,22 @@ describe('.on() method', () => {
     const customFunc = jest.fn()
     const testDiv = $('div.test')
     // jQuery event handler:
-    testDiv.on({
-      click: function (e,eventDetails) {
-        $(this).text('click event')
-        customFunc(e.data.massage + " " + eventDetails.name)
+    testDiv.on(
+      {
+        click: function (e, eventDetails) {
+          $(this).text('click event')
+          customFunc(e.data.massage + ' ' + eventDetails.name)
+        },
+        mouseenter: function (e, eventDetails) {
+          $(this).text('mouseenter event')
+          customFunc(e.data.massage + ' ' + eventDetails.name)
+        }
       },
-      mouseenter: function (e,eventDetails) {
-        $(this).text('mouseenter event')
-        customFunc(e.data.massage + " " + eventDetails.name)
-          
-      }
-    },{massage:"hello world"})
-    testDiv.trigger('click',{name:"click"})
+      { massage: 'hello world' }
+    )
+    testDiv.trigger('click', { name: 'click' })
     customFunc(testDiv.text())
-    testDiv.trigger('mouseenter',{name:"mouseenter"})
+    testDiv.trigger('mouseenter', { name: 'mouseenter' })
     customFunc(testDiv.text())
     expect(customFunc).toHaveBeenNthCalledWith(1, 'hello world click')
     expect(customFunc).toHaveBeenNthCalledWith(2, 'click event')
@@ -382,7 +382,97 @@ describe('.on() method', () => {
 })
 
 describe('.trigger() method', () => {
-  // Set up the document body
-  //   const defaultHtml = `<style>p {color: red;}span {color: blue;}</style><p>Has an attached custom event.</p><button>Trigger custom event</button><span style="display:none;"></span>`
-  test('with the .trigger() method. A call to .trigger() executes the handlers in the same order they would be if the event were triggered naturally by the user', () => {})
+  test('with the .trigger() method. A call to .trigger() executes the handlers in the same order they would be if the event were triggered naturally by the user', () => {
+    const customHtml = `<div id="foo">Hello world</div>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    $('#foo').on('click', function () {
+      customFunc($(this).text())
+    })
+    $('#foo').trigger('click')
+    expect(customFunc.mock.calls.length).toBe(1)
+    expect(customFunc).toHaveBeenCalledWith('Hello world')
+  })
+  test('An array of arguments can also be passed to the .trigger() call, and these parameters will be passed along to the handler as well following the event object.', () => {
+    const customHtml = `<div id="foo">Hello world</div>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    $('#foo').on('custom', function (event, param1, param2) {
+      customFunc(param1 + ' ' + param2)
+    })
+    $('#foo').trigger('custom', ['Custom', 'Event'])
+    expect(customFunc.mock.calls.length).toBe(1)
+    expect(customFunc).toHaveBeenCalledWith('Custom Event')
+  })
+  test('Clicks to button #2 also trigger a click for button #1.', () => {
+    const customHtml = `<button class="button-1">Button #1</button><button class="button-2">Button #2</button><div><span class="span-1">0</span> button #1 clicks.</div><div><span class="span-2">0</span> button #2 clicks.</div>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const button1 = $('.button-1')
+    const button2 = $('.button-2')
+    const span1 = $('.span-1')
+    const span2 = $('.span-2')
+
+    function update (j) {
+      var n = parseInt(j.text(), 10)
+      j.text(n + 1)
+    }
+
+    button1.on('click', function () {
+      update(span1)
+      customFunc(span1.text())
+    })
+
+    button2.on('click', function () {
+      button1.trigger('click')
+      update(span2)
+      customFunc(span2.text())
+    })
+    button2.trigger('click')
+
+    expect(customFunc.mock.calls.length).toBe(2)
+    expect(customFunc).toHaveBeenCalledWith('1')
+    expect(customFunc).toHaveBeenCalledWith('1')
+  })
+  test('pass A Event object as a first arguements in .trigger() method.', () => {
+    const customHtml = `<button class="button">Button</button>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const button = $('.button')
+
+    button.on('click', function () {
+      button.text('button text changed')
+      customFunc(button.text())
+    })
+    /**
+     * BabyQuery.Event method will be added letter version of Babyquery
+     */
+    // let event = BabyQuery.Event( "click" );
+    let event = new Event('click')
+    button.trigger(event)
+    expect(customFunc.mock.calls.length).toBe(1)
+    expect(customFunc).toHaveBeenCalledWith('button text changed')
+  })
+  test('Alternative way to pass data through an object', () => {
+    const customHtml = `<button class="button">Button</button>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const button = $('.button')
+
+    button.on('click', function (e) {
+      button.text('button text changed')
+      customFunc(button.text())
+      customFunc(e.user)
+      customFunc(e.pass)
+    })
+    button.trigger({
+      type: 'click',
+      user: 'foo',
+      pass: 'bar'
+    })
+    expect(customFunc.mock.calls.length).toBe(3)
+    expect(customFunc).toHaveBeenNthCalledWith(1, 'button text changed')
+    expect(customFunc).toHaveBeenNthCalledWith(2, 'foo')
+    expect(customFunc).toHaveBeenNthCalledWith(3, 'bar')
+  })
 })

@@ -53,9 +53,9 @@ export default {
     return this
   },
   /**
-   *
-   * @param {Object|String} eventType
-   * @param {Array|Object} data
+   * Execute all handlers and behaviors attached to the matched elements for the given event type.
+   * @param {Event|String} eventType A string containing a JavaScript event type, such as click or submit or A Event object.
+   * @param {Array|Object} data Additional parameters to pass along to the event handler.
    */
   trigger: function (eventType, data) {
     if (typeof eventType === 'string') {
@@ -68,7 +68,6 @@ export default {
       for (let index = 0; index < this.length; index++) {
         const event = new CustomEvent(eventType.type, { bubbles: true, detail: data })
         for (let item in eventType) {
-          // have to check if the item can be change or only have the getter
           if (item !== 'type') {
             event[item] = eventType[item]
           }
@@ -77,6 +76,11 @@ export default {
         this[index].dispatchEvent(event)
       }
     } else if (eventType instanceof Event) {
+      for (let index = 0; index < this.length; index++) {
+        eventType.__triggered = true
+        eventType.detail = data
+        this[index].dispatchEvent(eventType)
+      }
     }
     return this
   },
@@ -231,33 +235,5 @@ export default {
     }
 
     delegator.eventListeners = remainingSelectorListeners
-  },
-
-  gptTrigger: function (selector, eventType, eventData, options) {
-    const elements = document.querySelectorAll(selector)
-    const defaultOptions = {
-      bubbles: true,
-      cancelable: true,
-      detail: eventData
-    }
-    const mergedOptions = Object.assign({}, defaultOptions, options)
-
-    for (let i = 0; i < elements.length; i++) {
-      const event = new CustomEvent(eventType, mergedOptions)
-
-      // Add properties to the event object
-      for (const prop in eventData) {
-        if (eventData.hasOwnProperty(prop)) {
-          event[prop] = eventData[prop]
-        }
-      }
-
-      // Allow triggering of native browser events
-      if (eventType.indexOf('mouse') === 0 || eventType.indexOf('click') === 0 || eventType.indexOf('key') === 0) {
-        elements[i][eventType]()
-      } else {
-        elements[i].dispatchEvent(event)
-      }
-    }
   }
 }

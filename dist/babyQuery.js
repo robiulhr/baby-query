@@ -472,7 +472,7 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
     removeAttr: function() {},
     text: function(text) {
         if (!text) return this[0].textContent;
-        else if (typeof text === "string") for(let i = 0; i < this.length; i++)this[i].textContent = text;
+        else if (typeof text === "string" || typeof text === "number") for(let i = 0; i < this.length; i++)this[i].textContent = text;
         else if ($d8203bae9db46050$var$isFunction(text)) for(let i = 0; i < this.length; i++)this[i].textContent = text.call(this[i], i, this[i].textContent);
         return this;
     },
@@ -723,9 +723,9 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
         return this;
     },
     /**
-   *
-   * @param {Object|String} eventType
-   * @param {Array|Object} data
+   * Execute all handlers and behaviors attached to the matched elements for the given event type.
+   * @param {Event|String} eventType A string containing a JavaScript event type, such as click or submit or A Event object.
+   * @param {Array|Object} data Additional parameters to pass along to the event handler.
    */ trigger: function(eventType, data) {
         if (typeof eventType === "string") for(let index = 0; index < this.length; index++){
             const event = new CustomEvent(eventType, {
@@ -740,12 +740,15 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
                 bubbles: true,
                 detail: data
             });
-            for(let item in eventType)// have to check if the item can be change or only have the getter
-            if (item !== "type") event[item] = eventType[item];
+            for(let item in eventType)if (item !== "type") event[item] = eventType[item];
             event.__triggered = true;
             this[index].dispatchEvent(event);
         }
-        else Event;
+        else if (eventType instanceof Event) for(let index = 0; index < this.length; index++){
+            eventType.__triggered = true;
+            eventType.detail = data;
+            this[index].dispatchEvent(eventType);
+        }
         return this;
     },
     click: function() {},
@@ -869,23 +872,6 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
             else remainingSelectorListeners.push(selectorEventListeners[i]);
         }
         delegator.eventListeners = remainingSelectorListeners;
-    },
-    gptTrigger: function(selector, eventType, eventData, options) {
-        const elements = document.querySelectorAll(selector);
-        const defaultOptions = {
-            bubbles: true,
-            cancelable: true,
-            detail: eventData
-        };
-        const mergedOptions = Object.assign({}, defaultOptions, options);
-        for(let i = 0; i < elements.length; i++){
-            const event = new CustomEvent(eventType, mergedOptions);
-            // Add properties to the event object
-            for(const prop in eventData)if (eventData.hasOwnProperty(prop)) event[prop] = eventData[prop];
-            // Allow triggering of native browser events
-            if (eventType.indexOf("mouse") === 0 || eventType.indexOf("click") === 0 || eventType.indexOf("key") === 0) elements[i][eventType]();
-            else elements[i].dispatchEvent(event);
-        }
     }
 };
 

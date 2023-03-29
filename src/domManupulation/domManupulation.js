@@ -108,7 +108,7 @@ export default {
   text: function (text) {
     if (!text) {
       return this[0].textContent
-    } else if (typeof text === 'string') {
+    } else if (typeof text === 'string' || typeof text ===  "number") {
       for (let i = 0; i < this.length; i++) {
         this[i].textContent = text
       }
