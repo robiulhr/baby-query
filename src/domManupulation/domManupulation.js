@@ -61,7 +61,7 @@ export default {
   attr: function (name, value) {
     if (typeof name === 'string') {
       if (!value) {
-        return this['0']?.getAttribute(name)
+        return this['0']?.getAttribute(name) || undefined
       } else if (typeof value === 'string') {
         this['0']?.setAttribute(name, value)
       } else if (isFunction(value)) {

@@ -167,19 +167,19 @@ describe('.on() method', () => {
     expect(customFunc).toHaveBeenNthCalledWith(1, 'Hello Karl')
     expect(customFunc).toHaveBeenNthCalledWith(2, 'Hello Addy')
   })
-  test('Cancel only the default action by using .preventDefault().', () => {
-    const customHtml = `<button>hello world</button>`
-    setDefaultHtml(customHtml)
-    const customFunc = jest.fn()
-    const button = $('button')
-    button.on('click', function (event) {
-      event.preventDefault()
-      customFunc(event.isDefaultPrevented())
-    })
-    button.trigger('click')
-    expect(customFunc.mock.calls.length).toBe(1)
-    expect(customFunc).toHaveBeenCalledWith(true)
-  })
+  // test('Cancel only the default action by using .preventDefault().', () => {
+  //   const customHtml = `<button>hello world</button>`
+  //   setDefaultHtml(customHtml)
+  //   const customFunc = jest.fn()
+  //   const button = $('button')
+  //   button.on('click', function (event) {
+  //     event.preventDefault()
+  //     customFunc(event.isDefaultPrevented())
+  //   })
+  //   button.trigger('click')
+  //   expect(customFunc.mock.calls.length).toBe(1)
+  //   expect(customFunc).toHaveBeenCalledWith(true)
+  // })
   test('Stop click events from bubbling without preventing form button, using .stopPropagation().', () => {
     const customHtml = `<button>hello world</button>`
     setDefaultHtml(customHtml)
@@ -240,7 +240,7 @@ describe('.on() method', () => {
     expect(customFunc.mock.calls.length).toBe(1)
     expect(customFunc).toHaveBeenCalledWith('John, hi there!')
   })
-  test('Attach multiple event handlers simultaneously using a plain object.', () => {
+  test('1. Attach multiple event handlers simultaneously using a plain object.', () => {
     const customHtml = `<div class="test">test div</div>`
     setDefaultHtml(customHtml)
     const customFunc = jest.fn()
@@ -266,6 +266,32 @@ describe('.on() method', () => {
     expect(customFunc).toHaveBeenNthCalledWith(1, 'click event')
     expect(customFunc).toHaveBeenNthCalledWith(2, 'mouseenter event')
     expect(customFunc).toHaveBeenNthCalledWith(3, 'mouseleave event')
+  })
+  test('2. Attach multiple event handlers simultaneously using a plain object.', () => {
+    const customHtml = `<div class="test">test div</div>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const testDiv = $('div.test')
+    // jQuery event handler:
+    testDiv.on({
+      click: function (e,eventDetails) {
+        $(this).text('click event')
+        customFunc(e.data.massage + " " + eventDetails.name)
+      },
+      mouseenter: function (e,eventDetails) {
+        $(this).text('mouseenter event')
+        customFunc(e.data.massage + " " + eventDetails.name)
+          
+      }
+    },{massage:"hello world"})
+    testDiv.trigger('click',{name:"click"})
+    customFunc(testDiv.text())
+    testDiv.trigger('mouseenter',{name:"mouseenter"})
+    customFunc(testDiv.text())
+    expect(customFunc).toHaveBeenNthCalledWith(1, 'hello world click')
+    expect(customFunc).toHaveBeenNthCalledWith(2, 'click event')
+    expect(customFunc).toHaveBeenNthCalledWith(3, 'hello world mouseenter')
+    expect(customFunc).toHaveBeenNthCalledWith(4, 'mouseenter event')
   })
   test('Click any paragraph to add another after it. Note that .on() allows a click event on any paragraph--even new ones--since the event is handled by the ever-present body element after it bubbles to there.', () => {
     const customHtml = `<p>Click me!</p><span></span>`

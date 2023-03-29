@@ -1,7 +1,7 @@
 import checkers from '../checkers'
 import localhelpers from './localhelpers'
 const { isPlainObject } = checkers
-const { onMethodCallbackHandler } = localhelpers
+const { onSingleEventsMacker, onEventListener } = localhelpers
 export default {
   _allEventListeners: {},
   /**
@@ -21,71 +21,32 @@ export default {
     } else if ((typeof data === 'function' || data === false) && typeof selector === 'string') {
       ;(callback = data), (data = undefined)
     } else if ((typeof data === 'function' || data === false) && typeof selector !== 'string') {
-      ;(callback = data), (data = selector),(selector = undefined)
-    } 
-    // console.log(eventType)
-    // console.log(selector)
-    // console.log(data)
-    // console.log(callback)
+      ;(callback = data), (data = selector), (selector = undefined)
+    } else if (isPlainObject(selector)) {
+      ;(data = selector), (selector = undefined)
+    }
     // check eventType and callback are available
     if (!callback || !eventType) new Error('Must provide event type and event handler.')
     // loop over all this elements
     if (isPlainObject(eventType)) {
-      for (let index = 0; index < this.length; index++) {
-        for (let items in eventType) {
-          console.log(eventType[items])
+      for (let item in eventType) {
+        const singleEvent = onSingleEventsMacker(item, selector, data, eventType[item])
+        const { type: singleEventType, namespaces } = singleEvent
+        for (let index = 0; index < this.length; index++) {
+          ;(this._allEventListeners[this[index]] ??= {}) && (this._allEventListeners[this[index]][item] ??= [])
+          this._allEventListeners[this[index]][item].push(singleEvent)
+          this[index].addEventListener(namespaces.length > 0 ? [singleEventType, ...namespaces].join('.') : singleEventType, onEventListener.bind(this[index], selector, data, eventType[item]))
         }
       }
     } else if (typeof eventType == 'string') {
       const events = eventType.split(' ')
       for (let index = 0; index < events.length; index++) {
-        const splitedEventType = events[index].split('.')
-        const namespaces = [...splitedEventType].slice(1)
-        const singleEventType = [...splitedEventType].shift()
-        const singleEvent = {
-          data: data,
-          namespace: namespaces,
-          handler: callback,
-          selector: selector,
-          type: singleEventType
-        }
+        const singleEvent = onSingleEventsMacker(events[index], selector, data, callback)
+        const { type: singleEventType, namespaces } = singleEvent
         for (let ind = 0; ind < this.length; ind++) {
           ;(this._allEventListeners[this[ind]] ??= {}) && (this._allEventListeners[this[ind]][eventType] ??= [])
           this._allEventListeners[this[ind]][eventType].push(singleEvent)
-          const eventListener = function (selector, data, callback, event) {
-            // customise the event object
-            event.isDefaultPrevented = function () {
-              return event.defaultPrevented
-            }
-            event.isPropagationStopped = function () {
-             return event.cancelBubble
-            }
-            data && (event.data = data)
-            // define callback return value checker
-            let callbackReturnedValue = true
-            // check if selector in available
-            if (selector) {
-              let clickedTargetEle = event.target
-              while (clickedTargetEle) {
-                if (clickedTargetEle.matches(selector)) {
-                  const selectorElm = clickedTargetEle.closest(selector)
-                  // call the callback
-                  callbackReturnedValue = onMethodCallbackHandler.call(selectorElm ? selectorElm : this, event, callback)
-                  break
-                }
-                clickedTargetEle = clickedTargetEle.parentElement
-              }
-            } else {
-              // call the callback
-              callbackReturnedValue = onMethodCallbackHandler.call(this, event, callback)
-            }
-            // check if the callback value is false or callback returns false
-            if (callback === false || callbackReturnedValue === false) {
-              event.preventDefault()
-              event.stopPropagation()
-            }
-          }
-          this[ind].addEventListener(namespaces.length > 0 ? [singleEventType, ...namespaces].join('.') : singleEventType, eventListener.bind(this[ind], selector, data, callback))
+          this[ind].addEventListener(namespaces.length > 0 ? [singleEventType, ...namespaces].join('.') : singleEventType, onEventListener.bind(this[ind], selector, data, callback))
         }
       }
     }

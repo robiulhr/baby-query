@@ -6,7 +6,6 @@ import events from './events/events'
 const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction } = checkers
 const { createHtmlElementDynamically, handleDOMReady, myExtend } = helpers
 export default (function (globalThis) {
-
   /**
    * BabyQuery Constructor function
    * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
@@ -24,6 +23,7 @@ export default (function (globalThis) {
     }
     // if Developer pass a css selector
     if (typeof selector === 'string') {
+      this.selector = selector
       // HANDLE: $(".class") , $("#id") and more valid selector
       if (isValidElementSelector(selector)) {
         // selecting all element
