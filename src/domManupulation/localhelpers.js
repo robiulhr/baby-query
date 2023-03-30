@@ -4,12 +4,10 @@ const { isArrayLike, isBabyQueryObject } = checkers
 const { createHtmlElementDynamically } = helpers
 const localhelpers = {
   /**
-   * 
-   * @param {HTMLElement} elem 
-   * @param {Number} thisIndex 
-   * @param {Array} clonedNodeList 
-   * @returns {Array}
-   * 
+   * @param {HTMLElement} elem html element that need to be insert after the context element
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @returns {Array} returns the clonedNodeList array
    */
   afterElemCloneHandler: function (elem, thisIndex, clonedNodeList) {
     // clone the element
@@ -35,11 +33,10 @@ const localhelpers = {
     return clonedNodeList
   },
   /**
-   *
-   * @param {} input
-   * @param {} clonedNodeList
-   * @param {} thisIndex
-   * @returns
+   * @param {String|HTMLElement|Object|Array} input value for the html element that need to be insert after the context element
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
+   * @returns {Array} returns the clonedNodeList array
    */
   inputNotFunctionorArrayForAfter: function (input, clonedNodeList, thisIndex) {
     if (typeof input === 'string' || input instanceof HTMLElement) {
@@ -58,11 +55,10 @@ const localhelpers = {
     return clonedNodeList
   },
   /**
-   *
-   * @param {*} elem
-   * @param {*} thisIndex
-   * @param {*} clonedNodeList
-   * 
+   * @param {HTMLElement} elem html element that need to be insert after the context element
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @returns {Array|HTMLElement} returns the clonedNodeList array or a html element [origianl or coppied element]
    */
   appendElemCloneHandler: function (elem, thisIndex, clonedNodeList) {
     // clone the element
@@ -87,11 +83,9 @@ const localhelpers = {
     return clonedNodeList
   },
   /**
-   *
-   * @param {String|Object|Array} input
-   * @param {Array} clonedNodeList
-   * @param {Number} thisIndex
-   *
+   * @param {String|HTMLElement|Object|Array} input value for the html element that need to be insert after the context element
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
    */
   inputNotFunctionorArrayForAppend: function (input, clonedNodeList, thisIndex) {
     if (typeof input === 'string' || input instanceof HTMLElement) {

@@ -238,12 +238,10 @@ const { isArrayLike: $8e7efde313f1b90f$var$isArrayLike , isBabyQueryObject: $8e7
 const { createHtmlElementDynamically: $8e7efde313f1b90f$var$createHtmlElementDynamically  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
 const $8e7efde313f1b90f$var$localhelpers = {
     /**
-   * 
-   * @param {HTMLElement} elem 
-   * @param {Number} thisIndex 
-   * @param {Array} clonedNodeList 
-   * @returns {Array}
-   * 
+   * @param {HTMLElement} elem html element that need to be insert after the context element
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @returns {Array} returns the clonedNodeList array
    */ afterElemCloneHandler: function(elem, thisIndex, clonedNodeList) {
         // clone the element
         let newClonedElement = elem.cloneNode(true);
@@ -272,11 +270,10 @@ const $8e7efde313f1b90f$var$localhelpers = {
         return clonedNodeList;
     },
     /**
-   *
-   * @param {} input
-   * @param {} clonedNodeList
-   * @param {} thisIndex
-   * @returns
+   * @param {String|HTMLElement|Object|Array} input value for the html element that need to be insert after the context element
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
+   * @returns {Array} returns the clonedNodeList array
    */ inputNotFunctionorArrayForAfter: function(input, clonedNodeList, thisIndex) {
         if (typeof input === "string" || input instanceof HTMLElement) {
             // Loop over BabyQuery context object Example: BabyQuery {0: h2, 1: h2, nodes: NodeList(2), length: 2}
@@ -289,11 +286,10 @@ const $8e7efde313f1b90f$var$localhelpers = {
         return clonedNodeList;
     },
     /**
-   *
-   * @param {*} elem
-   * @param {*} thisIndex
-   * @param {*} clonedNodeList
-   * 
+   * @param {HTMLElement} elem html element that need to be insert after the context element
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @returns {Array|HTMLElement} returns the clonedNodeList array or a html element [origianl or coppied element]
    */ appendElemCloneHandler: function(elem, thisIndex, clonedNodeList) {
         // clone the element
         let newClonedElement = elem.cloneNode(true);
@@ -321,11 +317,9 @@ const $8e7efde313f1b90f$var$localhelpers = {
         return clonedNodeList;
     },
     /**
-   *
-   * @param {String|Object|Array} input
-   * @param {Array} clonedNodeList
-   * @param {Number} thisIndex
-   *
+   * @param {String|HTMLElement|Object|Array} input value for the html element that need to be insert after the context element
+   * @param {Array} clonedNodeList array of all cloned node list 
+   * @param {Number} thisIndex index of the context element [index of this value like: this[0]]
    */ inputNotFunctionorArrayForAppend: function(input, clonedNodeList, thisIndex) {
         if (typeof input === "string" || input instanceof HTMLElement) {
             const newElement = typeof input === "string" ? $8e7efde313f1b90f$var$createHtmlElementDynamically(input)[0] : input;
@@ -438,7 +432,15 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
         }
         return this;
     },
-    attr: function(name, value) {
+    /**
+   * @param {String|Object} name 
+   * - The name of the attribute to get. 
+   * - An object of attribute-value pairs to set.
+   * @param {String|Number|Boolean|Function} value 
+   * - A value to set for the attribute. If null, the specified attribute will be removed.
+   * - A function returning the value to set. this is the current element. Receives the index position of the element in the set and the old attribute value as arguments.
+   * @returns {Object} return the BabyQuery object
+   */ attr: function(name, value) {
         if (typeof name === "string") {
             if (!value) return this["0"]?.getAttribute(name) || undefined;
             else if (typeof value === "string") this["0"]?.setAttribute(name, value);
@@ -454,7 +456,12 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
     empty: function() {},
     get: function() {},
     has: function() {},
-    html: function(input) {
+    /**
+   * @param {String|Function|Object} input 
+   * - A string of HTML to set as the content of each matched element.
+   * - A function returning the HTML content to set. Receives the index position of the element in the set and the old HTML value as arguments. jQuery empties the element before calling the function; use the oldhtml argument to reference the previous content. Within the function, this refers to the current element in the set.
+   * @returns {Object} return the BabyQuery object
+   */ html: function(input) {
         if (!input) return this["0"].innerHTML;
         for(let i = 0; i < this.length; i++){
             if (typeof input === "string" && $d8203bae9db46050$var$isValidHtmlElement(input)) this[i].innerHTML = input;
@@ -470,7 +477,12 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
     prepend: function() {},
     remove: function() {},
     removeAttr: function() {},
-    text: function(text) {
+    /**
+   * @param {String|HTMLElement|Boolean} text 
+   * - The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+   * - A function returning the text content to set. Receives the index position of the element in the set and the old text value as arguments.
+   * @returns {Object} return the BabyQuery object
+   */ text: function(text) {
         if (!text) return this[0].textContent;
         else if (typeof text === "string" || typeof text === "number") for(let i = 0; i < this.length; i++)this[i].textContent = text;
         else if ($d8203bae9db46050$var$isFunction(text)) for(let i = 0; i < this.length; i++)this[i].textContent = text.call(this[i], i, this[i].textContent);
@@ -609,12 +621,23 @@ var $a9a61dad2c314c2e$export$2e2bcd8739ae039 = {
 
 const { isFunction: $5d3be07a2d287b78$var$isFunction , isArrayLike: $5d3be07a2d287b78$var$isArrayLike  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const $5d3be07a2d287b78$var$localhelpers = {
-    onMethodCallbackHandler: function(event, callback) {
+    /**
+   * @param {Object} event Event object 
+   * @param {Function} callback function which was passed as argument of the on() method
+   * @returns {any} returns the callback's returned value
+   */ onMethodCallbackHandler: function(event, callback) {
         // event has been dispatched using the .trigger() method
         if (event.__triggered && $5d3be07a2d287b78$var$isFunction(callback) && event.detail) return $5d3be07a2d287b78$var$isArrayLike(event.detail) ? callback.call(this, event, ...event.detail) : callback.call(this, event, event.detail);
         else if ($5d3be07a2d287b78$var$isFunction(callback)) return callback.call(this, event);
     },
-    onSingleEventsMacker: function(event, selector, data, callback) {
+    /**
+   * @param {String} event event type 
+   * [ Note: it may contain more that one event type separated with space.]
+   * @param {String} selector css selector that was passed as argument of on() method for delegation 
+   * @param {Object} data object which was passed as a argument of on() method
+   * @param {Function} callback function which was passed as argument of the on() method
+   * @returns {Object}
+   */ onSingleEventsMacker: function(event, selector, data, callback) {
         const splitedEventType = event.split(".");
         const namespaces = [
             ...splitedEventType
@@ -631,11 +654,11 @@ const $5d3be07a2d287b78$var$localhelpers = {
         };
     },
     /**
-   *
-   * @param {} selector
-   * @param {*} data
-   * @param {*} callback
-   * @param {*} event
+   * @param {String} selector css selector that was passed as argument of on() method for delegation 
+   * @param {Object} data object which was passed as a argument of on() method
+   * @param {Function} callback function which was passed as argument of the on() method
+   * @param {String} event event type 
+   * [ Note: it may contain more that one event type separated with space.]
    */ onEventListener: function(selector, data, callback, event) {
         // customise the event object
         event.isDefaultPrevented = function() {
@@ -674,9 +697,10 @@ var $5d3be07a2d287b78$export$2e2bcd8739ae039 = $5d3be07a2d287b78$var$localhelper
 const { isPlainObject: $6003777f4412a1bb$var$isPlainObject  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { onSingleEventsMacker: $6003777f4412a1bb$var$onSingleEventsMacker , onEventListener: $6003777f4412a1bb$var$onEventListener  } = (0, $5d3be07a2d287b78$export$2e2bcd8739ae039);
 var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
-    _allEventListeners: {},
     /**
-   *
+   * All Events Object
+   */ _allEventListeners: {},
+    /**
    * @param {String|Object} eventType
    * Type: String - One or more space-separated event types and optional namespaces, such as "click" or "keydown.myPlugin".
    * Type: PlainObject - An object in which the string keys represent one or more space-separated event types and optional namespaces, and the values represent a handler function to be called for the event(s).
@@ -722,6 +746,7 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
         }
         return this;
     },
+    one: function() {},
     /**
    * Execute all handlers and behaviors attached to the matched elements for the given event type.
    * @param {Event|String} eventType A string containing a JavaScript event type, such as click or submit or A Event object.
@@ -751,128 +776,16 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
         }
         return this;
     },
-    click: function() {},
-    gptOne: function(eventTypes, selector, data, callback, options) {
-        // Handle argument overloading
-        if (typeof selector === "function") {
-            callback = selector;
-            selector = undefined;
-            data = undefined;
-        } else if (typeof data === "function") {
-            callback = data;
-            data = undefined;
-        }
-        // Split eventTypes by namespaces
-        const namespaces = eventTypes.split(".");
-        eventTypes = namespaces.shift();
-        // Split eventTypes by space to support multiple event types
-        const events = eventTypes.split(" ");
-        // Get the elements to attach the events to
-        const elements = document.querySelectorAll(selector);
-        // Set the delegator to options.delegator or default to body
-        const delegator = options && options.delegator ? document.querySelector(options.delegator) : document.querySelector("body");
-        // Create an array to store event listeners for later removal
-        const eventListeners = [];
-        // Loop through each event type
-        for(let i = 0; i < events.length; i++){
-            const eventType = events[i];
-            // Loop through each element and attach event listener
-            for(let j = 0; j < elements.length; j++){
-                const element = elements[j];
-                const eventListener = function(e) {
-                    // Handle event delegation
-                    if (selector) {
-                        const possibleTargets = element.querySelectorAll(selector);
-                        let target = e.target;
-                        while(target && target !== this){
-                            for(let i = 0; i < possibleTargets.length; i++)if (possibleTargets[i] === target) {
-                                if (callback.call(target, e, data) === false) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                }
-                                break;
-                            }
-                            target = target.parentNode;
-                        }
-                    } else {
-                        // Handle namespaces
-                        if (namespaces.length > 0) {
-                            const $this = this;
-                            const $target = e.target;
-                            let matched = false;
-                            while($target && $target !== $this){
-                                for(let k = 0; k < namespaces.length; k++)if ($target.matches(`[data-namespace="${namespaces[k]}"]`)) {
-                                    matched = true;
-                                    break;
-                                }
-                                if (matched) break;
-                                $target = $target.parentNode;
-                            }
-                            if (matched) {
-                                if (callback.call($target, e, data) === false) {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                }
-                            }
-                        } else if (callback.call(this, e, data) === false) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                        }
-                    }
-                };
-                // Check for 'once' option
-                if (options && options.once) element.addEventListener(eventType, eventListener, {
-                    once: true
-                });
-                else delegator.addEventListener(eventType, eventListener);
-                // Store the event listener for later removal
-                eventListeners.push({
-                    element: element,
-                    eventType: eventType,
-                    eventListener: eventListener
-                });
-            }
-        }
-        // Return an object with an 'off' method to remove the event listeners
-        return {
-            off: function() {
-                for(let i = 0; i < eventListeners.length; i++){
-                    const { element: element , eventType: eventType , eventListener: eventListener  } = eventListeners[i];
-                    element.removeEventListener(eventType, eventListener);
-                }
-            }
-        };
-    },
-    gptOff: function(eventTypes, selector, callback) {
-        const namespaces = eventTypes.split(".");
-        eventTypes = namespaces.shift();
-        const events = eventTypes.split(" ");
-        const elements = document.querySelectorAll(selector);
-        for(let i = 0; i < events.length; i++){
-            const eventType = events[i];
-            for(let j = 0; j < elements.length; j++){
-                const element = elements[j];
-                const eventListeners = element.eventListeners || [];
-                const remainingListeners = [];
-                for(let k = 0; k < eventListeners.length; k++){
-                    const { registeredEventType: registeredEventType , registeredCallback: registeredCallback  } = eventListeners[k];
-                    if (registeredEventType === eventType && (!callback || registeredCallback === callback)) element.removeEventListener(eventType, registeredCallback);
-                    else remainingListeners.push(eventListeners[k]);
-                }
-                element.eventListeners = remainingListeners;
-            }
-        }
-        // Remove the event listeners associated with the given selector and event types from the delegator element
-        const delegator = document.querySelector("body");
-        const selectorEventListeners = delegator.eventListeners || [];
-        const remainingSelectorListeners = [];
-        for(let i = 0; i < selectorEventListeners.length; i++){
-            const { registeredEventType: registeredEventType , registeredSelector: registeredSelector  } = selectorEventListeners[i];
-            if (registeredEventType === eventTypes && registeredSelector === selector) delegator.removeEventListener(eventTypes, selectorEventListeners[i].eventListener);
-            else remainingSelectorListeners.push(selectorEventListeners[i]);
-        }
-        delegator.eventListeners = remainingSelectorListeners;
-    }
+    /**
+   *
+   * @param {String,Object,Event} event
+   * - One or more space-separated event types and optional namespaces, or just namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+   * - An object where the string keys represent one or more space-separated event types and optional namespaces, and the values represent handler functions previously attached for the event(s).
+   * - A BabyQuery.Event object.
+   * @param {String} selector A selector which should match the one originally passed to .on() when attaching event handlers.
+   * @param {Function|Boolean} handler A handler function previously attached for the event(s), or the special value false.
+   */ off: function(event, selector, handler) {},
+    click: function() {}
 };
 
 

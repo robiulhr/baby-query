@@ -3,9 +3,11 @@ import localhelpers from './localhelpers'
 const { isPlainObject } = checkers
 const { onSingleEventsMacker, onEventListener } = localhelpers
 export default {
+  /**
+   * All Events Object
+   */
   _allEventListeners: {},
   /**
-   *
    * @param {String|Object} eventType
    * Type: String - One or more space-separated event types and optional namespaces, such as "click" or "keydown.myPlugin".
    * Type: PlainObject - An object in which the string keys represent one or more space-separated event types and optional namespaces, and the values represent a handler function to be called for the event(s).
@@ -52,6 +54,7 @@ export default {
     }
     return this
   },
+  one: function () {},
   /**
    * Execute all handlers and behaviors attached to the matched elements for the given event type.
    * @param {Event|String} eventType A string containing a JavaScript event type, such as click or submit or A Event object.
@@ -84,156 +87,15 @@ export default {
     }
     return this
   },
-  click: function () {},
-
-  gptOne: function (eventTypes, selector, data, callback, options) {
-    // Handle argument overloading
-    if (typeof selector === 'function') {
-      callback = selector
-      selector = undefined
-      data = undefined
-    } else if (typeof data === 'function') {
-      callback = data
-      data = undefined
-    }
-
-    // Split eventTypes by namespaces
-    const namespaces = eventTypes.split('.')
-    eventTypes = namespaces.shift()
-
-    // Split eventTypes by space to support multiple event types
-    const events = eventTypes.split(' ')
-
-    // Get the elements to attach the events to
-    const elements = document.querySelectorAll(selector)
-
-    // Set the delegator to options.delegator or default to body
-    const delegator = options && options.delegator ? document.querySelector(options.delegator) : document.querySelector('body')
-
-    // Create an array to store event listeners for later removal
-    const eventListeners = []
-
-    // Loop through each event type
-    for (let i = 0; i < events.length; i++) {
-      const eventType = events[i]
-
-      // Loop through each element and attach event listener
-      for (let j = 0; j < elements.length; j++) {
-        const element = elements[j]
-
-        const eventListener = function (e) {
-          // Handle event delegation
-          if (selector) {
-            const possibleTargets = element.querySelectorAll(selector)
-            let target = e.target
-            while (target && target !== this) {
-              for (let i = 0; i < possibleTargets.length; i++) {
-                if (possibleTargets[i] === target) {
-                  if (callback.call(target, e, data) === false) {
-                    e.preventDefault()
-                    e.stopPropagation()
-                  }
-                  break
-                }
-              }
-              target = target.parentNode
-            }
-          } else {
-            // Handle namespaces
-            if (namespaces.length > 0) {
-              const $this = this
-              const $target = e.target
-              let matched = false
-
-              while ($target && $target !== $this) {
-                for (let k = 0; k < namespaces.length; k++) {
-                  if ($target.matches(`[data-namespace="${namespaces[k]}"]`)) {
-                    matched = true
-                    break
-                  }
-                }
-                if (matched) {
-                  break
-                }
-                $target = $target.parentNode
-              }
-              if (matched) {
-                if (callback.call($target, e, data) === false) {
-                  e.preventDefault()
-                  e.stopPropagation()
-                }
-              }
-            } else {
-              if (callback.call(this, e, data) === false) {
-                e.preventDefault()
-                e.stopPropagation()
-              }
-            }
-          }
-        }
-
-        // Check for 'once' option
-        if (options && options.once) {
-          element.addEventListener(eventType, eventListener, { once: true })
-        } else {
-          delegator.addEventListener(eventType, eventListener)
-        }
-
-        // Store the event listener for later removal
-        eventListeners.push({ element, eventType, eventListener })
-      }
-    }
-
-    // Return an object with an 'off' method to remove the event listeners
-    return {
-      off: function () {
-        for (let i = 0; i < eventListeners.length; i++) {
-          const { element, eventType, eventListener } = eventListeners[i]
-          element.removeEventListener(eventType, eventListener)
-        }
-      }
-    }
-  },
-  gptOff: function (eventTypes, selector, callback) {
-    const namespaces = eventTypes.split('.')
-    eventTypes = namespaces.shift()
-    const events = eventTypes.split(' ')
-    const elements = document.querySelectorAll(selector)
-
-    for (let i = 0; i < events.length; i++) {
-      const eventType = events[i]
-      for (let j = 0; j < elements.length; j++) {
-        const element = elements[j]
-        const eventListeners = element.eventListeners || []
-        const remainingListeners = []
-
-        for (let k = 0; k < eventListeners.length; k++) {
-          const { registeredEventType, registeredCallback } = eventListeners[k]
-          if (registeredEventType === eventType && (!callback || registeredCallback === callback)) {
-            element.removeEventListener(eventType, registeredCallback)
-          } else {
-            remainingListeners.push(eventListeners[k])
-          }
-        }
-
-        element.eventListeners = remainingListeners
-      }
-    }
-
-    // Remove the event listeners associated with the given selector and event types from the delegator element
-    const delegator = document.querySelector('body')
-    const selectorEventListeners = delegator.eventListeners || []
-    const remainingSelectorListeners = []
-
-    for (let i = 0; i < selectorEventListeners.length; i++) {
-      const { registeredEventType, registeredSelector } = selectorEventListeners[i]
-      if (registeredEventType === eventTypes && registeredSelector === selector) {
-        delegator.removeEventListener(eventTypes, selectorEventListeners[i].eventListener)
-      } else {
-        remainingSelectorListeners.push(selectorEventListeners[i])
-      }
-    }
-
-    delegator.eventListeners = remainingSelectorListeners
-  }
+  /**
+   *
+   * @param {String,Object,Event} event
+   * - One or more space-separated event types and optional namespaces, or just namespaces, such as "click", "keydown.myPlugin", or ".myPlugin".
+   * - An object where the string keys represent one or more space-separated event types and optional namespaces, and the values represent handler functions previously attached for the event(s).
+   * - A BabyQuery.Event object.
+   * @param {String} selector A selector which should match the one originally passed to .on() when attaching event handlers.
+   * @param {Function|Boolean} handler A handler function previously attached for the event(s), or the special value false.
+   */
+  off: function (event, selector, handler) {},
+  click: function () {}
 }

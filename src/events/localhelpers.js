@@ -1,6 +1,11 @@
 import checkers from '../checkers'
 const { isFunction, isArrayLike } = checkers
 const localhelpers = {
+  /**
+   * @param {Object} event Event object 
+   * @param {Function} callback function which was passed as argument of the on() method
+   * @returns {any} returns the callback's returned value
+   */
   onMethodCallbackHandler: function (event, callback) {
     // event has been dispatched using the .trigger() method
     if (event.__triggered && isFunction(callback) && event.detail) {
@@ -9,6 +14,14 @@ const localhelpers = {
       return callback.call(this, event)
     }
   },
+  /**
+   * @param {String} event event type 
+   * [ Note: it may contain more that one event type separated with space.]
+   * @param {String} selector css selector that was passed as argument of on() method for delegation 
+   * @param {Object} data object which was passed as a argument of on() method
+   * @param {Function} callback function which was passed as argument of the on() method
+   * @returns {Object}
+   */
   onSingleEventsMacker: function (event, selector, data, callback) {
     const splitedEventType = event.split('.')
     const namespaces = [...splitedEventType].slice(1)
@@ -22,11 +35,11 @@ const localhelpers = {
     }
   },
   /**
-   *
-   * @param {} selector
-   * @param {*} data
-   * @param {*} callback
-   * @param {*} event
+   * @param {String} selector css selector that was passed as argument of on() method for delegation 
+   * @param {Object} data object which was passed as a argument of on() method
+   * @param {Function} callback function which was passed as argument of the on() method
+   * @param {String} event event type 
+   * [ Note: it may contain more that one event type separated with space.]
    */
   onEventListener: function (selector, data, callback, event) {
     // customise the event object

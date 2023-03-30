@@ -58,6 +58,15 @@ export default {
     }
     return this
   },
+  /**
+   * @param {String|Object} name 
+   * - The name of the attribute to get. 
+   * - An object of attribute-value pairs to set.
+   * @param {String|Number|Boolean|Function} value 
+   * - A value to set for the attribute. If null, the specified attribute will be removed.
+   * - A function returning the value to set. this is the current element. Receives the index position of the element in the set and the old attribute value as arguments.
+   * @returns {Object} return the BabyQuery object
+   */
   attr: function (name, value) {
     if (typeof name === 'string') {
       if (!value) {
@@ -82,6 +91,12 @@ export default {
   empty: function () {},
   get: function () {},
   has: function () {},
+  /**
+   * @param {String|Function|Object} input 
+   * - A string of HTML to set as the content of each matched element.
+   * - A function returning the HTML content to set. Receives the index position of the element in the set and the old HTML value as arguments. jQuery empties the element before calling the function; use the oldhtml argument to reference the previous content. Within the function, this refers to the current element in the set.
+   * @returns {Object} return the BabyQuery object
+   */
   html: function (input) {
     if (!input) {
       return this['0'].innerHTML
@@ -105,6 +120,12 @@ export default {
   prepend: function () {},
   remove: function () {},
   removeAttr: function () {},
+  /**
+   * @param {String|HTMLElement|Boolean} text 
+   * - The text to set as the content of each matched element. When Number or Boolean is supplied, it will be converted to a String representation.
+   * - A function returning the text content to set. Receives the index position of the element in the set and the old text value as arguments.
+   * @returns {Object} return the BabyQuery object
+   */
   text: function (text) {
     if (!text) {
       return this[0].textContent

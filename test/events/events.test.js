@@ -439,13 +439,13 @@ describe('.trigger() method', () => {
     setDefaultHtml(customHtml)
     const customFunc = jest.fn()
     const button = $('.button')
-
     button.on('click', function () {
       button.text('button text changed')
       customFunc(button.text())
     })
     /**
      * BabyQuery.Event method will be added letter version of Babyquery
+     * in jquery it's doesn't works for the defaul javascript Event object. it works for only jquery.Event object.
      */
     // let event = BabyQuery.Event( "click" );
     let event = new Event('click')
@@ -475,4 +475,249 @@ describe('.trigger() method', () => {
     expect(customFunc).toHaveBeenNthCalledWith(2, 'foo')
     expect(customFunc).toHaveBeenNthCalledWith(3, 'bar')
   })
+})
+/**
+ * have to work on it
+ */
+describe('.off() method', () => {
+  test('Add and remove event handlers', () => {
+    const customHtml = `<button id="theone">Does nothing...</button><button id="bind">Add Click</button><button id="unbind">Remove Click</button><div class="div" style="display: none">Click!</div>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const bind = $('#bind')
+    const unBind = $('#unbind')
+    const theone = $('#theone')
+    const div = document.querySelector('.div')
+    function flash () {
+      const currStyle = window.getComputedStyle(div).getPropertyValue('display')
+      if (currStyle === 'none') document.querySelector('div').style.display = 'block'
+      else document.querySelector('div').style.display = 'none'
+    }
+    bind.on('click', function () {
+      theone.text('Can Click!')
+      theone.on('click', flash)
+    })
+    unBind.on('click', function () {
+      theone.off('click', flash)
+      theone.text('Does nothing...')
+    })
+    // check the default values
+    customFunc(window.getComputedStyle(div).getPropertyValue('display'))
+    customFunc(theone.text())
+    // attach the event to the theone div
+    bind.trigger('click')
+    // check for the changes
+    customFunc(theone.text())
+    // fire the event for the first time of theone div
+    theone.trigger('click')
+    // check for the changes
+    customFunc(window.getComputedStyle(div).getPropertyValue('display'))
+    // fire the event for the second time of theone div
+    theone.trigger('click')
+    // check for the changes
+    customFunc(window.getComputedStyle(div).getPropertyValue('display'))
+    // remove the event from the theone div
+    unBind.trigger('click')
+    // check for the changes
+    customFunc(theone.text())
+    // fire the event for the third time of theone div
+    theone.trigger('click')
+    // check for the changes
+    customFunc(window.getComputedStyle(div).getPropertyValue('display'))
+
+    // compare the results with the expected result
+    expect(customFunc.mock.calls.length).toBe(7)
+    expect(customFunc).toHaveBeenNthCalledWith(1, 'none')
+    expect(customFunc).toHaveBeenNthCalledWith(2, 'Does nothing...')
+    expect(customFunc).toHaveBeenNthCalledWith(3, 'Can Click!')
+    expect(customFunc).toHaveBeenNthCalledWith(4, 'block')
+    expect(customFunc).toHaveBeenNthCalledWith(5, 'none')
+    expect(customFunc).toHaveBeenNthCalledWith(6, 'Does nothing...')
+    expect(customFunc).toHaveBeenNthCalledWith(7, 'none')
+  })
+  test('Remove all event handlers from all paragraphs', () => {
+    const customHtml = `<button id="bind">Add Click</button><button id="unbind">Remove Click</button><p class="paragraph-1">paragraph 1</p><p class="paragraph-2">paragraph 2</p>`
+    setDefaultHtml(customHtml)
+    const customFunc = jest.fn()
+    const bind = $('#bind')
+    const unBind = $('#unbind')
+    const allP = $('p')
+    let value = 0
+    function flash (e) {
+      $(this).text('Clicked Count ' + ++value)
+    }
+    bind.on('click', function () {
+      allP.on('click', flash)
+      allP.on('mouseenter', flash)
+    })
+    unBind.on('click', function () {
+      allP.off()
+    })
+    // check the default values
+    customFunc($(allP[0]).text())
+    customFunc($(allP[1]).text())
+    // attach the event to the theone div
+    bind.trigger('click')
+    // fire the click event for first p element for the first time
+    $(allP[0]).trigger('click')
+    // check for the changes
+    customFunc($(allP[0]).text())
+    // fire the mouseenter event for first p element for the first time
+    $(allP[0]).trigger('mouseenter')
+    // check for the changes
+    customFunc($(allP[0]).text())
+    // fire the click event for second p element for the first time
+    $(allP[1]).trigger('click')
+    // check for the changes
+    customFunc($(allP[1]).text())
+    // fire the mouseenter event for second p element for the first time
+    $(allP[1]).trigger('mouseenter')
+    // check for the changes
+    customFunc($(allP[1]).text())
+    // fire the click event for first p element for the second time
+    $(allP[0]).trigger('click')
+    // check for the changes
+    customFunc($(allP[0]).text())
+    // fire the mouseenter event for first p element for the second time
+    $(allP[0]).trigger('mouseenter')
+    // check for the changes
+    customFunc($(allP[0]).text())
+    // fire the event for second p element for the second time
+    $(allP[1]).trigger('click')
+    // check for the changes
+    customFunc($(allP[1]).text())
+    // fire the mouseenter event for second p element for the second time
+    $(allP[1]).trigger('mouseenter')
+    // check for the changes
+    customFunc($(allP[1]).text())
+
+    // remove the event from the theone div
+    unBind.trigger('click')
+    // fire the event for first p element for the third time
+    $(allP[0]).trigger('click')
+    // check for the changes
+    customFunc($(allP[0]).text())
+    // fire the mouseenter event for first p element for the third time
+    $(allP[0]).trigger('mouseenter')
+    // check for the changes
+    customFunc($(allP[0]).text())
+    // fire the event for second p element for the third time
+    $(allP[1]).trigger('click')
+    // check for the changes
+    customFunc($(allP[1]).text())
+    // fire the mouseenter event for second p element for the third time
+    $(allP[1]).trigger('mouseenter')
+    // check for the changes
+    customFunc($(allP[1]).text())
+
+    // compare the results with the expected result
+    expect(customFunc.mock.calls.length).toBe(14)
+    expect(customFunc).toHaveBeenNthCalledWith(1, 'paragraph 1')
+    expect(customFunc).toHaveBeenNthCalledWith(2, 'paragraph 2')
+    expect(customFunc).toHaveBeenNthCalledWith(3, 'Clicked Count 1')
+    expect(customFunc).toHaveBeenNthCalledWith(4, 'Clicked Count 2')
+    expect(customFunc).toHaveBeenNthCalledWith(5, 'Clicked Count 3')
+    expect(customFunc).toHaveBeenNthCalledWith(6, 'Clicked Count 4')
+    expect(customFunc).toHaveBeenNthCalledWith(7, 'Clicked Count 5')
+    expect(customFunc).toHaveBeenNthCalledWith(8, 'Clicked Count 6')
+    expect(customFunc).toHaveBeenNthCalledWith(9, 'Clicked Count 7')
+    expect(customFunc).toHaveBeenNthCalledWith(10, 'Clicked Count 8')
+    expect(customFunc).toHaveBeenNthCalledWith(11, 'Clicked Count 6')
+    expect(customFunc).toHaveBeenNthCalledWith(12, 'Clicked Count 6')
+    expect(customFunc).toHaveBeenNthCalledWith(13, 'Clicked Count 8')
+    expect(customFunc).toHaveBeenNthCalledWith(14, 'Clicked Count 8')
+  })
+  // test('Remove all delegated click handlers from all paragraphs', () => {
+  //   const customHtml = `<button id="bind">Add Click</button><button id="unbind">Remove Click</button><p class="paragraph-1">paragraph 1</p><p class="paragraph-2">paragraph 2</p>`
+  //   setDefaultHtml(customHtml)
+  //   const customFunc = jest.fn()
+  //   const bind = $('#bind')
+  //   const unBind = $('#unbind')
+  //   const allP = $('p')
+  //   const body = $('body')
+  //   let value = 0
+  //   function flash (e) {
+  //     $(this).text('Clicked Count ' + ++value)
+  //   }
+  //   bind.on('click', function () {
+  //     body.on('click', 'p', flash)
+  //     body.on('mouseenter', 'p', flash)
+  //   })
+  //   unBind.on('click', function () {
+  //     allP.off('click', '**')
+  //   })
+  //   // check the default values
+  //   customFunc($(allP[0]).text())
+  //   customFunc($(allP[1]).text())
+  //   // attach the event to the theone div
+  //   bind.trigger('click')
+  //   // fire the click event for first p element for the first time
+  //   $(allP[0]).trigger('click')
+  //   // check for the changes
+  //   customFunc($(allP[0]).text())
+  //   // fire the mouseenter event for first p element for the first time
+  //   $(allP[0]).trigger('mouseenter')
+  //   // check for the changes
+  //   customFunc($(allP[0]).text())
+  //   // fire the click event for second p element for the first time
+  //   $(allP[1]).trigger('click')
+  //   // check for the changes
+  //   customFunc($(allP[1]).text())
+  //   // fire the mouseenter event for second p element for the first time
+  //   $(allP[1]).trigger('mouseenter')
+  //   // check for the changes
+  //   customFunc($(allP[1]).text())
+  //   // fire the click event for first p element for the second time
+  //   $(allP[0]).trigger('click')
+  //   // check for the changes
+  //   customFunc($(allP[0]).text())
+  //   // fire the mouseenter event for first p element for the second time
+  //   $(allP[0]).trigger('mouseenter')
+  //   // check for the changes
+  //   customFunc($(allP[0]).text())
+  //   // fire the event for second p element for the second time
+  //   $(allP[1]).trigger('click')
+  //   // check for the changes
+  //   customFunc($(allP[1]).text())
+  //   // fire the mouseenter event for second p element for the second time
+  //   $(allP[1]).trigger('mouseenter')
+  //   // check for the changes
+  //   customFunc($(allP[1]).text())
+
+  //   // remove the event from the theone div
+  //   unBind.trigger('click')
+  //   // fire the event for first p element for the third time
+  //   $(allP[0]).trigger('click')
+  //   // check for the changes
+  //   customFunc($(allP[0]).text())
+  //   // fire the mouseenter event for first p element for the third time
+  //   $(allP[0]).trigger('mouseenter')
+  //   // check for the changes
+  //   customFunc($(allP[0]).text())
+  //   // fire the event for second p element for the third time
+  //   $(allP[1]).trigger('click')
+  //   // check for the changes
+  //   customFunc($(allP[1]).text())
+  //   // fire the mouseenter event for second p element for the third time
+  //   $(allP[1]).trigger('mouseenter')
+  //   // check for the changes
+  //   customFunc($(allP[1]).text())
+
+  //   // compare the results with the expected result
+  //   expect(customFunc.mock.calls.length).toBe(14)
+  //   expect(customFunc).toHaveBeenNthCalledWith(1, 'paragraph 1')
+  //   expect(customFunc).toHaveBeenNthCalledWith(2, 'paragraph 2')
+  //   expect(customFunc).toHaveBeenNthCalledWith(3, 'Clicked Count 1')
+  //   expect(customFunc).toHaveBeenNthCalledWith(4, 'Clicked Count 2')
+  //   expect(customFunc).toHaveBeenNthCalledWith(5, 'Clicked Count 3')
+  //   expect(customFunc).toHaveBeenNthCalledWith(6, 'Clicked Count 4')
+  //   expect(customFunc).toHaveBeenNthCalledWith(7, 'Clicked Count 5')
+  //   expect(customFunc).toHaveBeenNthCalledWith(8, 'Clicked Count 6')
+  //   expect(customFunc).toHaveBeenNthCalledWith(9, 'Clicked Count 7')
+  //   expect(customFunc).toHaveBeenNthCalledWith(10, 'Clicked Count 8')
+  //   expect(customFunc).toHaveBeenNthCalledWith(11, 'Clicked Count 6')
+  //   expect(customFunc).toHaveBeenNthCalledWith(12, 'Clicked Count 9')
+  //   expect(customFunc).toHaveBeenNthCalledWith(13, 'Clicked Count 8')
+  //   expect(customFunc).toHaveBeenNthCalledWith(14, 'Clicked Count 10')
+  // })
 })
