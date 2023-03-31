@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-const { registerComponents } = require('@vuepress/plugin-registered-components')
 
 export default defineConfig({
   title: 'Baby Query',
@@ -76,38 +75,28 @@ export default defineConfig({
           text: 'Table of content',
           items: [
             {
-              text: 'Array Methods',
-              collapsed: true,
-
-              items: [{ text: '.each()', link: '/docs/array/each' }]
-            },
-            {
               text: 'CSS Methods',
               collapsed: true,
               items: [{ text: '.css()', link: '/docs/css/css' }]
             },
             {
-              text: 'Effects',
-              collapsed: true,
-              items: [{ text: '.toggle()', link: '/docs/effects/toggle' }]
-            },
-            {
               text: 'Events',
               collapsed: true,
-              items: [{ text: '.on()', link: '/docs/events/on' }]
+              items: [
+                { text: '.on()', link: '/docs/events/on' },
+                { text: '.trigger()', link: '/docs/events/trigger' }
+              ]
             },
             {
               text: 'Manupulation Methods',
               collapsed: true,
               items: [
                 { text: '.after()', link: '/docs/manupulation/after' },
-                { text: '.attr()', link: '/docs/manupulation/attr' }
+                { text: '.append()', link: '/docs/manupulation/append' },
+                { text: '.attr()', link: '/docs/manupulation/attr' },
+                { text: '.html()', link: '/docs/manupulation/html' },
+                { text: '.text()', link: '/docs/manupulation/text' }
               ]
-            },
-            {
-              text: 'Object Methods',
-              collapsed: true,
-              items: [{ text: '.each()', link: '/docs/object/' }]
             }
           ]
         }
@@ -120,12 +109,5 @@ export default defineConfig({
     footer: {
       message: 'Released under the MIT License'
     }
-  },
-  plugins: [
-    ['@vuepress/plugin-register-components', {
-      components: {
-        'CodePreview': '/components/CodePreview.vue'
-      }
-    }]
-  ]
+  }
 })
