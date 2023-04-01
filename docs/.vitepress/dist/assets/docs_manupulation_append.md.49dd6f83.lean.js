@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,N as l}from"./chunks/framework.a6ff1387.js";const d=JSON.parse('{"title":".append()","description":"","frontmatter":{},"headers":[],"relativePath":"docs/manupulation/append.md"}'),p={name:"docs/manupulation/append.md"},o=l("",26),e=[o];function t(c,r,D,F,y,i){return n(),a("div",null,e)}const A=s(p,[["render",t]]);export{d as __pageData,A as default};

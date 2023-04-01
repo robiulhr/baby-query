@@ -68,11 +68,11 @@ Show the `#banner-message` element that is hidden with `display:none` in its CSS
 ```javascript
 var hiddenBox = $('#banner-message')
 $('#button-container button').on('click', function (event) {
-  hiddenBox.show()
+  hiddenBox.text("button clicked")
 })
 ```
 
-### Ajax
+<!-- ### Ajax
 
 Call a local script on the server /api/getWeather with the query parameter zipcode=97201 and replace the element #weather-temp's html with the returned text.
 
@@ -86,4 +86,4 @@ $.ajax({
     $('#weather-temp').html('<strong>' + result + '</strong> degrees')
   }
 })
-```
+``` -->

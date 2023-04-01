@@ -75,6 +75,11 @@ export default defineConfig({
           text: 'Table of content',
           items: [
             {
+              text: 'Core Methods',
+              collapsed: true,
+              items: [{ text: '.ready()', link: '/docs/core/ready' }]
+            },
+            {
               text: 'CSS Methods',
               collapsed: true,
               items: [{ text: '.css()', link: '/docs/css/css' }]
