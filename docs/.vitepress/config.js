@@ -93,7 +93,7 @@ export default defineConfig({
               ]
             },
             {
-              text: 'Manupulation Methods',
+              text: 'Manipulation Methods',
               collapsed: true,
               items: [
                 { text: '.after()', link: '/docs/manupulation/after' },
