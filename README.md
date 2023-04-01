@@ -38,4 +38,4 @@ Baby Query is a custom implementation of the popular JavaScript library jQuery.
 
   - `.trigger()`: Execute all handlers and behaviors attached to the matched elements for the given event type.
 
-## Read the Documentation [here](robiulhr.github.io/baby-query/)
+#### Read the Documentation [here](https://robiulhr.github.io/baby-query/)
