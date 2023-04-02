@@ -127,6 +127,7 @@ export default {
    * @returns {Object} return the BabyQuery object
    */
   text: function (text) {
+    console.log(this[0])
     if (!text) {
       return this[0].textContent
     } else if (typeof text === 'string' || typeof text ===  "number") {

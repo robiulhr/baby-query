@@ -1,41 +1,54 @@
 # Baby Query
 
-Baby Query is a custom implementation of the popular JavaScript library jQuery.
+Baby Query is a custom implementation of the popular JavaScript library Baby Query.
 
-## Features
+For information on how to get started and how to use Baby Query, please see Baby Query's [documentation](https://robiulhr.github.io/baby-query/). For source files and issues, please visit the Baby Query [repo](https://github.com/robiulhr/baby-query).
 
-- Simple and minimal: Just call the function with selector `$()` you are ready to do changes.
+## Including Baby Query
 
-- Chainable methods: `$("div").css("width","200px").text("Hello world")`
+Below are some of the most common ways to include Baby Query.
 
-- Better performance: Runs much faster and more efficiently.
+### Browser
 
-## Methods
+Script tag
 
-- Core:
+```javascript
+<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.1/dist/babyQuery.js'></script>
+```
 
-  - `.ready()`: Specify a function to execute when the DOM is fully loaded.
+or for the minified version:
 
-- CSS:
+```javascript
+<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.1/dist/babyQuery.min.js'></script>
+```
 
-  - `.css()`: Get the value of a computed style property for the first element in the set of matched elements or set one or more CSS properties for every matched element.
+In the script, including Baby Query will usually look like this:
 
-- Dom Manipulation:
+```javascript
+import $ from 'baby-query'
+```
 
-  - `.after()`: Insert content, specified by the parameter, after each element in the set of matched elements.
+If you need to use Baby Query in a file that's not an ECMAScript module, you can use the CommonJS syntax:
 
-  - `.append()`: Insert content, specified by the parameter, to the end of each element in the set of matched elements.
+```javascript
+var $ = require('baby-query')
+```
 
-  - `.attr()`: Get the value of an attribute for the first element in the set of matched elements also, Set one or more attributes for the set of matched elements.
+## Node
 
-  - `.html()`: Get the HTML contents of the first element in the set of matched elements or set the HTML contents of every matched element.
+To include Baby Query in Node, first install with npm.
 
-  - `.text()`: Get the combined text contents of each element in the set of matched elements, including their descendants, or set the text contents of the matched elements.
+```javascript
+npm install baby-query
+```
 
-- Events
+For Baby Query to work in Node, a window with a document is required. Since no such window exists natively in Node, one can be mocked by tools such as [jsdom](https://github.com/jsdom/jsdom). This can be useful for testing purposes.
 
-  - `.on()`: Attach an event handler function for one or more events to the selected elements.
-
-  - `.trigger()`: Execute all handlers and behaviors attached to the matched elements for the given event type.
-
-#### Read the Documentation [here](https://robiulhr.github.io/baby-query/)
+```javascript
+const $ = require('baby-query')
+const { JSDOM } = require('jsdom')
+const { window, document } = new JSDOM(`<p>Hello world</p>`).window
+global.window = window
+global.document = document
+console.log($('p').text())
+```

@@ -1,9 +1,9 @@
 {
   "name": "baby-query",
-  "version": "1.0.0",
-  "description": "baby query is a custom implementation of the popular javascriopt library jQuery.",
-  "source": "./dist/babyQuery.js",
-  "main": "./dist/babyQuery.min.js",
+  "version": "1.0.4",
+  "description": "baby query is a custom implementation of the popular javascript library jQuery.",
+  "source": "./src/babyQuery.js",
+  "main": "./dist/babyQuery.js",
   "entry point": "./dist/babyQuery.js",
   "scripts": {
     "test": "jest --env=jsdom --coverage --watchAll",
@@ -15,6 +15,7 @@
     "docs:preview": "vitepress preview docs/",
     "docs": "concurrently \"vitepress dev docs/\" \"npm run docs:build\" \"npm run docs:preview\""
   },
+  "readme": "README.npm.md",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/robiulhr/baby-query.git"

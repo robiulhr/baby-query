@@ -8,6 +8,11 @@ typeof globalThis !== 'undefined'
   : typeof global !== 'undefined'
   ? global
   : {};
+function $parcel$export(e, n, v, s) {
+  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+}
+
+$parcel$export(module.exports, "default", () => $047f9defc20f6cd7$export$2e2bcd8739ae039, (v) => $047f9defc20f6cd7$export$2e2bcd8739ae039 = v);
 const $d4df80a29a2554d2$var$checkers = {
     /**
    * checks the provided input is a value Css selector
@@ -483,6 +488,7 @@ var $d8203bae9db46050$export$2e2bcd8739ae039 = {
    * - A function returning the text content to set. Receives the index position of the element in the set and the old text value as arguments.
    * @returns {Object} return the BabyQuery object
    */ text: function(text) {
+        console.log(this[0]);
         if (!text) return this[0].textContent;
         else if (typeof text === "string" || typeof text === "number") for(let i = 0; i < this.length; i++)this[i].textContent = text;
         else if ($d8203bae9db46050$var$isFunction(text)) for(let i = 0; i < this.length; i++)this[i].textContent = text.call(this[i], i, this[i].textContent);
@@ -791,7 +797,7 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
 
 const { isValidElementSelector: $047f9defc20f6cd7$var$isValidElementSelector , isValidHtmlElement: $047f9defc20f6cd7$var$isValidHtmlElement , isPlainObject: $047f9defc20f6cd7$var$isPlainObject , isFunction: $047f9defc20f6cd7$var$isFunction  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $047f9defc20f6cd7$var$createHtmlElementDynamically , handleDOMReady: $047f9defc20f6cd7$var$handleDOMReady , myExtend: $047f9defc20f6cd7$var$myExtend  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
-export default $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
+const $047f9defc20f6cd7$var$$ = function(globalThis) {
     /**
    * BabyQuery Constructor function
    * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
@@ -806,9 +812,12 @@ export default $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
         if (typeof selector === "string") {
             this.selector = selector;
             // HANDLE: $(".class") , $("#id") and more valid selector
-            if ($047f9defc20f6cd7$var$isValidElementSelector(selector)) // selecting all element
-            this.nodes = (context || document).querySelectorAll(selector);
-            else if ($047f9defc20f6cd7$var$isValidHtmlElement(selector)) {
+            if ($047f9defc20f6cd7$var$isValidElementSelector(selector)) {
+                // selecting all element
+                console.log(selector, document);
+                this.nodes = (context || document).querySelectorAll(selector);
+            // HANDLE: $(html)
+            } else if ($047f9defc20f6cd7$var$isValidHtmlElement(selector)) {
                 this.nodes = $047f9defc20f6cd7$var$createHtmlElementDynamically(selector);
                 // HANDLE: $(html, props)
                 if (context) {
@@ -841,6 +850,10 @@ export default $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
     globalThis.BabyQuery = globalThis.$ = BabyQuery;
     return BabyQuery;
 }("undefined" != typeof window ? window : $parcel$global, undefined);
+// Export the function using CommonJS syntax
+module.exports = $047f9defc20f6cd7$var$$;
+var // Export the function using ES module syntax
+$047f9defc20f6cd7$export$2e2bcd8739ae039 = $047f9defc20f6cd7$var$$;
 
 
 //# sourceMappingURL=babyQuery.js.map

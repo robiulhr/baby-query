@@ -2,7 +2,6 @@
 
 import $ from '../dist/babyQuery'
 
-console.log($)
 // Set up our document body
 document.body.innerHTML = `<div>
       <ul id="main-menu" class="menu">

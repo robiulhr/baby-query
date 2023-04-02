@@ -5,7 +5,7 @@ import css from './css/css.js'
 import events from './events/events'
 const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction } = checkers
 const { createHtmlElementDynamically, handleDOMReady, myExtend } = helpers
-export default (function (globalThis) {
+const $ = (function (globalThis) {
   /**
    * BabyQuery Constructor function
    * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
@@ -27,6 +27,7 @@ export default (function (globalThis) {
       // HANDLE: $(".class") , $("#id") and more valid selector
       if (isValidElementSelector(selector)) {
         // selecting all element
+        console.log(selector, document)
         this.nodes = (context || document).querySelectorAll(selector)
         // HANDLE: $(html)
       } else if (isValidHtmlElement(selector)) {
@@ -55,7 +56,7 @@ export default (function (globalThis) {
       }
     }
   }
-  
+
   BabyQuery.fn = BabyQuery.prototype = {
     /**
      * .ready() waits until all document and scripts get loads
@@ -77,3 +78,9 @@ export default (function (globalThis) {
 
   return BabyQuery
 })('undefined' != typeof window ? window : global, undefined)
+
+// Export the function using CommonJS syntax
+module.exports = $
+
+// Export the function using ES module syntax
+export default $

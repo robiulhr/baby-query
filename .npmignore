@@ -16,11 +16,8 @@ test
 
 .parcel-cache
 
-dist/babyQuery.js
-
 dist/babyQuery.js.map
 
 dist/babyQuery.min.js.map
-
 
 coverage
