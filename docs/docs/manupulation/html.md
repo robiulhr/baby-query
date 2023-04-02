@@ -38,7 +38,7 @@ This method uses the browser's innerHTML property. Some browsers may not return 
 
 By design, any BabyQuery constructor or method that accepts an HTML string — BabyQuery(), .append(), .after(), etc. — can potentially execute code. This can occur by injection of script tags or use of HTML attributes that execute code (for example, <img onload="">). Do not use these methods to insert strings obtained from untrusted sources such as URL query parameters, cookies, or form inputs. Doing so can introduce cross-site-scripting (XSS) vulnerabilities. Remove or escape any user input before adding content to the document. -->
 
-## Example:
+## Examples:
 
 Click a paragraph to convert it from html to text.
 
@@ -119,8 +119,6 @@ This method uses the browser's innerHTML property. Some browsers may not generat
 To set the content of a `<script>` element, which does not contain HTML, use the `.text()` method and not `.html()`.
 
 <!-- Note: In Internet Explorer up to and including version 9, setting the text content of an HTML element may corrupt the text nodes of its children that are being removed from the document as a result of the operation. If you are keeping references to these DOM elements and need them to be unchanged, use .empty().html( string ) instead of .html(string) so that the elements are removed from the document before the new string is assigned to the element. -->
-
-## Examples:
 
 Add some html to each div.
 

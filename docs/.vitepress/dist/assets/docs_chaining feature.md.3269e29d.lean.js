@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as a}from"./chunks/framework.a6ff1387.js";const f=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"docs/chaining feature.md"}'),n={name:"docs/chaining feature.md"};function r(c,o,s,i,_,d){return t(),a("div")}const m=e(n,[["render",r]]);export{f as __pageData,m as default};

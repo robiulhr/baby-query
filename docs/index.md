@@ -11,8 +11,8 @@ hero:
     alt: VitePress
   actions:
     - theme: brand
-      text: Examples
-      link: /examples/
+      text: Tutorial
+      link: /docs/tutorial/
     - theme: alt
       text: API Docs
       link: /docs/introduction

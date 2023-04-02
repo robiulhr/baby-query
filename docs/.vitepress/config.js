@@ -56,7 +56,7 @@ export default defineConfig({
     siteTitle: 'Baby Query',
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Tutorial', link: '/tutorial/' },
+      { text: 'Tutorial', link: '/docs/tutorial/' },
       { text: 'Docs', link: '/docs/introduction', activeMatch: '/docs/' },
       { text: 'Author', link: 'https://robiulhr.github.io/' }
     ],

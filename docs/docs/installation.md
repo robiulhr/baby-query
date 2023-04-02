@@ -8,9 +8,7 @@ next:
   link: '/docs/contribute'
 ---
 
-
-
-## Including Baby Query
+# Including Baby Query
 
 Below are some of the most common ways to include Baby Query.
 
@@ -19,13 +17,13 @@ Below are some of the most common ways to include Baby Query.
 Script tag
 
 ```html
-<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.5/dist/babyQuery.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/baby-query@1.0.5/dist/babyQuery.js"></script>
 ```
 
 or for the minified version:
 
 ```html
-<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.5/dist/babyQuery.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/baby-query@1.0.5/dist/babyQuery.min.js"></script>
 ```
 
 In the script, including Baby Query will usually look like this:
