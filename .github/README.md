@@ -10,6 +10,12 @@ Baby Query is a custom implementation of the popular JavaScript library jQuery.
 
 - Better performance: Runs much faster and more efficiently.
 
+## Environments in which to use Baby Query
+
+- Browser support
+
+- Baby Query also runs on the Node environment.
+
 ## Methods
 
 - Core:
@@ -39,3 +45,5 @@ Baby Query is a custom implementation of the popular JavaScript library jQuery.
   - `.trigger()`: Execute all handlers and behaviors attached to the matched elements for the given event type.
 
 #### Read the Documentation [here](https://robiulhr.github.io/baby-query/)
+
+

@@ -13,13 +13,13 @@ Below are some of the most common ways to include Baby Query.
 Script tag
 
 ```javascript
-<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.1/dist/babyQuery.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.5/dist/babyQuery.js'></script>
 ```
 
 or for the minified version:
 
 ```javascript
-<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.1/dist/babyQuery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/baby-query@1.0.5/dist/babyQuery.min.js'></script>
 ```
 
 In the script, including Baby Query will usually look like this:
