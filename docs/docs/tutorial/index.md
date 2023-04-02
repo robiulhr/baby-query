@@ -1,3 +1,5 @@
+# Tutorial
+
 ## Adding Baby Query
 
 To begin, make an HTML file and save it as `index.html`.
@@ -160,16 +162,16 @@ Save the `scripts.js` file, and refresh `index.html` in the browser. Now when yo
 
 An event is any time the user interacts with the browser. Usually this is done with the mouse or keyboard. The example you just created used a click event. Using `on()` you can create any kind method just passing the name of the event as the first argument of `on()` method.
 
-- on("click",function(){}) Click: This executes on a single mouse click.
+- `on("click",function(){})` Click: This executes on a single mouse click.
 
-- hover("hover",function(){}): This executes when the mouse is hovered over an element.
+- `hover("hover",function(){})`: This executes when the mouse is hovered over an element.
 
-- on("mouseenter",function(){}) and mouseleave() apply only to the mouse entering or leaving an element, respectively.
+- `on("mouseenter",function(){})` and mouseleave() apply only to the mouse entering or leaving an element, respectively.
 
-- submit("submit",funciton(){}) Submit: This executes when a form is submitted.
+- `submit("submit",funciton(){})` Submit: This executes when a form is submitted.
 
-- scroll("scroll",function(){}) Scroll: This executes when the screen is scrolled.
+- `scroll("scroll",function(){})` Scroll: This executes when the screen is scrolled.
 
-- keydown("keydown",funciton(){}) Keydown: This executes when you press down on a key on the keyboard.
+- `keydown("keydown",funciton(){})` Keydown: This executes when you press down on a key on the keyboard.
 
 Understanding events is essential to creating dynamic website content with Baby Query.

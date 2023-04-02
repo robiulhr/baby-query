@@ -8,6 +8,6 @@ next:
   link: '/docs/css/after'
 ---
 
-## Contribution Guides
+# Contribution Guides
 
 In the spirit of open source software development, Baby Query always encourages community code contribution.
