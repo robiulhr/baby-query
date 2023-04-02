@@ -6,7 +6,6 @@ import events from './events/events'
 const { isValidElementSelector, isValidHtmlElement, isPlainObject, isFunction } = checkers
 const { createHtmlElementDynamically, handleDOMReady, myExtend } = helpers
 export default (function (globalThis) {
-  
   /**
    * BabyQuery Constructor function
    * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply
@@ -56,7 +55,7 @@ export default (function (globalThis) {
       }
     }
   }
-
+  
   BabyQuery.fn = BabyQuery.prototype = {
     /**
      * .ready() waits until all document and scripts get loads

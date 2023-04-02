@@ -791,7 +791,7 @@ var $6003777f4412a1bb$export$2e2bcd8739ae039 = {
 
 const { isValidElementSelector: $047f9defc20f6cd7$var$isValidElementSelector , isValidHtmlElement: $047f9defc20f6cd7$var$isValidHtmlElement , isPlainObject: $047f9defc20f6cd7$var$isPlainObject , isFunction: $047f9defc20f6cd7$var$isFunction  } = (0, $d4df80a29a2554d2$export$2e2bcd8739ae039);
 const { createHtmlElementDynamically: $047f9defc20f6cd7$var$createHtmlElementDynamically , handleDOMReady: $047f9defc20f6cd7$var$handleDOMReady , myExtend: $047f9defc20f6cd7$var$myExtend  } = (0, $20b4a97a61b3fccb$export$2e2bcd8739ae039);
-var $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
+export default $047f9defc20f6cd7$export$2e2bcd8739ae039 = function(globalThis) {
     /**
    * BabyQuery Constructor function
    * @param {String|HTMLElement|Function|null|undefined} selector to create or select elements on which all changes should apply

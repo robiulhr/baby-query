@@ -1,10 +1,10 @@
 {
-  "name": "@robiulh/baby-query",
+  "name": "baby-query",
   "version": "1.0.0",
-  "description": "baby query is the custom implementation of the popular javascriopt library jQuery.",
-  "source": "src/babyQuery.js",
-  "main": "dist/babyQuery.min.js",
-  "entry point": "dist/babyQuery.min.js",
+  "description": "baby query is a custom implementation of the popular javascriopt library jQuery.",
+  "source": "./dist/babyQuery.js",
+  "main": "./dist/babyQuery.min.js",
+  "entry point": "./dist/babyQuery.js",
   "scripts": {
     "test": "jest --env=jsdom --coverage --watchAll",
     "watch": "parcel watch",

@@ -101,6 +101,7 @@ const checkers = {
 
     return type === 'array' || length === 0 || (typeof length === 'number' && length > 0 && length - 1 in input)
   },
+  
   /**
    * checks the input value is a plainObject
    * @param {*} input
