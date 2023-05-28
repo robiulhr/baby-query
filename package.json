@@ -1,6 +1,6 @@
 {
   "name": "baby-query",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "baby query is a custom implementation of the popular javascript library jQuery.",
   "source": "./src/babyQuery.js",
   "main": "./dist/babyQuery.js",
