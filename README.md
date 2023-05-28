@@ -54,4 +54,4 @@ console.log($('p').text())
 ```
 
 
-Personal Blog: [Roblog](https://robiul.dev/)
+Personal Blog [Roblog](https://robiul.dev/), resource for learning web development. 
