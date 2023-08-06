@@ -58,9 +58,9 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Tutorial', link: '/docs/tutorial/' },
       { text: 'Docs', link: '/docs/introduction', activeMatch: '/docs/' },
+      { text: 'Blog', link: 'https://robiul.dev', },
       { text: 'Author', link: 'https://robiulhr.github.io/' }
     ],
-
     sidebar: {
       '/docs/': [
         {
@@ -109,10 +109,16 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/robiulhr/baby-query' }
+      { icon: 'github', link: 'https://github.com/robiulhr/baby-query' },
+      { icon: "twitter", link: "https://twitter.com/robiulhr01" },
+      { icon: "linkedin", link: "https://linkedin.com/in/robiulhr" },
     ],
     footer: {
-      message: 'Released under the MIT License'
+      message: 'Released under the MIT License',
+      copyright: "Copyright © 2023-present Robiul H.",
+    },
+    search: {
+      provider: 'local'
     }
   }
 })
